@@ -1,0 +1,27 @@
+K 10
+svn:ignore
+V 248
+.project
+.metadata
+.settings
+.classpath
+# External tool builders
+.externalToolBuilders
+# Locally stored "Eclipse launch configurations"
+*.launch
+# CDT-specific
+.cproject
+# PDT-specific
+.buildpath
+# WTP
+.wtpmodules
+# maven temp directory
+target
+bin
+
+K 13
+svn:mergeinfo
+V 98
+/branches/search2.5_20120917_ebay:536-841,843,846-849,872-876
+/trunk/search2.5:877,883,900-905,934
+END

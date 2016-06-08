@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/search/!svn/ver/2206/trunk/search2.5
+END
+deploy.bat
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/search/!svn/ver/1735/trunk/search2.5/deploy.bat
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/search/!svn/ver/1735/trunk/search2.5/pom.xml
+END
+compile.bat
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/search/!svn/ver/1735/trunk/search2.5/compile.bat
+END
