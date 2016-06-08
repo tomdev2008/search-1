@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<!-- JdbcType enumeration. Most common are: NULL, VARCHAR and OTHER -->
+		<setting name="jdbcTypeForNull" value="NULL" />
+		<setting name="defaultStatementTimeout" value="30" />
+	</settings>
+	<mappers>
+		<mapper resource="XIU_CAT_RECOMMEND_SqlMap.xml"/>
+		<mapper resource="XIU_BRAND_RECOMMEND_SqlMap.xml"/>	
+		<mapper resource="XIU_ITEM_INFO_SqlMap.xml"/>	
+		<mapper resource="XIU_SEARCH_CONFIG_SqlMap.xml"/>
+		<mapper resource="XIU_SEO_Keyword_SqlMap.xml"/>	
+	</mappers>
+</configuration>

@@ -1,0 +1,142 @@
+<div class="footer">
+    <div class="footer-tools clear">
+        <div class="footer-edm">
+            <h3 class="footer-edm-title"></h3>
+            <form action="#" class="clear">
+                <label>填写您的邮箱地址或手机号码</label>
+                <div id="emailAddressErr" onclick="$(this).hide()" style="display:none;height:25px;font-weight:normal;padding-left:8px;width:295px;background:#fff;position:absolute;top:6px;left:1px;line-height:25px;color:red;font-size:12px;">请输入正确的E-mail地址</div>
+    <input name="emailAddress" id="emailAddress" type="text" onfocus="$('#emailAddressErr').hide();" value=""/>
+                <a id="submitBtn" href="javascript:void(0);" alt="订阅" title="订阅" class="button"></a>
+            </form>
+        </div>
+        <ul class="footer-app clear">
+            <li>
+                <a  target="_blank" alt="关注微博" title="关注微博" 
+                    href="http://e.weibo.com/ebaystylexiu" class="weibo"></a>
+            </li>
+            <li>
+                <a  target="_blank" class="weixin"></a>
+            </li>
+            <li>
+                <a  target="_blank" alt="APP下载" title="APP下载" 
+                    href="http://ebay.xiu.com/mobile.shtml" class="app"></a>
+            </li>
+        </ul>
+        <div class="footer-video">
+                                        <a alt="页脚工具视频 " title="页脚工具视频 " href="http://ebay.xiu.com/about/video.shtml" target="_blank">
+        <img src="http://5.xiustatic.com/cms/page/2013/05/17/0cea8daf-d992-4455-8869-d93fbcf904a2.jpg" onerror="this.src='http://www.xiustatic.com/static/img/default/default.150_150.jpg'" width="337" height="70" />      
+    </a>
+    
+        </div>
+    </div>
+    <div class="footer-nav clear">
+        <div class="footer-nav-item footer-nav-promise">
+            <h3>
+                <a title="ebay承诺" alt="ebay承诺" href="http://ebay.xiu.com/promise.html" target="_blank">
+                </a>
+            </h3>
+            <p>
+                <a alt="全球知名电子商务平台" title="全球知名电子商务平台" href="http://ebay.xiu.com/promise.html" target="_blank">
+                全球知名电子商务平台
+                </a>
+            </p>
+            <p>
+                <a alt="美国直发，正品到家" title="美国直发，正品到家" href="http://ebay.xiu.com/promise.html" target="_blank">
+                美国直发，正品到家
+                </a>
+            </p>
+            <p>
+                <a alt="7天承诺，退货无忧" title="7天承诺，退货无忧" href="http://ebay.xiu.com/promise.html" target="_blank">
+                7天承诺，退货无忧
+                </a>
+            </p>
+        </div>
+        <div class="footer-nav-item footer-nav-shopping">
+            <h3>
+                <a title="购物指南" alt="购物指南" href="http://ebay.xiu.com/guide.html" target="_blank">
+                </a>
+            </h3>
+            <ul>
+                <li>
+                    <a alt="发掘心仪商品" target="_blank" title="发掘心仪商品" href="http://ebay.xiu.com/guide.html#guide-1">
+                    发掘心仪商品
+                    </a>
+                </li>
+                <li>
+                    <a alt="商品相关问询" target="_blank" title="商品相关问询" href="http://ebay.xiu.com/guide.html#guide-2">
+                    商品相关问询
+                    </a>
+                </li>
+                <li>
+                    <a alt="了解发货周期" target="_blank" title="了解发货周期" href="http://ebay.xiu.com/guide.html#guide-3">
+                    了解发货周期
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-nav-item footer-nav-help">
+            <h3>
+                <a title="帮助中心" alt="帮助中心" href="http://www.xiu.com/help/index.shtml" target="_blank">
+                </a>
+            </h3>
+            <div class="clear">
+                <ul>
+                    <li><a alt="新人注册" title="新人注册" href="http://www.xiu.com/help/help1-1.shtml" target="_blank">新人注册</a>&nbsp;|&nbsp;<a alt="找回密码" title="找回密码" href="http://www.xiu.com/help/201109191419.shtml" target="_blank">找回密码</a></li>
+                    <li><a alt="购物流程" title="购物流程" href="http://www.xiu.com/help/help1-2.shtml" target="_blank">购物流程</a>&nbsp;|&nbsp;<a alt="配送政策" title="配送政策" href="http://www.xiu.com/help/help4-2.shtml" target="_blank">配送政策</a></li>
+                    <li><a alt="在线客服" title="在线客服" href="http://v1.live800.com/live800/chatClient/chatbox.jsp?companyID=198389&amp;configID=40775&amp;jid=5811309589&amp;enterurl=http%3A%2F%2Fwww%2Exiu%2Ecom%2F" target="_blank">在线客服</a>&nbsp;|&nbsp;<a alt="退换货政策" title="退换货政策" href="http://www.xiu.com/help/help_2012-11-14_00.shtml" target="_blank">退换货政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-nav-item footer-nav-hotline">
+            <h3><a title="客户服务电话" alt="客户服务电话"></a></h3>
+            <div>
+                <p class="hotline"><i class="icon"></i>400-888-4499</p>
+                <p class="time">服务时间：08:00~24:00</p>
+            </div>
+        </div>
+        <div class="footer-nav-item footer-nav-info">
+            <h3>
+                <a title="ebay.com" alt="ebay.com" target="_blank" href="http://www.ebay.com">
+                </a>
+            </h3>
+            <p>eBay，1995年于美国成立，拥有丰富的全球电子商务经验和数以亿计的全球用户，现已成为时尚人士的风格直搜站。</p>
+            <p>eBay Style 秀，2012年由eBay和走秀网联袂打造，拥有超过5000个风尚品牌及500,000款潮流单品，获得多家全球品牌独家在线授权，致力于为中国消费者提供国际风尚体验。</p>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        Copyright&nbsp;&copy;&nbsp;2008-2013&nbsp;
+        <a target="_blank" href="http://www.xiu.com">
+        Xiu.com
+        </a>
+        &nbsp;版权所有&nbsp;粤ICP备07502993号
+    </div>
+    <div class="footer-ext clear">
+        <a target="_blank" alt="中国互联网违法和不良信息举报中心" title="中国互联网违法和不良信息举报中心" class="footer-ext-e1" href="http://www.net.china.com.cn/index.htm">
+        </a>
+        <a target="_blank" alt="深圳网络警察报警平台" title="深圳网络警察报警平台" class="footer-ext-e2" href="http://www.sznet110.gov.cn/netalarm/index.jsp">
+        </a>
+        <a target="_blank" alt="公共信息安全网络监察" title="公共信息安全网络监察" class="footer-ext-e3" href="http://www.sznet110.gov.cn/webrecord/innernet/Welcome.jsp?bano=4403101020565">
+        </a>
+        <a target="_blank" alt="AAA信用企业" title="AAA信用企业" class="footer-ext-e4" href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1667062250">
+        </a>
+        <a target="_blank" alt="可信网站" title="可信网站" class="footer-ext-e5" href="https://ss.cnnic.cn/verifyseal.dll?sn=2010090100100002003&pa=621350">
+        </a>
+        <a target="_blank" alt="深圳市场监管主体身份认证" title="深圳市场监管主体身份认证" class="footer-ext-e6" href="http://www.ebs.gov.cn/EntCertificate.aspx?mainId=7ffba2a8-c8b9-4d36-b196-bf81c17253b5">
+        </a>
+    </div>
+    <div class="gotop">
+        <div class="go-all">
+            <a alt="购物袋" title="购物袋" class="go-cart" href="http://portal.xiu.com/business/XOrderItemDisplayCmd?langId=-7&amp;storeId=10154&amp;catalogId=10101&amp;sellType=5&amp;?s_id=ebay-gouwudai">
+            <i class="shopNum icon"></i>
+            </a>
+            <a target="_blank" alt="在线客服" title="在线客服" class="go-services" href="http://v1.live800.com/live800/chatClient/chatbox.jsp?companyID=198389&configID=40775&jid=5811309589&enterurl=http%3A%2F%2Fwww%2Exiu%2Ecom%2F">
+            </a>
+            <a alt="返回顶部" title="返回顶部" class="go-top" href="#header">
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<script src="http://www.xiustatic.com/static/ebay/js/ebay.public.min.js?__=20130517163826"></script>
+

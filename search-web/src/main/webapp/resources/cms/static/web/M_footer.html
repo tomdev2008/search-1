@@ -1,0 +1,305 @@
+<!--右侧导航开始-->
+<!-- Page Create Time : $!{nowTime}  -->
+<script>
+$(function(){
+   $("#backtop .close_btn").click(function(){  
+   $("#backtop").hide(); 
+   });
+})
+</script>
+<div id="backtop" >
+    <div class="close_btn"><a href="javascript:void(0)">关闭</a></div>
+	<div class="r_menu">
+		<!--自定义内容 开始-->
+		<div class="right_natigation"></div>
+	    <!--自定义内容 结束-->
+		<a onclick="openLive();"  class="service"></a>
+		<a href="http://portal.xiu.com/business/XOrderItemDisplayCmd?langId=-7&storeId=10154&catalogId=10101&sellType=5" id="right_new_bag" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=shopcart|lev3=shopcart','abtest');" target="_blank" class="buy"><span class="redx shopNum num" id="num">0</span></a>
+		<a href="http://my.xiu.com/v3/idea/create" target="_blank" class="mail"></a>
+		<a href="javascript:void(0)" class="backtop"></a>
+   </div>
+</div> 
+<script type="text/javascript">
+var footer_url=location.href.toLowerCase();
+if(footer_url.indexOf("my.xiu.com")!=-1){
+$("#backtop").remove();
+}
+if(footer_url.indexOf("login.xiu.com")!=-1){
+$("#backtop").remove();
+}
+$(document).ready(function(){
+var a_html="";
+$(".div_a_c a").each(function(){
+a_html+="<a href=\""+$(this).attr("href")+"\" target=\""+$(this).attr("target")+"\" class=\""+$(this).attr("class")+"\">"+$(this).text()+"</a>"; 
+});
+if(a_html!=""){
+$(".right_natigation").html(a_html);//设置html代码
+}
+}); //右侧浮动导航回顶部
+$(document).ready(function(){
+$(".backtop").click(function(){
+$("html,body").animate({"scrollTop":"0"},"slow");
+})
+})
+$('#right_new_bag').hover(function(){
+$._xiu_login.showCard();
+},function(){})
+
+
+</script>
+<!--右侧导航结束-->
+<!--公共页脚 $!{nowTime} -->
+<div class="footer_frame">
+<div class="footer">
+<div class="server_btn">
+<a class="btn1" target="_blank" href="http://www.xiu.com/about/xiu_superiority.shtml" title="正品授权"></a>
+<a class="btn2" target="_blank" href="http://www.xiu.com/about/xiu_superiority.shtml" title="全球直送"></a>
+<a class="btn3" target="_blank" href="http://www.xiu.com/about/xiu_superiority.shtml" title="低价保证"></a>
+<a class="btn4" target="_blank" href="http://www.xiu.com/about/xiu_superiority.shtml" title="全国领先"></a>
+<a class="btn5" target="_blank" href="http://www.xiu.com/about/xiu_superiority.shtml" title="潮人热荐"></a>
+<a class="btn6" target="_blank" href="http://www.xiu.com/about/xiu_superiority.shtml" title="退换货保障"></a>
+<a class="btn7" target="_blank" href="http://www.xiu.com/about/xiu_superiority.shtml" title="金牌客服"></a>
+</div>
+<div class="service_info cindex_info">
+<div class="w service_nr">
+<div class="cs">
+<a href="mailto:service@xiu.com" target="_blank" class="mail_link"></a>
+<a href="" title="在线客服" class="kf" onclick="openLive();"></a>
+</div>
+<dl>
+<dt>新手入门</dt>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help1-2.shtml">购物流程</a></dd>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help3-1-2.shtml">会员制度</a></dd>
+<dd><a rel="nofollow" target="_blank" href="http://my.xiu.com">我的走秀</a></dd>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help6-4.shtml#help_s_faq">常见问题</a></dd>
+
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/mobile.html#s_id=xiu-service-5-3">手机走秀</a></dd>
+</dl>
+<dl>
+<dt>配送方式</dt>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help4-1.shtml">配送时间及运费</a></dd>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help2-4.shtml">订单状态说明</a></dd>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help4-3.shtml">配送状态说明</a></dd>
+</dl>
+<dl>
+<dt>支付方式</dt>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help3-1-1.shtml">网上支付</a></dd>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help3-4.shtml">货到付款</a></dd>
+<dd><a rel="nofollow" target="_blank" href="http://www.xiu.com/help/help3-2.shtml">银行转账</a></dd>
+</dl>
+<dl>
+<dt>售后服务</dt>
+<dd><a name="" rel="nofollow" class="replace" target="_blank" href="http://my.xiu.com/v3/order/list?orderCase=5&querySign=2&s_id=xiu-service-4-5">退换货自助申请</a></dd>
+<dd><a name="#{url}OrderManageCmd?#{params}&amp;orderCase=5&amp;querySign=2" rel="nofollow" class="replace" target="_blank" href="http://www.xiu.com/help/help_2012-11-14_00.shtml?s_id=xiu-service-4-1">退换货政策</a></dd>
+<dd><a name="#{url}OrderManageCmd?#{params}&amp;orderCase=5&amp;querySign=2" rel="nofollow" class="replace" target="_blank" href="http://www.xiu.com/help/help_2012-11-14_08.shtml?s_id=xiu-service-4-2">退换货流程图</a></dd>
+<dd><a name="" rel="nofollow" class="replace" target="_blank" href="http://www.xiu.com/help/help_2012-11-14_09.shtml?s_id=xiu-service-4-3">退款说明</a></dd>
+<dd><a name="" rel="nofollow" class="replace" target="_blank" href="mailto:ceo@xiu.com">CEO邮箱</a></dd>
+</dl>
+<dl class="wchat">
+<dt>走秀微信客服</dt>
+<dd></dd>
+</dl>
+</div>
+</div>
+<div class="footlink">
+<div class="fLink_con">
+<ul>
+<li><a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com/about/aboutus.shtml">关于走秀</a>|</li>
+<li><a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com/minisite/index.html">About us</a>|</li>
+<li><a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com/about/media.shtml">媒体报道</a>|</li>
+<li><a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com/about/cooperate.shtml">品牌招商</a>|</li>
+<li><a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com/about/job.shtml">加入走秀</a>|</li>
+<li><a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com/about/classifymap.shtml">网站地图</a>|</li>
+<li><a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com/about/link.shtml">友情链接</a>|</li>
+<li><a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com/about/contact.shtml">联系我们</a></li>
+</ul>
+</div>
+</div>
+<p class="copyright">Copyright ? 2008-2013<a onclick="XIU.Window.ctraceClick('version=b|lev1=yj|lev2=yj|lev3=yj','abtest');" target="_blank" href="http://www.xiu.com">Xiu.com</a>深圳走秀网络科技有限公司 版权所有 . <a target="_blank" href="http://www.miibeian.gov.cn/">粤ICP备07502993号</a></p>
+</div>
+</div>
+<!--公共插码 开始-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9540643-5']);
+  _gaq.push(['_addOrganic', 'baidu', 'word']);
+  _gaq.push(['_addOrganic', 'm.baidu', 'word']);
+  _gaq.push(['_addOrganic', 'wap.baidu', 'word']);
+  _gaq.push(['_addOrganic', 'baidu.mobi', 'word']);
+  _gaq.push(['_addOrganic', 'image.baidu', 'word']);
+  _gaq.push(['_addOrganic', 'baidu', 'wd']);
+  _gaq.push(['_addOrganic', 'baidu', 'kw']);
+  _gaq.push(['_addOrganic', 'baidu', 'q1']);
+  _gaq.push(['_addOrganic', 'baidu', 'q2']);
+  _gaq.push(['_addOrganic', 'baidu', 'q3']);
+  _gaq.push(['_addOrganic', 'baidu', 'q4']);
+  _gaq.push(['_addOrganic', 'baidu', 'q5']);
+  _gaq.push(['_addOrganic', 'baidu', 'q6']);
+  _gaq.push(['_addOrganic', 'baidu', 'frq']);
+  _gaq.push(['_addOrganic', 'so.360', 'q']);
+  _gaq.push(['_addOrganic', 'so', 'q']);
+  _gaq.push(['_addOrganic', '360', 'q']);
+  _gaq.push(['_addOrganic', 'image.so', 'q']);
+  _gaq.push(['_addOrganic', 'soso', 'w']);
+  _gaq.push(['_addOrganic', 'image.soso', 'w']);
+  _gaq.push(['_addOrganic', 'wap.soso', 'key']);
+  _gaq.push(['_addOrganic', 'pic.sogou', 'query']);
+  _gaq.push(['_addOrganic', 'wap.sogou', 'keyword']);
+  _gaq.push(['_addOrganic', 'm.sogou', 'keyword']);
+  _gaq.push(['_addOrganic', 'sogou', 'query']);
+  _gaq.push(['_addOrganic', 'youdao', 'q']);
+  _gaq.push(['_addOrganic', 'bing', 'q']);
+  _gaq.push(['_setDomainName', '.xiu.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setAllowHash', false]); 
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!--mediaV埋码开始-->
+<script type="text/javascript">
+var _mvq = _mvq || [];
+_mvq.push(['$setAccount', 'm-90-0'],['$logConversion']);
+(function() {
+var mvjs = document.createElement('script');
+mvjs.type = 'text/javascript';mvjs.async = true;
+mvjs.src ='http://www.xiustatic.com/static/js/thirdparty/mediav20130617.js';
+(document.getElementsByTagName('head')[0] ||
+document.getElementsByTagName('body')[0]).appendChild(mvjs);
+})();
+</script>
+<!--mediaV埋码结束-->
+<!--xiu内部媒体cps记录-->
+<script type="text/javascript"> 
+(function() {
+var s = document.getElementsByTagName('script')[0];
+var mediajs = document.createElement('script'); mediajs.type = 'text/javascript'; mediajs.async = true;
+mediajs.src = 'http://www.xiustatic.com/static/js/thirdparty/media.js';
+s.parentNode.insertBefore(mediajs, s);
+var semjs = document.createElement('script'); semjs.type = 'text/javascript'; semjs.async = true;
+semjs.src = ' http://www.xiustatic.com/static/js/thirdparty/agwebtracking_224.js';
+s.parentNode.insertBefore(semjs, s);
+})();
+try{
+var _mvsite=new $mvt.$site("m-90-0");
+_mvsite.$logConversion();
+}catch(err){}
+</script>
+<!--xiu内部媒体cps记录-->
+
+<script type="text/javascript">
+try{
+if(top!=this){
+(function(){
+var getHeight = function(){
+return Math.max(document.documentElement.scrollHeight,document.body.scrollHeight);
+};
+var preHeight = getHeight(),agent_iframe;
+var createIframe = function(height){
+agent_iframe = document.createElement("iframe");
+agent_iframe.style.height = "0";
+agent_iframe.style.width = "0";
+agent_iframe.style.border = "none";
+agent_iframe.src = "http://www.xiu.com/iframeAutoHeight.html#" + height;
+document.body.appendChild(agent_iframe);
+}
+createIframe(preHeight);
+var checkHeight = function(){
+var currentHeight = getHeight();
+if(currentHeight != preHeight){
+agent_iframe.src = "http://www.xiu.com/iframeAutoHeight.html#" + currentHeight;
+preHeight = currentHeight;
+}
+setTimeout(checkHeight,500);
+}
+
+setTimeout(checkHeight,500);
+})();
+} 
+}
+catch(e){
+
+}
+</script>
+
+<script type="text/javascript">XIU.Window.send();</script>
+
+<!--Live800埋码开始-->
+<script type="text/javascript">
+var liveCusustomInfo = "";
+var live800Url = "http://v1.live800.com/live800/chatClient/chatbox.jsp?companyID=198389&configID=40775&jid=5811309589&enterurl=http%3A%2F%2Fwww%2Exiu%2Ecom%2F";
+function _load(fun){
+	 if (window.attachEvent){
+	     window.attachEvent('onload', fun);
+	 }else{
+	     window.addEventListener('load', fun, false);
+	}
+}
+function async_load(src){
+    var live800_s = document.createElement('script');
+    live800_s.type = 'text/javascript';
+    live800_s.src = src;
+	document.body.appendChild(live800_s);
+}
+(function(){
+  var getCookie1 = function (check_name) {
+     var a_all_cookies = document.cookie.split(';');
+     var a_temp_cookie = '';
+     var cookie_name = '';
+     var cookie_value = '';
+     var b_cookie_found = false;
+
+     for (i = 0; i < a_all_cookies.length; i++) {
+          a_temp_cookie = a_all_cookies[i].split('=');
+          cookie_name = a_temp_cookie[0].replace(/^\s+|\s+$/g, '');
+          if (cookie_name == check_name) {
+               b_cookie_found = true;
+               if (a_temp_cookie.length > 1) {
+                    cookie_value = unescape(a_temp_cookie[1].replace(/^\s+|\s+$/g, ''));
+               }
+               return cookie_value;
+               break;
+          }
+          a_temp_cookie = null;
+          cookie_name = '';
+     }
+     if (!b_cookie_found) {
+          return null;
+     }
+  };
+
+  var xiu_live800='http://v1.live800.com/live800/chatClient/monitor.js?jid=5811309589&companyID=198389&configID=40770&codeType=custom';
+  var xiuLoginName = getCookie1('xiu.login.loginName');
+  var xiuLoginUserId = getCookie1('xiu.login.userId');
+  if(xiuLoginName != null && xiuLoginUserId != null){
+     liveCusustomInfo = encodeURIComponent("userId=" + xiuLoginUserId + "&name=" + xiuLoginName + "&timestamp=" + new Date().getTime());
+     xiu_live800 += ("&info=" + liveCusustomInfo );
+     live800Url += ("&info=" + liveCusustomInfo );
+  }
+  xiu_live800 += "&delayload=1";
+  _load( function(){
+	async_load(xiu_live800);
+	 try{
+      $('#onLineLive800').attr('href',live800Url);
+      $('#onLineLive8002').attr('href',live800Url);
+	}catch(err){}
+  });
+})();
+
+function openLive(){
+   this.newWindow = window.open(
+'http://v1.live800.com/live800/chatClient/chatbox.jsp?companyID=198389&configID=40775&jid=5811309589&enterurl=http%3A%2F%2Fwww%2Exiu%2Ecom%2F'
+,'chatbox77366','toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=570,height=424');
+   //this.newWindow.focus();
+   //this.newWindow.opener=window;
+   return false;
+}
+</script>
+<!--Live800埋码结束-->
+<!--公共插码结束-->

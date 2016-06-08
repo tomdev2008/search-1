@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/search/!svn/ver/2236/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao
+END
+XDataAttrDescDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/search/!svn/ver/1965/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XDataAttrDescDAO.java
+END
+XDataCatalogDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XDataCatalogDAO.java
+END
+DeliverTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/2234/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/DeliverTypeDAO.java
+END
+XSalesCatalogCondDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XSalesCatalogCondDAO.java
+END
+XiuCatalogDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XiuCatalogDAO.java
+END
+XiuItemInfoDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XiuItemInfoDAO.java
+END
+XiuSEOKeywordDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XiuSEOKeywordDAO.java
+END
+XiuSearchConfigDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XiuSearchConfigDAO.java
+END
+XTagDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XTagDAO.java
+END
+XiuBrandRecommendDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XiuBrandRecommendDAO.java
+END
+XiuCatRecommendDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XiuCatRecommendDAO.java
+END
+XDataBrandDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/search/!svn/ver/1966/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/XDataBrandDAO.java
+END

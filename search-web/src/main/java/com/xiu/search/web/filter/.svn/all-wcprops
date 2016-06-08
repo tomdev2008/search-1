@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/search/!svn/ver/2161/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter
+END
+XUrlRewriteFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter/XUrlRewriteFilter.java
+END
+CookieIdentityFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter/CookieIdentityFilter.java
+END
+FGReadyRedirectFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/search/!svn/ver/2161/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter/FGReadyRedirectFilter.java
+END
+ReptileFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter/ReptileFilter.java
+END
+OrigUrlRedirectFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter/OrigUrlRedirectFilter.java
+END
+AnalyticsFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter/AnalyticsFilter.java
+END
+XUrlRewriteWrappedResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter/XUrlRewriteWrappedResponse.java
+END
+XUrlRewriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/filter/XUrlRewriter.java
+END

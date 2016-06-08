@@ -1,0 +1,1200 @@
+<!--PublicHeadDom begin-->
+
+<div class="header">
+  <ul class="w toplink">
+    <li class="nofix">
+      <a href="http://card.xiu.com/" target="_blank">秀卡</a>
+    </li>
+    <li>
+      <a href="http://www.xiu.com/mobile.html" target="_blank" class="redx" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=mobile|lev3=mobile','abtest');">移动走秀</a>
+    </li>
+    <li>
+      <a href="#" onclick="addfavorite(); XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=enshrine|lev3=enshrine','abtest');">收藏走秀</a>
+    </li>
+    <li>
+      <a href="http://www.xiu.com/help/index.shtml" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=help|lev3=help','abtest');">帮助</a>
+    </li>
+    <li class="my_xiu relax" id="mine">
+      <a href="javascript:;" id="xiuurl" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=myxiu|lev3=myxiu','abtest');">我的走秀</a>
+      <div class="myXiu_menu" id="my_xiu">
+        <a href="#">我的订单</a>
+        <a href="#">我的收藏</a>
+      </div>
+    </li>
+    <li class="my_bag relax" id="bag">
+      <a href="http://portal.xiu.com/business/XOrderItemDisplayCmd?langId=-7&storeId=10154&catalogId=10101&sellType=5" id="new_bag" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=shopcart|lev3=shopcart','abtest');">购物袋<font class="redx" id="num">0</font>件</a>
+      <div class="myBag_con" id="my_bag">
+      </div>
+    </li>
+    <li>
+      <span id="logindiv">您好，欢迎光临走秀网！
+      <a href="#">[登录]</a>
+      <a href="#">[注册]</a>
+      </span>
+    </li>
+  </ul>
+  <div class="w LSS_box">
+    <h1 class="logo_x">
+      <a href="http://www.xiu.com/" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=xiulogo|lev3=xiulogo','abtest');"><img src="static/css/default/img/index/x_logo.jpg" width="194" alt="走秀网-全球品牌网络旗舰店"></a>
+    </h1>
+    <form id="J_searchForm" action="http://search.xiu.com/s" method="get" onsubmit="return LEON.searchSubmit();">
+      <div class="search_x leon-search-box">
+        <label id="J_search_welcome" for="J_searchTerm" class="leon-welcome" style="display:none">请输入商品名称或品牌名称</label>
+        <input id="J_searchTerm" type="text" value="" name="kw" autocomplete="off"
+        	 onfocus="$('#J_search_welcome').hide();" onblur="if(!$(this).val())$('#J_search_welcome').show();">
+        <input type="submit" value="" class="s_btn" id="searchBtn">
+        <input type="hidden" name="salesCatgroupId" id="J_st_oclass_id"/>
+        <p><b class="redx">热搜：</b>    	<a target="_blank" href="http://brand.xiu.com/2958.html" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=hotkw|lev3=雅诗兰黛','abtest');">雅诗兰黛</a>
+        	<a target="_blank" href="http://brand.xiu.com/1266.html" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=hotkw|lev3=GUCCI','abtest');">GUCCI</a>
+        	<a target="_blank" href="http://brand.xiu.com/1282.html" onclick="XIU.Window.ctraceClick('version=b|lev1=yetou|lev2=hotkw|lev3=PRADA','abtest');">PRADA</a>
+    </p>
+      </div>
+    </form>
+    <div class="service_x">
+      <a href="#" onclick="this.newWindow = window.open('http://v1.live800.com/live800/chatClient/chatbox.jsp?companyID=198389&configID=40775&jid=5811309589&enterurl=http%3A%2F%2Fwww%2Exiu%2Ecom%2F','chatbox77366','toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=570,height=424');this.newWindow.focus();this.newWindow.opener=window;return false;">在线客服</a>
+    </div>
+  </div>
+  <div class="nav_box">
+    <div class="w nav_type">
+      <div class="class_type sonClass_type">
+        <h3>全部商品和分类</h3>
+	<ul class="cType_con">  
+		<li><p class="ty1">
+<a href="http://www.xiu.com/nvzhuang.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=服装','abtest');"><b>服装</b></a>
+<a href="http://www.xiu.com/nvzhuang.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=女装','abtest');">女装</a>
+<a href="http://www.xiu.com/nanzhuang.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=男装','abtest');">男装</a>
+<a href="http://www.xiu.com/underwear.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=内衣','abtest');">内衣</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl>
+	<dt><h4><a href="http://www.xiu.com/nvzhuang.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女装','abtest');">女装</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/32237.html "  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=雪纺','abtest');">雪纺</a>
+			 |  <a href="http://list.xiu.com/32713.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=蕾丝','abtest');">蕾丝</a>
+			 |  <a href="http://list.xiu.com/20078.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=连衣裙','abtest');">连衣裙</a>
+			 |  <a href="http://list.xiu.com/19795.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=半身裙','abtest');">半身裙</a>
+			 |  <a href="http://list.xiu.com/20076.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=热裤短裤','abtest');">热裤短裤</a>
+			 |  <a href="http://list.xiu.com/20066.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=T恤','abtest');">T恤</a>
+			 |  <a href="http://list.xiu.com/20068.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=衬衫','abtest');">衬衫</a>
+			 |  <a href="http://list.xiu.com/19796.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=开衫','abtest');">开衫</a>
+			 |  <a href="http://list.xiu.com/20069.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=针织衫','abtest');">针织衫</a>
+			 |  <a href="http://list.xiu.com/20064.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=小外套','abtest');">小外套</a>
+			 |  <a href="http://list.xiu.com/19786.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=打底裤','abtest');">打底裤</a>
+			 |  <a href="http://list.xiu.com/20072.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=牛仔裤','abtest');">牛仔裤</a>
+			 |  <a href="http://list.xiu.com/20074.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=休闲裤','abtest');">休闲裤</a>
+			 |  <a href="http://list.xiu.com/20063.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=小西装','abtest');">小西装</a>
+			 |  <a href="http://list.xiu.com/19508.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=特色服饰','abtest');">特色服饰</a>
+			 |  <a href="http://list.xiu.com/20065.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=马甲背心','abtest');">马甲背心</a>
+			 |  <a href="http://list.xiu.com/20071.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=毛衣','abtest');">毛衣</a>
+			 |  <a href="http://list.xiu.com/32238.html "  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=风衣','abtest');">风衣</a>
+			 |  <a href="http://list.xiu.com/20070.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=卫衣','abtest');">卫衣</a>
+			 |  <a href="http://list.xiu.com/32372.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=甜美风','abtest');">甜美风</a>
+			 |  <a href="http://list.xiu.com/32712.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=全球速递','abtest');">全球速递</a>
+			 |  <a href="http://www.xiu.com/korea.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=<font color=red>韩国女装</font>','abtest');"><font color=red>韩国女装</font></a>
+			 |  <a href="http://www.xiu.com/cx/25411.shtml#fl02"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=<font color=red>女装清仓</font>','abtest');"><font color=red>女装清仓</font></a>
+			 |  <a href="http://list.xiu.com/19380.html?searchTerm=&buyAble=0&pageView=image&minPrice=&maxPrice=&metaData=&facet=&instalment=&brandid=&orderBy=8#J_anchor"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=<font color=red>新品女装</font>','abtest');"><font color=red>新品女装</font></a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://www.xiu.com/nanzhuang.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男装','abtest');">男装</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19729.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=T恤','abtest');">T恤</a>
+			 |  <a href="http://list.xiu.com/19730.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=POLO衫','abtest');">POLO衫</a>
+			 |  <a href="http://list.xiu.com/33242.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=短裤','abtest');">短裤</a>
+			 |  <a href="http://list.xiu.com/19745.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=牛仔裤','abtest');">牛仔裤</a>
+			 |  <a href="http://list.xiu.com/20560.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=休闲裤','abtest');">休闲裤</a>
+			 |  <a href="http://list.xiu.com/19733.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=休闲衬衫','abtest');">休闲衬衫</a>
+			 |  <a href="http://list.xiu.com/19741.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=商务衬衫','abtest');">商务衬衫</a>
+			 |  <a href="http://list.xiu.com/19734.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=卫衣','abtest');">卫衣</a>
+			 |  <a href="http://list.xiu.com/19731.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=针织衫','abtest');">针织衫</a>
+			 |  <a href="http://list.xiu.com/20549.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=西装','abtest');">西装</a>
+			 |  <a href="http://list.xiu.com/20552.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=马甲','abtest');">马甲</a>
+			 |  <a href="http://list.xiu.com/19732.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=夹克','abtest');">夹克</a>
+			 |  <a href="http://list.xiu.com/20551.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=风衣','abtest');">风衣</a>
+			 |  <a href="http://list.xiu.com/20555.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=皮衣','abtest');">皮衣</a>
+			 |  <a href="http://list.xiu.com/20556.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=大衣','abtest');">大衣</a>
+			 |  <a href="http://list.xiu.com/20553.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=棉服','abtest');">棉服</a>
+			 |  <a href="http://list.xiu.com/20554.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=羽绒服','abtest');">羽绒服</a>
+			 |  <a href="http://list.xiu.com/19743.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=套装','abtest');">套装</a>
+			 |  <a href="http://list.xiu.com/19739.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=西裤','abtest');">西裤</a>
+			 |  <a href="http://list.xiu.com/19775.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=<font color=red>韩国男装</font>','abtest');"><font color=red>韩国男装</font></a>
+			 |  <a href="http://list.xiu.com/34153.html?pageView=image&searchTerm=%E9%AB%98%E8%A1%97&brandid=" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=<font color=red>美国潮牌</font>','abtest');"><font color=red>美国潮牌</font></a>
+			 |  <a href="http://list.xiu.com/20566.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=全球速递','abtest');">全球速递</a>
+			 |  <a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=2933" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=<font color=red>CK新品上线</font>','abtest');"><font color=red>CK新品上线</font></a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://www.xiu.com/underwear.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=内衣','abtest');">内衣</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19841.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=文胸','abtest');">文胸</a>
+			 |  <a href="http://list.xiu.com/19965.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=底裤','abtest');">底裤</a>
+			 |  <a href="http://list.xiu.com/19986.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=背心','abtest');">背心</a>
+			 |  <a href="http://list.xiu.com/20841.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=美体塑型','abtest');">美体塑型</a>
+			 |  <a href="http://list.xiu.com/20823.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=家居/睡衣','abtest');">家居/睡衣</a>
+			 |  <a href="http://list.xiu.com/20847.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=情趣内衣','abtest');">情趣内衣</a>
+			 |  <a href="http://list.xiu.com/20831.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=泳装/沙滩装','abtest');">泳装/沙滩装</a>
+			 |  <a href="http://list.xiu.com/20828.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=保暖内衣','abtest');">保暖内衣</a>
+			 |  <a href="http://list.xiu.com/20842.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=打底裤/袜子/手套','abtest');">打底裤/袜子/手套</a>
+			 |  <a href="http://list.xiu.com/20846.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=孕妇装','abtest');">孕妇装</a>
+			 |  <a href="http://list.xiu.com/29493.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=全球速递','abtest');">全球速递</a>
+			</dd>
+</dl>
+												<dl class="lastx">
+	<dt><h4><a href="http://www.xiu.com/childapparel/index.shtml"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=童装','abtest');">童装</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19653.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童装','abtest');">男童装</a>
+			 |  <a href="http://list.xiu.com/19655.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童T恤','abtest');">男童T恤</a>
+			 |  <a href="http://list.xiu.com/19660.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童外套','abtest');">男童外套</a>
+			 |  <a href="http://list.xiu.com/19657.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童衬衫','abtest');">男童衬衫</a>
+			 |  <a href="http://list.xiu.com/19661.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童卫衣','abtest');">男童卫衣</a>
+			 |  <a href="http://list.xiu.com/19658.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童毛衣','abtest');">男童毛衣</a>
+			 |  <a href="http://list.xiu.com/19663.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童夹克','abtest');">男童夹克</a>
+			 |  <a href="http://list.xiu.com/19656.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童棉服','abtest');">男童棉服</a>
+			 |  <a href="http://list.xiu.com/19654.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童马甲','abtest');">男童马甲</a>
+			 |  <a href="http://list.xiu.com/19659.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童羽绒服','abtest');">男童羽绒服</a>
+			 |  <a href="http://list.xiu.com/19662.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男童裤子','abtest');">男童裤子</a>
+			 |  <a href="http://list.xiu.com/19664.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童装','abtest');">女童装</a>
+			 |  <a href="http://list.xiu.com/19666.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童T恤','abtest');">女童T恤</a>
+			 |  <a href="http://list.xiu.com/19670.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童裙子','abtest');">女童裙子</a>
+			 |  <a href="http://list.xiu.com/19672.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童外套','abtest');">女童外套</a>
+			 |  <a href="http://list.xiu.com/19667.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童衬衫','abtest');">女童衬衫</a>
+			 |  <a href="http://list.xiu.com/19671.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童毛衣','abtest');">女童毛衣</a>
+			 |  <a href="http://list.xiu.com/19668.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童棉服','abtest');">女童棉服</a>
+			 |  <a href="http://list.xiu.com/19673.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童卫衣','abtest');">女童卫衣</a>
+			 |  <a href="http://list.xiu.com/19665.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童马甲','abtest');">女童马甲</a>
+			 |  <a href="http://list.xiu.com/19669.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童羽绒服','abtest');">女童羽绒服</a>
+			 |  <a href="http://list.xiu.com/19674.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女童裤子','abtest');">女童裤子</a>
+			 |  <a href="http://list.xiu.com/21823.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=婴童','abtest');">婴童</a>
+			 |  <a href="http://list.xiu.com/21825.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=婴幼用品','abtest');">婴幼用品</a>
+			 |  <a href="http://list.xiu.com/21826.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=内衣/配饰 ','abtest');">内衣/配饰 </a>
+			 |  <a href="http://list.xiu.com/33314.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=大牌童装全球速递','abtest');">大牌童装全球速递</a>
+			</dd>
+</dl>
+														</div>
+																												<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+																		<a href="http://brand.xiu.com/2271269.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=<font color=red>IMAGE</font>','abtest');"><font color=red>IMAGE</font></a>
+								<a href="http://brand.xiu.com/2825.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=FLORA','abtest');">FLORA</a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=1266" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=GUCCI','abtest');">GUCCI</a>
+								<a href="http://list.xiu.com/19380.html?searchTerm=&buyAble=0&pageView=image&minPrice=&maxPrice=&metaData=&facet=&instalment=&brandid=3098&orderBy=8#J_anchor" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=BCBG','abtest');">BCBG</a>
+								<a href="http://list.xiu.com/29495.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=TOMMY ','abtest');">TOMMY </a>
+								<a href="http://brand.xiu.com/259943.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=MAXANDCLEO','abtest');">MAXANDCLEO</a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=2932" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=<font color=red>RALPH LAUREN</font>','abtest');"><font color=red>RALPH LAUREN</font></a>
+								<a href="http://brand.xiu.com/2439.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=<font color=red>ZIMMUR</font>','abtest');"><font color=red>ZIMMUR</font></a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=1265" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=DIESEL 迪赛','abtest');">DIESEL 迪赛</a>
+								<a href="http://brand.xiu.com/3406.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=爱慕','abtest');">爱慕</a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=2640" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Paul Smith','abtest');">Paul Smith</a>
+								<a href="http://brand.xiu.com/1536880.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=<font color=red>KINISII柯妮丝麗 </font>','abtest');"><font color=red>KINISII柯妮丝麗 </font></a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=3649" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=CK JEANS','abtest');">CK JEANS</a>
+								<a href="http://list.xiu.com/19380.html?pageView=image&searchTerm=&brandid=1656&orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Fevenly 费雯莉','abtest');">Fevenly 费雯莉</a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=2894518" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=杰夫班克斯','abtest');">杰夫班克斯</a>
+								<a href="http://list.xiu.com/34145.html?pageView=image&searchTerm=%E9%AB%98%E8%A1%97&brandid=" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=karmaloop','abtest');">karmaloop</a>
+								<a href="http://list.xiu.com/32118.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=<font color=red>Burberry</font>','abtest');"><font color=red>Burberry</font></a>
+								<a href="http://brand.xiu.com/2895.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=misscandy','abtest');">misscandy</a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=2933" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=<font color=red>CK</font>','abtest');"><font color=red>CK</font></a>
+								<a href="http://brand.xiu.com/2837.html&orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=NIPONJJUYA','abtest');">NIPONJJUYA</a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=2944" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=HUGO BOSS','abtest');">HUGO BOSS</a>
+								<a href="http://brand.xiu.com/1675791.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=三季服饰','abtest');">三季服饰</a>
+								<a href="http://list.xiu.com/19381.html?pageView=image&searchTerm=&brandid=2519053" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=GLM','abtest');">GLM</a>
+								<a href="http://brand.xiu.com/2860.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=AKA','abtest');">AKA</a>
+								<a href="http://brand.xiu.com/2940.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=A&F','abtest');">A&F</a>
+								<a href="http://list.xiu.com/19380.html?pageView=image&searchTerm=&brandid=1026560" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=爱肯','abtest');">爱肯</a>
+								<a href="http://list.xiu.com/19652.html?pageView=image&searchTerm=&brandid=3614" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=TOMMY HILFIGER','abtest');">TOMMY HILFIGER</a>
+								<a href="tp://brand.xiu.com/5179852.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=十月传奇','abtest');">十月传奇</a>
+								<a href="http://brand.xiu.com/435872.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=PUFFY PUPPY','abtest');">PUFFY PUPPY</a>
+								<a href="http://brand.xiu.com/3093.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=维多利亚的秘密','abtest');">维多利亚的秘密</a>
+								<a href="http://brand.xiu.com/3393561.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=PLACE','abtest');">PLACE</a>
+								<a href="http://brand.xiu.com/2458.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=神曲','abtest');">神曲</a>
+								<a href="http://list.xiu.com/19652.html?pageView=image&searchTerm=&brandid=3100" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=老海军童装','abtest');">老海军童装</a>
+								<a href="http://brand.xiu.com/3573.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=浪莎','abtest');">浪莎</a>
+																		</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                        <a href="http://www.xiu.com/cx/26456.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=<font color=red>初秋夏味 女装新品专辑59元起</font>','abtest');"><font color=red>初秋夏味 女装新品专辑59元起</font></a>
+			                                    <a href="http://www.xiu.com/cx/26205.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=风靡美国 婴童品牌Carter\'s 86元起','abtest');">风靡美国 婴童品牌Carter's 86元起</a>
+			                                    <a href="http://outlets.xiu.com/26473-1-1-1.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=时尚摇滚 个性混搭 126元起','abtest');">时尚摇滚 个性混搭 126元起</a>
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="http://www.xiu.com/cx/26226.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=<font color=red>大牌清仓 低至1折 </font>','abtest');"><font color=red>大牌清仓 低至1折 </font></a>
+			                                    <a href="http://outlets.xiu.com/26474-1-1-1.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=个性潮流 型格范儿 89元起','abtest');">个性潮流 型格范儿 89元起</a>
+			                                    <a href="http://www.xiu.com/cx/26287.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=陪你玩转全球大牌时尚 低至1折','abtest');">陪你玩转全球大牌时尚 低至1折</a>
+			            		</dd>
+	</dl>
+</div>
+					</div>
+       <span class="layer_arrow"></span>
+</div></li>
+		<li><p class="ty2">
+<a href="http://www.xiu.com/bags.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=箱包','abtest');"><b>箱包</b></a>
+<a href="http://list.xiu.com/19512.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=女包','abtest');">女包</a>
+<a href="http://list.xiu.com/19565.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=男包','abtest');">男包</a>
+<a href="http://list.xiu.com/19587.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=旅行包','abtest');">旅行包</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl>
+	<dt><h4><a href="http://list.xiu.com/19512.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女包','abtest');">女包</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19513.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=单肩包','abtest');">单肩包</a>
+			 |  <a href="http://list.xiu.com/19524.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=手提包','abtest');">手提包</a>
+			 |  <a href="http://list.xiu.com/19554.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=化妆包','abtest');">化妆包</a>
+			 |  <a href="http://list.xiu.com/19535.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=手包/晚装包','abtest');">手包/晚装包</a>
+			 |  <a href="http://list.xiu.com/19514.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=斜跨包','abtest');">斜跨包</a>
+			 |  <a href="http://list.xiu.com/19557.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=多功能包','abtest');">多功能包</a>
+			 |  <a href="http://list.xiu.com/20057.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=钱包','abtest');">钱包</a>
+			 |  <a href="http://list.xiu.com/33599.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=畅销新品','abtest');">畅销新品</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19565.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男包','abtest');">男包</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19573.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=单肩包','abtest');">单肩包</a>
+			 |  <a href="http://list.xiu.com/19582.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=公文包','abtest');">公文包</a>
+			 |  <a href="http://list.xiu.com/19581.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=手提包','abtest');">手提包</a>
+			 |  <a href="http://list.xiu.com/19580.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=斜挎包','abtest');">斜挎包</a>
+			 |  <a href="http://list.xiu.com/20058.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=钱包','abtest');">钱包</a>
+			 |  <a href="http://list.xiu.com/20565.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=手拿包','abtest');">手拿包</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19587.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=户外旅行包','abtest');">户外旅行包</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19591.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=拉杆箱','abtest');">拉杆箱</a>
+			 |  <a href="http://list.xiu.com/19594.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=双肩包','abtest');">双肩包</a>
+			 |  <a href="http://list.xiu.com/19602.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=旅行配件','abtest');">旅行配件</a>
+			 |  <a href="http://list.xiu.com/19595.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=胸包','abtest');">胸包</a>
+			 |  <a href="http://list.xiu.com/31054.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=拉杆包','abtest');">拉杆包</a>
+			 |  <a href="http://list.xiu.com/31055.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=登山包','abtest');">登山包</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19607.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=功能箱包','abtest');">功能箱包</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19610.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=电脑包','abtest');">电脑包</a>
+			 |  <a href="http://list.xiu.com/19619.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=数码包','abtest');">数码包</a>
+			 |  <a href="http://list.xiu.com/19620.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=钥匙包','abtest');">钥匙包</a>
+			 |  <a href="http://list.xiu.com/19626.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=腰包','abtest');">腰包</a>
+			 |  <a href="http://list.xiu.com/19623.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=证件包','abtest');">证件包</a>
+			 |  <a href="http://list.xiu.com/31057.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=学生书包','abtest');">学生书包</a>
+			 |  <a href="http://list.xiu.com/19621.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=名片夹','abtest');">名片夹</a>
+			</dd>
+</dl>
+												<dl class="lastx">
+	<dt><h4><a href="http://list.xiu.com/20056.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=皮带腰带','abtest');">皮带腰带</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/20783.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=皮具礼盒','abtest');">皮具礼盒</a>
+			 |  <a href="http://list.xiu.com/20785.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=腰带','abtest');">腰带</a>
+			 |  <a href="http://list.xiu.com/20784.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=皮带','abtest');">皮带</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19511.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=价格区间','abtest');">价格区间</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19511.html?searchTerm=&buyAble=0&pageView=image&minPrice=&maxPrice=&metaData=&orderBy=11&instalment=&brandid=&facet=priceFinal:{500%20TO%201000}%20priceFinal:1000"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=￥500-1000','abtest');">￥500-1000</a>
+			 |  <a href="http://list.xiu.com/19511.html?searchTerm=&buyAble=0&pageView=image&minPrice=&maxPrice=&metaData=&orderBy=11&instalment=&brandid=&facet=priceFinal:{1000%20TO%203000}%20priceFinal:3000"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=￥1000-3000','abtest');">￥1000-3000</a>
+			 |  <a href="http://list.xiu.com/19511.html?searchTerm=&buyAble=0&pageView=image&minPrice=&maxPrice=&metaData=&orderBy=11&instalment=&brandid=&facet=priceFinal:{3000%20TO%205000}%20priceFinal:5000"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=￥3000-5000','abtest');">￥3000-5000</a>
+			 |  <a href="http://list.xiu.com/19511.html?searchTerm=&buyAble=0&pageView=image&minPrice=&maxPrice=&metaData=&orderBy=11&instalment=&brandid=&facet=priceFinal:{5000%20TO%208000}%20priceFinal:8000"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=￥5000-8000','abtest');">￥5000-8000</a>
+			 |  <a href="http://list.xiu.com/19511.html?searchTerm=&buyAble=0&pageView=image&minPrice=&maxPrice=&metaData=&orderBy=11&instalment=&brandid=&facet=priceFinal:{8000%20TO%20*}"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=￥8000以上','abtest');">￥8000以上</a>
+			</dd>
+</dl>
+														</div>
+																																				<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+						<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1266" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=GUCCI','abtest');">GUCCI</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1795" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=COACH','abtest');">COACH</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1282" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=PRADA','abtest');">PRADA</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&brandid=1791" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=BURBERRY','abtest');">BURBERRY</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1267" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=FENDI','abtest');">FENDI</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=2638" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Dunhill','abtest');">Dunhill</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1276" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Ferragamo','abtest');">Ferragamo</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=3130" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Alviero Martini','abtest');">Alviero Martini</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1171" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=LV','abtest');">LV</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1124" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=CHANEL ','abtest');">CHANEL </a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=3098" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=BCBG','abtest');">BCBG</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=3117" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=BOTTEGA VENETA','abtest');">BOTTEGA VENETA</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=3632" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Tory Burch','abtest');">Tory Burch</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1222" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=D&G','abtest');">D&G</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1123" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=DIOR','abtest');">DIOR</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1120" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=HERMES','abtest');">HERMES</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1584984" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=PARIS HILTON','abtest');">PARIS HILTON</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=1727" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=KATE SPADE','abtest');">KATE SPADE</a>
+								<a href="http://list.xiu.com/19511.html?pageView=image&searchTerm=&brandid=997233" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=LIEBESKIND','abtest');">LIEBESKIND</a>
+																																		</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="http://www.xiu.com/cx/26425.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=独一无二 奢华新品上线3折起','abtest');">独一无二 奢华新品上线3折起</a>
+			                                    <a href="http://www.xiu.com/cx/26426.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=知性包包 知心之选 全场2折起','abtest');">知性包包 知心之选 全场2折起</a>
+			                                    <a href="http://www.xiu.com/cx/25276.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=做众人羡慕焦点 品牌包包为你守候','abtest');">做众人羡慕焦点 品牌包包为你守候</a>
+			                                    <a href="http://www.xiu.com/cx/25277.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=夏日至HOT包聚合地 全场2折起','abtest');">夏日至HOT包聚合地 全场2折起</a>
+			                                    <a href="http://list.xiu.com/19511.html?pageView=image&brandid=1266" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=GUCCI 经典包包859元起','abtest');">GUCCI 经典包包859元起</a>
+			                                    <a href="http://www.xiu.com/cx/25945.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=COACH新品上架4折起','abtest');">COACH新品上架4折起</a>
+			                                    <a href="http://list.xiu.com/31059.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=全球正品箱包，海外直发','abtest');">全球正品箱包，海外直发</a>
+			            		</dd>
+	</dl>
+</div>
+					</div>
+        <span class="layer_arrow"></span>
+</div></li>
+		<li><p class="ty3">
+<a href="http://www.xiu.com/shoes.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=鞋','abtest');"><b>鞋</b></a>
+<a href="http://list.xiu.com/19862.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=女鞋','abtest');">女鞋</a>
+<a href="http://list.xiu.com/19861.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=男鞋','abtest');">男鞋</a>
+<a href="http://list.xiu.com/19860.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=童鞋','abtest');">童鞋</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl>
+	<dt><h4><a href="http://list.xiu.com/19862.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女鞋','abtest');">女鞋</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19890.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女靴','abtest');">女靴</a>
+			 |  <a href="http://list.xiu.com/33215.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=平跟鞋','abtest');">平跟鞋</a>
+			 |  <a href="http://list.xiu.com/33218.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=坡跟鞋','abtest');">坡跟鞋</a>
+			 |  <a href="http://list.xiu.com/33219.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=低跟鞋','abtest');">低跟鞋</a>
+			 |  <a href="http://list.xiu.com/33216.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=中跟鞋','abtest');">中跟鞋</a>
+			 |  <a href="http://list.xiu.com/33217.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高跟鞋','abtest');">高跟鞋</a>
+			 |  <a href="http://list.xiu.com/19954.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=鱼嘴鞋','abtest');">鱼嘴鞋</a>
+			 |  <a href="http://list.xiu.com/19889.html?pageView=image&searchTerm=&brandid=&p_code="  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女凉鞋','abtest');">女凉鞋</a>
+			 |  <a href="http://list.xiu.com/33231.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=露趾鞋','abtest');">露趾鞋</a>
+			 |  <a href="http://list.xiu.com/19891.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女布鞋','abtest');">女布鞋</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19861.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男鞋','abtest');">男鞋</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19878.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=商务皮鞋','abtest');">商务皮鞋</a>
+			 |  <a href="http://list.xiu.com/19880.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=商务休闲','abtest');">商务休闲</a>
+			 |  <a href="http://list.xiu.com/19884.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=日常休闲','abtest');">日常休闲</a>
+			 |  <a href="http://list.xiu.com/19885.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=凉鞋/凉拖','abtest');">凉鞋/凉拖</a>
+			 |  <a href="http://list.xiu.com/19886.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男靴/高帮鞋','abtest');">男靴/高帮鞋</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19860.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=童鞋','abtest');">童鞋</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19867.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=童鞋单鞋','abtest');">童鞋单鞋</a>
+			 |  <a href="http://list.xiu.com/19870.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=童鞋靴子','abtest');">童鞋靴子</a>
+			 |  <a href="http://list.xiu.com/19872.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动童鞋','abtest');">运动童鞋</a>
+			 |  <a href="http://list.xiu.com/19873.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=童鞋其他','abtest');">童鞋其他</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19863.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动户外','abtest');">运动户外</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/21902.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男运动鞋','abtest');">男运动鞋</a>
+			 |  <a href="http://list.xiu.com/21903.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女运动鞋','abtest');">女运动鞋</a>
+			 |  <a href="http://list.xiu.com/21907.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男户外鞋','abtest');">男户外鞋</a>
+			 |  <a href="http://list.xiu.com/21908.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女户外鞋','abtest');">女户外鞋</a>
+			 |  <a href="http://list.xiu.com/22087.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男跑步鞋','abtest');">男跑步鞋</a>
+			 |  <a href="http://list.xiu.com/22099.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女跑步鞋','abtest');">女跑步鞋</a>
+			 |  <a href="http://list.xiu.com/22083.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男板鞋','abtest');">男板鞋</a>
+			 |  <a href="http://list.xiu.com/22095.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女板鞋','abtest');">女板鞋</a>
+			</dd>
+</dl>
+														</div>
+																												<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+						<a href="http://list.xiu.com/19452.html?pageView=image&brandid=1266 " target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=GUCCI','abtest');">GUCCI</a>
+								<a href="http://brand.xiu.com/3061.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=NINE WEST','abtest');">NINE WEST</a>
+								<a href="http://list.xiu.com/19452.html?pageView=image&brandid=1584984" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=PARIS HILTON','abtest');">PARIS HILTON</a>
+								<a href="http://list.xiu.com/19452.html?pageView=image&brandid=3059" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=JESSICA SIMPSON','abtest');">JESSICA SIMPSON</a>
+								<a href="http://list.xiu.com/19452.html?pageView=image&brandid=1222" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=D&G','abtest');">D&G</a>
+								<a href="http://list.xiu.com/19452.html?pageView=image&brandid=1267" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=FENDI','abtest');">FENDI</a>
+								<a href="http://list.xiu.com/19452.html?pageView=image&brandid=1276" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=FERRAGAMO','abtest');">FERRAGAMO</a>
+								<a href="http://list.xiu.com/19452.html?pageView=image&brandid=2933" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Calvin Klein','abtest');">Calvin Klein</a>
+								<a href="http://brand.xiu.com/3090.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=ALDO','abtest');">ALDO</a>
+								<a href="http://brand.xiu.com/442875.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=CAMEL','abtest');">CAMEL</a>
+								<a href="http://list.xiu.com/19452.html?pageView=image&brandid=2136" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=MARCHIORI','abtest');">MARCHIORI</a>
+								<a href="http://list.xiu.com/21901.html?pageView=image&brandid=2937" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=NIKE','abtest');">NIKE</a>
+								<a href="http://list.xiu.com/21901.html?pageView=image&brandid=1002" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=ADIDAS','abtest');">ADIDAS</a>
+								<a href="http://brand.xiu.com/3577.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Timberland','abtest');">Timberland</a>
+								<a href="http://brand.xiu.com/153721.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Naturalizer','abtest');">Naturalizer</a>
+								<a href="http://brand.xiu.com/1059.html?orderBy=8" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=BELLE','abtest');">BELLE</a>
+																														</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                                                                                                                                                                                                                                                                                                                                                                                                                        <a href="http://www.xiu.com/cx/26229.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=糖果色拼接 专属美人季2折起','abtest');">糖果色拼接 专属美人季2折起</a>
+			                                    <a href="http://www.xiu.com/cx/26202.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=2012年中特惠 美鞋低价来袭1折起','abtest');">2012年中特惠 美鞋低价来袭1折起</a>
+			                                    <a href="http://www.xiu.com/cx/26228.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=断码美鞋 0利清仓','abtest');">断码美鞋 0利清仓</a>
+			                                    <a href="http://list.xiu.com/34683.html?orderBy=8" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=百丽家族新品直降','abtest');">百丽家族新品直降</a>
+			                                    <a href="http://list.xiu.com/35110.html?orderBy=8" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=玖熙夏季凉鞋最高直降900元','abtest');">玖熙夏季凉鞋最高直降900元</a>
+			                                    <a href="http://brand.xiu.com/2374.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=HAVAIANAS人字拖直降活动','abtest');">HAVAIANAS人字拖直降活动</a>
+			            		</dd>
+	</dl>
+</div>
+					</div>
+        <span class="layer_arrow"></span>
+</div></li>
+		<li><p class="ty4">
+<a href="http://www.xiu.com/watch.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=钟表','abtest');"><b>钟表</b></a>
+<a href="http://list.xiu.com/19476.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=瑞士','abtest');">瑞士</a>
+<a href="http://list.xiu.com/19560.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=欧美','abtest');">欧美</a>
+<a href="http://list.xiu.com/19583.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=日韩','abtest');">日韩</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl>
+	<dt><h4><a href="http://list.xiu.com/33492.html?pageView=image&searchTerm=&brandid"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=手表分类','abtest');">手表分类</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/34850.html?pageView=image&searchTerm=&brandid"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=机械表','abtest');">机械表</a>
+			 |  <a href="http://list.xiu.com/34861.html?pageView=image&searchTerm=&brandid"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=石英表','abtest');">石英表</a>
+			 |  <a href="http://list.xiu.com/33337.html?pageView=image&searchTerm=&brandid"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女表','abtest');">女表</a>
+			 |  <a href="http://list.xiu.com/34849.html?pageView=image&searchTerm=&brandid"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男表','abtest');">男表</a>
+			 |  <a href="http://list.xiu.com/34874.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=陶瓷表','abtest');">陶瓷表</a>
+			 |  <a href="http://list.xiu.com/34862.html?pageView=image&searchTerm=&brandid"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=情侣对表','abtest');">情侣对表</a>
+			 |  <a href="http://list.xiu.com/33598.html?pageView=image&searchTerm=&brandid"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=中性表','abtest');">中性表</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19456.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=时尚品牌','abtest');">时尚品牌</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19464.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=ARMANI','abtest');">ARMANI</a>
+			 |  <a href="http://list.xiu.com/19457.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=BURBERRY','abtest');">BURBERRY</a>
+			 |  <a href="http://list.xiu.com/19462.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=D&G','abtest');">D&G</a>
+			 |  <a href="http://list.xiu.com/19461.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=COACH','abtest');">COACH</a>
+			 |  <a href="http://list.xiu.com/19460.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=CK','abtest');">CK</a>
+			 |  <a href="http://list.xiu.com/22691.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=施华洛世奇','abtest');">施华洛世奇</a>
+			 |  <a href="http://list.xiu.com/19467.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=GUCCI','abtest');">GUCCI</a>
+			 |  <a href="http://list.xiu.com/19465.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=FENDI','abtest');">FENDI</a>
+			 |  <a href="http://list.xiu.com/19577.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=范思哲','abtest');">范思哲</a>
+			 |  <a href="http://list.xiu.com/19469.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=爱马仕','abtest');">爱马仕</a>
+			 |  <a href="http://list.xiu.com/19468.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=GUESS','abtest');">GUESS</a>
+			 |  <a href="http://list.xiu.com/19470.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=JUICY COUTURE','abtest');">JUICY COUTURE</a>
+			 |  <a href="http://list.xiu.com/19466.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=FOLLI FOLLIE','abtest');">FOLLI FOLLIE</a>
+			 |  <a href="http://list.xiu.com/32123.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=卡纳','abtest');">卡纳</a>
+			 |  <a href="http://list.xiu.com/19471.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=聚利时','abtest');">聚利时</a>
+			 |  <a href="http://list.xiu.com/34104.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=全球速递-腕表','abtest');">全球速递-腕表</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19476.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=瑞士品牌','abtest');">瑞士品牌</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19526.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=欧米茄','abtest');">欧米茄</a>
+			 |  <a href="http://list.xiu.com/19517.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=浪琴','abtest');">浪琴</a>
+			 |  <a href="http://list.xiu.com/19484.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=卡地亚','abtest');">卡地亚</a>
+			 |  <a href="http://list.xiu.com/19548.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=天梭','abtest');">天梭</a>
+			 |  <a href="http://list.xiu.com/19521.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=MOVADO摩凡陀','abtest');">MOVADO摩凡陀</a>
+			 |  <a href="http://list.xiu.com/19534.html "  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=RADO雷达','abtest');">RADO雷达</a>
+			 |  <a href="http://list.xiu.com/19540.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=劳力士','abtest');">劳力士</a>
+			 |  <a href="http://list.xiu.com/19549.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=梅花','abtest');">梅花</a>
+			 |  <a href="http://list.xiu.com/19544.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=SWATCH','abtest');">SWATCH</a>
+			 |  <a href="http://list.xiu.com/22191.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=INVICTA','abtest');">INVICTA</a>
+			 |  <a href="http://list.xiu.com/19519.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=美度','abtest');">美度</a>
+			 |  <a href="http://list.xiu.com/19481.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=宝路华','abtest');">宝路华</a>
+			 |  <a href="http://list.xiu.com/20089.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=英纳格','abtest');">英纳格</a>
+			 |  <a href="http://list.xiu.com/19563.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=科因沃奇','abtest');">科因沃奇</a>
+			 |  <a href="http://list.xiu.com/19479.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=宝玑','abtest');">宝玑</a>
+			 |  <a href="http://list.xiu.com/19515.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=积家','abtest');">积家</a>
+			 |  <a href="http://list.xiu.com/19532.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=伯爵','abtest');">伯爵</a>
+			 |  <a href="http://list.xiu.com/19546.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=天骏','abtest');">天骏</a>
+			 |  <a href="http://list.xiu.com/19504.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=万国','abtest');">万国</a>
+			 |  <a href="http://list.xiu.com/19515.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=积家','abtest');">积家</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19560.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=欧美品牌','abtest');">欧美品牌</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19502.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=汉密尔顿','abtest');">汉密尔顿</a>
+			 |  <a href="http://list.xiu.com/32139.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=天柏伦','abtest');">天柏伦</a>
+			 |  <a href="http://list.xiu.com/19566.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=吉普','abtest');">吉普</a>
+			 |  <a href="http://list.xiu.com/32134.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=Glam Rock','abtest');">Glam Rock</a>
+			 |  <a href="http://list.xiu.com/33439.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=RED LINE','abtest');">RED LINE</a>
+			 |  <a href="http://list.xiu.com/19561.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=01 THE ONE','abtest');">01 THE ONE</a>
+			 |  <a href="http://list.xiu.com/19562.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=欧古诗丹','abtest');">欧古诗丹</a>
+			 |  <a href="http://list.xiu.com/19579.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=OBAKU','abtest');">OBAKU</a>
+			 |  <a href="http://list.xiu.com/19567.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=鳄鱼','abtest');">鳄鱼</a>
+			 |  <a href="http://list.xiu.com/19568.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=LEVI\'S','abtest');">LEVI'S</a>
+			 |  <a href="http://list.xiu.com/19570.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=POLO CLUB','abtest');">POLO CLUB</a>
+			 |  <a href="http://list.xiu.com/19578.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=WENGER','abtest');">WENGER</a>
+			 |  <a href="http://list.xiu.com/19572.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=萝亚克朗','abtest');">萝亚克朗</a>
+			 |  <a href="http://list.xiu.com/19574.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=史努比','abtest');">史努比</a>
+			 |  <a href="http://list.xiu.com/28334.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=Time2u','abtest');">Time2u</a>
+			 |  <a href="http://list.xiu.com/19575.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=颂拓','abtest');">颂拓</a>
+			 |  <a href="http://list.xiu.com/19564.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=COSMOPOLITAN','abtest');">COSMOPOLITAN</a>
+			 |  <a href="http://list.xiu.com/28335.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=TIME FORCE','abtest');">TIME FORCE</a>
+			 |  <a href="http://list.xiu.com/32133.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=GEORG JENSEN','abtest');">GEORG JENSEN</a>
+			 |  <a href="http://list.xiu.com/32141.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=TED LAPIDUS','abtest');">TED LAPIDUS</a>
+			 |  <a href="http://list.xiu.com/32143.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=迈克·柯尔','abtest');">迈克·柯尔</a>
+			 |  <a href="http://list.xiu.com/32144.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=DIESEL','abtest');">DIESEL</a>
+			 |  <a href="http://list.xiu.com/32146.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=雾仙侬','abtest');">雾仙侬</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19583.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=日韩品牌','abtest');">日韩品牌</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19584.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=卡西欧','abtest');">卡西欧</a>
+			 |  <a href="http://list.xiu.com/19585.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=西铁城','abtest');">西铁城</a>
+			 |  <a href="http://list.xiu.com/19589.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=精工','abtest');">精工</a>
+			 |  <a href="http://list.xiu.com/33437.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=TENDENCE天势','abtest');">TENDENCE天势</a>
+			 |  <a href="http://list.xiu.com/19586.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=三宅一生','abtest');">三宅一生</a>
+			 |  <a href="http://list.xiu.com/19611.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=贝捷','abtest');">贝捷</a>
+			 |  <a href="http://list.xiu.com/32129.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=BOY LONDON','abtest');">BOY LONDON</a>
+			 |  <a href="http://list.xiu.com/32130.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=INTERCREW','abtest');">INTERCREW</a>
+			 |  <a href="http://list.xiu.com/32131.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=TF','abtest');">TF</a>
+			 |  <a href="http://list.xiu.com/32132.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=津森千里','abtest');">津森千里</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19590.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=国产品牌','abtest');">国产品牌</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19597.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=依波','abtest');">依波</a>
+			 |  <a href="http://list.xiu.com/19601.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=罗西尼','abtest');">罗西尼</a>
+			 |  <a href="http://list.xiu.com/19603.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=海鸥','abtest');">海鸥</a>
+			 |  <a href="http://list.xiu.com/19590.html?searchTerm=&buyAble=0&pageView=image&minPrice=&maxPrice=&metaData=&orderBy=11&instalment=&facet=brandname_ntk_cs%3ATianwang"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=天王','abtest');">天王</a>
+			 |  <a href="http://list.xiu.com/19599.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=格雅','abtest');">格雅</a>
+			 |  <a href="http://list.xiu.com/19593.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=伯尼','abtest');">伯尼</a>
+			 |  <a href="http://list.xiu.com/19608.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=精准','abtest');">精准</a>
+			 |  <a href="http://list.xiu.com/19592.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=欧曼巴','abtest');">欧曼巴</a>
+			 |  <a href="http://list.xiu.com/19596.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=天威龙','abtest');">天威龙</a>
+			 |  <a href="http://list.xiu.com/34143.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高的尔','abtest');">高的尔</a>
+			</dd>
+</dl>
+												<dl class="lastx">
+	<dt><h4><a href="http://list.xiu.com/28497.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=时钟闹钟','abtest');">时钟闹钟</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/32359.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=Guten 金钟宝','abtest');">Guten 金钟宝</a>
+			 |  <a href="http://list.xiu.com/32358.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=Jebely 杰伯利','abtest');">Jebely 杰伯利</a>
+			 |  <a href="http://list.xiu.com/33343.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=丽声','abtest');">丽声</a>
+			 |  <a href="http://list.xiu.com/33345.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=琪特','abtest');">琪特</a>
+			 |  <a href="http://list.xiu.com/33342.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=霸王','abtest');">霸王</a>
+			 |  <a href="http://list.xiu.com/33341.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=世荣','abtest');">世荣</a>
+			</dd>
+</dl>
+														</div>
+																																								<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+						<a href="http://list.xiu.com/19455.html?pageView=image&brandid=1896" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=阿玛尼','abtest');">阿玛尼</a>
+								<a href="http://brand.xiu.com/1478.html?searchTerm=&pageView=image&minPrice=&maxPrice=&metaData=&facet=&instalment=&brandid=1478&orderBy=6" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=欧米茄','abtest');">欧米茄</a>
+								<a href="http://list.xiu.com/19457.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Burberry','abtest');">Burberry</a>
+								<a href="http://list.xiu.com/19484.html?searchTerm=&pageView=image&minPrice=&maxPrice=&metaData=&facet=&instalment=&brandid=&orderBy=1" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=卡地亚','abtest');">卡地亚</a>
+								<a href="http://list.xiu.com/19455.html?pageView=image&brandid=1222" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=D&G','abtest');">D&G</a>
+								<a href="http://brand.xiu.com/1479.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=浪琴','abtest');">浪琴</a>
+								<a href="http://list.xiu.com/19455.html?pageView=image&brandid=1795" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=COACH','abtest');">COACH</a>
+								<a href="http://brand.xiu.com/1497.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=劳力士','abtest');">劳力士</a>
+								<a href="http://list.xiu.com/19455.html?pageView=image&brandid=1266" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=GUCCI','abtest');">GUCCI</a>
+								<a href="http://brand.xiu.com/2084.html?searchTerm=&pageView=image&minPrice=&maxPrice=&metaData=&facet=&instalment=&brandid=2084&orderBy=6" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=天梭','abtest');">天梭</a>
+								<a href="http://brand.xiu.com/1504.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=宝玑','abtest');">宝玑</a>
+								<a href="http://brand.xiu.com/1953.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=斯沃琪','abtest');">斯沃琪</a>
+								<a href="http://brand.xiu.com/933252.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=雷达','abtest');">雷达</a>
+								<a href="http://brand.xiu.com/1802.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=卡西欧','abtest');">卡西欧</a>
+								<a href="http://brand.xiu.com/3593.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=摩凡陀','abtest');">摩凡陀</a>
+																																		</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                                                                                                                                                                                                                                                                                                                                                                                                <a href="http://www.xiu.com/cx/26268.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=伦敦奥运时尚精品腕表','abtest');">伦敦奥运时尚精品腕表</a>
+			                                    <a href="http://www.xiu.com/cx/21860.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=海外名表，每周新品特惠2折起','abtest');">海外名表，每周新品特惠2折起</a>
+			                                    <a href="http://www.xiu.com/cx/23288.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=时尚腕表降到冰点，折后五折！','abtest');">时尚腕表降到冰点，折后五折！</a>
+			                                    <a href="http://www.xiu.com/cx/25202.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=时尚动感，卓越竞速，运动系列腕表2折起','abtest');">时尚动感，卓越竞速，运动系列腕表2折起</a>
+			                                    <a href="http://www.xiu.com/cx/25044.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=史上最畅销，瑞士经典品牌锦集','abtest');">史上最畅销，瑞士经典品牌锦集</a>
+			                                    <a href="http://www.xiu.com/cx/25905.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=国货新势力，全场特价来袭','abtest');">国货新势力，全场特价来袭</a>
+			                                    <a href="http://www.xiu.com/watch.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=大牌情侣对表专场 596元起','abtest');">大牌情侣对表专场 596元起</a>
+			            		</dd>
+	</dl>
+</div>
+					</div>
+        <span class="layer_arrow"></span>
+</div></li>
+		<li><p class="ty5">
+<a href="http://www.xiu.com/cosmetics.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=化妆品','abtest');"><b>化妆品</b></a>
+<a href="http://list.xiu.com/19383.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=面部护理','abtest');">面部护理</a>
+<a href="http://list.xiu.com/19388.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=香水','abtest');">香水</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl>
+	<dt><h4><a href="http://list.xiu.com/19383.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=护肤','abtest');">护肤</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/32252.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=洁面','abtest');">洁面</a>
+			 |  <a href="http://list.xiu.com/32242.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=爽肤水','abtest');">爽肤水</a>
+			 |  <a href="http://list.xiu.com/32243.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=乳液精华','abtest');">乳液精华</a>
+			 |  <a href="http://list.xiu.com/20871.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=隔离防晒','abtest');">隔离防晒</a>
+			 |  <a href="http://list.xiu.com/32247.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=面膜面霜','abtest');">面膜面霜</a>
+			 |  <a href="http://list.xiu.com/32246.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=眼部护理','abtest');">眼部护理</a>
+			 |  <a href="http://list.xiu.com/32245.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=唇部护理','abtest');">唇部护理</a>
+			 |  <a href="http://list.xiu.com/32244.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=调理霜','abtest');">调理霜</a>
+			 |  <a href="http://list.xiu.com/32241.html	"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=礼盒套装','abtest');">礼盒套装</a>
+			 |  <a href="http://list.xiu.com/33257.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=全球速递','abtest');">全球速递</a>
+			 |  <a href="http://list.xiu.com/34115.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=零利清仓','abtest');">零利清仓</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/32253.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=彩妆','abtest');">彩妆</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19400.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=BB霜','abtest');">BB霜</a>
+			 |  <a href="http://list.xiu.com/32257.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=粉底粉饼','abtest');">粉底粉饼</a>
+			 |  <a href="http://list.xiu.com/20851.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=眼妆','abtest');">眼妆</a>
+			 |  <a href="http://list.xiu.com/20849.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=腮红','abtest');">腮红</a>
+			 |  <a href="http://list.xiu.com/20854.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=唇妆','abtest');">唇妆</a>
+			 |  <a href="http://list.xiu.com/19392.html	"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=卸妆','abtest');">卸妆</a>
+			 |  <a href="http://list.xiu.com/32256.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=美甲','abtest');">美甲</a>
+			 |  <a href="http://list.xiu.com/32240.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=礼盒套装','abtest');">礼盒套装</a>
+			 |  <a href="http://list.xiu.com/20857.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=美容工具','abtest');">美容工具</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19388.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=香水精油','abtest');">香水精油</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19427.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女士香水','abtest');">女士香水</a>
+			 |  <a href="http://list.xiu.com/19426.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男士香水','abtest');">男士香水</a>
+			 |  <a href="http://list.xiu.com/20863.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=中性香水','abtest');">中性香水</a>
+			 |  <a href="http://list.xiu.com/20864.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=精油香薰','abtest');">精油香薰</a>
+			 |  <a href="http://list.xiu.com/19428.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=礼盒套装','abtest');">礼盒套装</a>
+			 |  <a href="http://list.xiu.com/34113.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=香水小样','abtest');">香水小样</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19389.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男士护理','abtest');">男士护理</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/32275.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=面部护理','abtest');">面部护理</a>
+			 |  <a href="http://list.xiu.com/19430.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=剃须护理','abtest');">剃须护理</a>
+			 |  <a href="http://list.xiu.com/19436.html	"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=礼盒套装','abtest');">礼盒套装</a>
+			</dd>
+</dl>
+												<dl class="lastx">
+	<dt><h4><a href="http://list.xiu.com/19385.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=个人护理','abtest');">个人护理</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19413.html	"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=洗护系列','abtest');">洗护系列</a>
+			 |  <a href="http://list.xiu.com/19445.html	"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=口腔护理','abtest');">口腔护理</a>
+			 |  <a href="http://list.xiu.com/19405.html	"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=手足护理','abtest');">手足护理</a>
+			 |  <a href="http://list.xiu.com/19408.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=塑身美体','abtest');">塑身美体</a>
+			 |  <a href="http://list.xiu.com/20858.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=母婴护理','abtest');">母婴护理</a>
+			 |  <a href="http://list.xiu.com/19407.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=礼盒套装','abtest');">礼盒套装</a>
+			</dd>
+</dl>
+														</div>
+																																<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+						<a href="http://brand.xiu.com/1127.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=兰蔻','abtest');">兰蔻</a>
+								<a href="http://brand.xiu.com/2957.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=雅顿','abtest');">雅顿</a>
+								<a href="http://brand.xiu.com/2958.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=雅诗兰黛','abtest');">雅诗兰黛</a>
+								<a href="http://brand.xiu.com/3214.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=SK-II','abtest');">SK-II</a>
+								<a href="http://brand.xiu.com/2955.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=倩碧','abtest');">倩碧</a>
+								<a href="http://list.xiu.com/19382.html?pageView=image&brandid=1276" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=菲拉格慕','abtest');">菲拉格慕</a>
+								<a href="http://brand.xiu.com/2647.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=碧欧泉','abtest');">碧欧泉</a>
+								<a href="http://brand.xiu.com/1125.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=娇韵诗','abtest');">娇韵诗</a>
+								<a href="http://list.xiu.com/19382.html?pageView=image&brandid=1791" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=博柏利','abtest');">博柏利</a>
+								<a href="http://brand.xiu.com/3184.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=高丝','abtest');">高丝</a>
+								<a href="http://brand.xiu.com/2614.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=莱珀妮','abtest');">莱珀妮</a>
+								<a href="http://list.xiu.com/19382.html?pageView=image&brandid=1266" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=GUCCI','abtest');">GUCCI</a>
+								<a href="http://list.xiu.com/19382.html?pageView=image&brandid=1123" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=DIOR','abtest');">DIOR</a>
+								<a href="http://brand.xiu.com/1861.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=玉兰油','abtest');">玉兰油</a>
+								<a href="http://brand.xiu.com/2628.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=安娜苏','abtest');">安娜苏</a>
+								<a href="http://brand.xiu.com/1275.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=贝佳斯','abtest');">贝佳斯</a>
+								<a href="http://list.xiu.com/19382.html?pageView=image&brandid=1124" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Chanel','abtest');">Chanel</a>
+								<a href="http://brand.xiu.com/2516.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=兰芝','abtest');">兰芝</a>
+								<a href="http://list.xiu.com/19382.html?pageView=image&brandid=1137" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=范思哲','abtest');">范思哲</a>
+								<a href="http://brand.xiu.com/2988.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=芭比波朗','abtest');">芭比波朗</a>
+								<a href="http://brand.xiu.com/2711.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=茱莉蔻','abtest');">茱莉蔻</a>
+								<a href="http://brand.xiu.com/1237.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=薇姿','abtest');">薇姿</a>
+								<a href="http://brand.xiu.com/2416.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=欧珀莱','abtest');">欧珀莱</a>
+								<a href="http://brand.xiu.com/1185.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=雅漾','abtest');">雅漾</a>
+								<a href="http://brand.xiu.com/3032.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=The Body Shop','abtest');">The Body Shop</a>
+								<a href="http://brand.xiu.com/3422.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=NYR','abtest');">NYR</a>
+								<a href="http://brand.xiu.com/2995.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Kiehl\'s','abtest');">Kiehl's</a>
+								<a href="http://brand.xiu.com/3212.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=FANCL','abtest');">FANCL</a>
+														</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a href="http://brand.xiu.com/1127.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=兰蔻美妆2折起','abtest');">兰蔻美妆2折起</a>
+			                                    <a href="http://brand.xiu.com/3214.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=SK-II全场5折起','abtest');">SK-II全场5折起</a>
+			            		</dd>
+	</dl>
+</div>
+					</div>
+        <span class="layer_arrow"></span>
+</div></li>
+                <li><p class="ty10" style="background-position:0 -199px !important;">
+<a href="http://www.xiu.com/accessories.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=饰品','abtest');"><b>饰品</b></a>
+<a href="http://list.xiu.com/33419.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=施华洛世奇','abtest');">施华洛世奇</a>
+<a href="http://list.xiu.com/19724.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=太阳镜','abtest');">太阳镜</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl class="lastx">
+	<dt><h4><a href="http://list.xiu.com/33416.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=当季热卖','abtest');">当季热卖</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/33419.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=施华洛世奇限时特价','abtest');">施华洛世奇限时特价</a>
+			 |  <a href="http://www.xiu.com/cx/24324.shtml"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=本周新品','abtest');">本周新品</a>
+			 |  <a href="http://list.xiu.com/33417.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=热销太阳镜','abtest');">热销太阳镜</a>
+			 |  <a href="http://brand.xiu.com/1343.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=ZIPPO火机','abtest');">ZIPPO火机</a>
+			 |  <a href="http://list.xiu.com/20029.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=翡翠手镯','abtest');">翡翠手镯</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/33209.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=潮流饰品','abtest');">潮流饰品</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/20019.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=吊坠项链','abtest');">吊坠项链</a>
+			 |  <a href="http://list.xiu.com/19630.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=耳钉耳环','abtest');">耳钉耳环</a>
+			 |  <a href="http://list.xiu.com/20039.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=戒指','abtest');">戒指</a>
+			 |  <a href="http://list.xiu.com/20020.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=手链手镯','abtest');">手链手镯</a>
+			 |  <a href="http://list.xiu.com/19649.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=翡翠玉石','abtest');">翡翠玉石</a>
+			 |  <a href="http://list.xiu.com/19681.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=水晶','abtest');">水晶</a>
+			 |  <a href="http://list.xiu.com/19648.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=银饰','abtest');">银饰</a>
+			 |  <a href="http://list.xiu.com/19651.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=珍珠','abtest');">珍珠</a>
+			 |  <a href="http://list.xiu.com/19683.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=合金饰品','abtest');">合金饰品</a>
+			 |  <a href="http://list.xiu.com/19678.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=琥珀','abtest');">琥珀</a>
+			 |  <a href="http://list.xiu.com/33421.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=碧玺','abtest');">碧玺</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19698.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=服饰配件','abtest');">服饰配件</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19724.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=太阳镜','abtest');">太阳镜</a>
+			 |  <a href="http://list.xiu.com/32263.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=围巾丝巾','abtest');">围巾丝巾</a>
+			 |  <a href="http://list.xiu.com/19685.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=头饰发饰','abtest');">头饰发饰</a>
+			 |  <a href="http://list.xiu.com/19699.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=领带','abtest');">领带</a>
+			 |  <a href="http://list.xiu.com/19702.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=帽子','abtest');">帽子</a>
+			 |  <a href="http://list.xiu.com/19716.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=皮带腰带','abtest');">皮带腰带</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/33208.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=礼品工具','abtest');">礼品工具</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19718.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=军刀','abtest');">军刀</a>
+			 |  <a href="http://list.xiu.com/19717.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=火机','abtest');">火机</a>
+			 |  <a href="http://list.xiu.com/19719.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=笔','abtest');">笔</a>
+			</dd>
+</dl>
+														</div>
+																												<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+						<a href="http://list.xiu.com/19629.html?pageView=image&brandid=1357" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=施华洛世奇','abtest');">施华洛世奇</a>
+								<a href="http://list.xiu.com/19698.html?pageView=image&searchTerm=&brandid=1266" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Gucci','abtest');">Gucci</a>
+								<a href="http://list.xiu.com/19698.html?pageView=image&searchTerm=&brandid=1791" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Burberry','abtest');">Burberry</a>
+								<a href="http://brand.xiu.com/1343.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=芝宝','abtest');">芝宝</a>
+								<a href="http://brand.xiu.com/2364.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Lux-women','abtest');">Lux-women</a>
+								<a href="http://list.xiu.com/19629.html?pageView=image&brandid=2791" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=橘滋','abtest');">橘滋</a>
+								<a href="http://list.xiu.com/19651.html?pageView=image&searchTerm=&brandid=2083" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=京润珍珠','abtest');">京润珍珠</a>
+								<a href="http://list.xiu.com/20042.html?pageView=image&searchTerm=&brandid=3443" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=Folli Follie','abtest');">Folli Follie</a>
+								<a href="http://list.xiu.com/19698.html?pageView=image&searchTerm=&brandid=1124" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=香奈儿','abtest');">香奈儿</a>
+								<a href="http://brand.xiu.com/2857613.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=曼古银','abtest');">曼古银</a>
+								<a href="http://brand.xiu.com/1417.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=VVA','abtest');">VVA</a>
+																												<a href="http://list.xiu.com/19698.html?pageView=image&searchTerm=&brandid=1174" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=蔻依','abtest');">蔻依</a>
+						</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                                                                                                                                                                                                                                                                                                <a href="http://www.xiu.com/cx/24324.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=周周有惊喜 潮流饰品 每周二上新','abtest');">周周有惊喜 潮流饰品 每周二上新</a>
+			                                    <a href="http://list.xiu.com/33419.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=施华洛世奇新款上架 低价特卖','abtest');">施华洛世奇新款上架 低价特卖</a>
+			                                    <a href="http://www.xiu.com/cx/25451.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=戴TA去旅行--浪漫饰品99元起','abtest');">戴TA去旅行--浪漫饰品99元起</a>
+			                                    <a href="http://www.xiu.com/cx/25208.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=仲夏邀约--天然水晶玉石1折起','abtest');">仲夏邀约--天然水晶玉石1折起</a>
+			                                    <a href="http://www.xiu.com/cx/26005.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=京润珍珠新品一款多戴独家花样链','abtest');">京润珍珠新品一款多戴独家花样链</a>
+			                                    		</dd>
+	</dl>
+</div>
+					</div>
+        <span class="layer_arrow"></span>
+</div></li>
+		<li><p class="ty6">
+<a href="http://www.xiu.com/jewelry.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=珠宝','abtest');"><b>珠宝</b></a>
+<a href="http://list.xiu.com/19642.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=钻石','abtest');">钻石</a>
+<a href="http://list.xiu.com/28277.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=黄金铂金','abtest');">黄金铂金</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl>
+	<dt><h4><a href="http://list.xiu.com/19642.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=钻石首饰','abtest');">钻石首饰</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/28274.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=裸钻','abtest');">裸钻</a>
+			 |  <a href="http://list.xiu.com/28268.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=吊坠项链','abtest');">吊坠项链</a>
+			 |  <a href="http://list.xiu.com/28269.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=钻石戒指','abtest');">钻石戒指</a>
+			 |  <a href="http://list.xiu.com/28266.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=耳钉耳环','abtest');">耳钉耳环</a>
+			 |  <a href="http://list.xiu.com/28267.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=手链手镯','abtest');">手链手镯</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/28277.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=黄金铂金','abtest');">黄金铂金</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/28278.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=千足金黄金','abtest');">千足金黄金</a>
+			 |  <a href="http://list.xiu.com/33422.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=金箔','abtest');">金箔</a>
+			 |  <a href="http://list.xiu.com/28279.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=K金','abtest');">K金</a>
+			 |  <a href="http://list.xiu.com/28283.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=PT950','abtest');">PT950</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/28291.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=翡翠玉石','abtest');">翡翠玉石</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/28292.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=翡翠手镯','abtest');">翡翠手镯</a>
+			 |  <a href="http://list.xiu.com/28294.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=吊坠项链','abtest');">吊坠项链</a>
+			 |  <a href="http://list.xiu.com/28297.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=挂件摆件','abtest');">挂件摆件</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/28299.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=珍珠首饰','abtest');">珍珠首饰</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/28272.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=项链吊坠','abtest');">项链吊坠</a>
+			 |  <a href="http://list.xiu.com/28312.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=耳钉耳环','abtest');">耳钉耳环</a>
+			 |  <a href="http://list.xiu.com/28281.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=戒指','abtest');">戒指</a>
+			</dd>
+</dl>
+														</div>
+																												<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+														<a href="http://list.xiu.com/19617.html?pageView=image&searchTerm=&brandid=1140" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=CARTIER','abtest');">CARTIER</a>
+								<a href="http://brand.xiu.com/3000901.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=HENRI J. SILLAM','abtest');">HENRI J. SILLAM</a>
+								<a href="http://brand.xiu.com/3547.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=周生生','abtest');">周生生</a>
+								<a href="http://brand.xiu.com/2421328.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=潮宏基','abtest');">潮宏基</a>
+								<a href="http://brand.xiu.com/2443.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=珂兰','abtest');">珂兰</a>
+								<a href="http://brand.xiu.com/1136359.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=金叶珠宝','abtest');">金叶珠宝</a>
+								<a href="http://brand.xiu.com/2118.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=蓝色多瑙河','abtest');">蓝色多瑙河</a>
+								<a href="http://brand.xiu.com/310013.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=钻石凤凰','abtest');">钻石凤凰</a>
+								<a href="http://list.xiu.com/19617.html?pageView=image&searchTerm=&brandid=600172" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=闪烁珠宝','abtest');">闪烁珠宝</a>
+								<a href="http://brand.xiu.com/3448.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=GEORG JENSEN','abtest');">GEORG JENSEN</a>
+																				<a href="http://brand.xiu.com/1405.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=零兑金','abtest');">零兑金</a>
+								<a href="http://brand.xiu.com/2392.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=龙之昱','abtest');">龙之昱</a>
+								<a href="http://brand.xiu.com/4169876.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=珍珠美人','abtest');">珍珠美人</a>
+								<a href="http://brand.xiu.com/3618740.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=一生一石','abtest');">一生一石</a>
+						</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                        <a href="http://www.xiu.com/cx/21705.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=HENRI J. SILLAM独家入驻','abtest');">HENRI J. SILLAM独家入驻</a>
+			                                    <a href="http://list.xiu.com/28298.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=彩色宝石低至1.5折','abtest');">彩色宝石低至1.5折</a>
+			                                                                                                                                                                                                                                                                                    <a href="http://www.xiu.com/cx/25211.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=年中大促--10大品牌最高直降28881元','abtest');">年中大促--10大品牌最高直降28881元</a>
+			                                    <a href="http://www.xiu.com/cx/25209.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=翡翠最低价--折后6.8折再送琥珀手链','abtest');">翡翠最低价--折后6.8折再送琥珀手链</a>
+			                                    <a href="http://www.xiu.com/cx/24155.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=潮宏基哆啦A梦伦敦印象单品独家上市','abtest');">潮宏基哆啦A梦伦敦印象单品独家上市</a>
+			                                                                                                            		</dd>
+	</dl>
+</div>
+					</div>
+       <span class="layer_arrow"></span>
+</div></li>
+		<li><p class="ty7">
+<a href="http://www.xiu.com/sports.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=运动','abtest');"><b>运动</b></a>
+<a href="http://list.xiu.com/33198.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=运动鞋服','abtest');">运动鞋服</a>
+<a href="http://list.xiu.com/22006.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=户外装备','abtest');">户外装备</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl>
+	<dt><h4><a href="http://list.xiu.com/21901.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动鞋','abtest');">运动鞋</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/21902.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男运动鞋','abtest');">男运动鞋</a>
+			 |  <a href="http://list.xiu.com/21903.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女运动鞋','abtest');">女运动鞋</a>
+			 |  <a href="http://list.xiu.com/22087.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男跑步鞋','abtest');">男跑步鞋</a>
+			 |  <a href="http://list.xiu.com/22099.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女跑步鞋','abtest');">女跑步鞋</a>
+			 |  <a href="http://list.xiu.com/22086.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男篮球鞋','abtest');">男篮球鞋</a>
+			 |  <a href="http://list.xiu.com/22083.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男板鞋','abtest');">男板鞋</a>
+			 |  <a href="http://list.xiu.com/22095.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女板鞋','abtest');">女板鞋</a>
+			 |  <a href="http://list.xiu.com/22084.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男帆布鞋','abtest');">男帆布鞋</a>
+			 |  <a href="http://list.xiu.com/22096.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女帆布鞋','abtest');">女帆布鞋</a>
+			 |  <a href="http://list.xiu.com/22090.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男训练鞋','abtest');">男训练鞋</a>
+			 |  <a href="http://list.xiu.com/22102.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女训练鞋','abtest');">女训练鞋</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/21911.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动服装','abtest');">运动服装</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/21914.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=瑜伽服装','abtest');">瑜伽服装</a>
+			 |  <a href="http://list.xiu.com/21912.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男运动服','abtest');">男运动服</a>
+			 |  <a href="http://list.xiu.com/21913.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女运动服','abtest');">女运动服</a>
+			 |  <a href="http://list.xiu.com/22113.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男运动长袖','abtest');">男运动长袖</a>
+			 |  <a href="http://list.xiu.com/22124.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女运动长袖','abtest');">女运动长袖</a>
+			 |  <a href="http://list.xiu.com/22119.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男卫衣','abtest');">男卫衣</a>
+			 |  <a href="http://list.xiu.com/22131.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女卫衣','abtest');">女卫衣</a>
+			 |  <a href="http://list.xiu.com/22112.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男短袖','abtest');">男短袖</a>
+			 |  <a href="http://list.xiu.com/22123.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女短袖','abtest');">女短袖</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/27191.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高尔夫','abtest');">高尔夫</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/28192.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高尔夫球具','abtest');">高尔夫球具</a>
+			 |  <a href="http://list.xiu.com/27691.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高尔夫鞋','abtest');">高尔夫鞋</a>
+			 |  <a href="http://list.xiu.com/27692.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高尔夫服装','abtest');">高尔夫服装</a>
+			 |  <a href="http://list.xiu.com/28191.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高尔夫包','abtest');">高尔夫包</a>
+			 |  <a href="http://list.xiu.com/28195.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高尔夫伞','abtest');">高尔夫伞</a>
+			 |  <a href="http://list.xiu.com/32361.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=高尔夫附件','abtest');">高尔夫附件</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/22006.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=户外装备','abtest');">户外装备</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/21907.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男户外鞋','abtest');">男户外鞋</a>
+			 |  <a href="http://list.xiu.com/21908.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女户外鞋','abtest');">女户外鞋</a>
+			 |  <a href="http://list.xiu.com/21916.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=男户外服装','abtest');">男户外服装</a>
+			 |  <a href="http://list.xiu.com/21917.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=女户外服装','abtest');">女户外服装</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/21925.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动配件','abtest');">运动配件</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/21928.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动包','abtest');">运动包</a>
+			 |  <a href="http://list.xiu.com/21929.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=户外包','abtest');">户外包</a>
+			 |  <a href="http://list.xiu.com/21926.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动帽','abtest');">运动帽</a>
+			 |  <a href="http://list.xiu.com/21931.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动围巾','abtest');">运动围巾</a>
+			 |  <a href="http://list.xiu.com/21935.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动护具','abtest');">运动护具</a>
+			 |  <a href="http://list.xiu.com/21934.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动腰带','abtest');">运动腰带</a>
+			 |  <a href="http://list.xiu.com/21927.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=运动袜','abtest');">运动袜</a>
+			</dd>
+</dl>
+												<dl class="lastx">
+	<dt><h4><a href="http://list.xiu.com/32365.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=体育健身用品','abtest');">体育健身用品</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/22019.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=网球拍','abtest');">网球拍</a>
+			 |  <a href="http://list.xiu.com/22018.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=羽毛球拍','abtest');">羽毛球拍</a>
+			 |  <a href="http://list.xiu.com/21914.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=瑜珈','abtest');">瑜珈</a>
+			</dd>
+</dl>
+														</div>
+																																				<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+						<a href="http://brand.xiu.com/2937.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=耐克','abtest');">耐克</a>
+								<a href="http://brand.xiu.com/1002.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=阿迪达斯','abtest');">阿迪达斯</a>
+								<a href="http://brand.xiu.com/3605.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=哥伦比亚','abtest');">哥伦比亚</a>
+								<a href="http://brand.xiu.com/1331.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=卡帕','abtest');">卡帕</a>
+								<a href="http://brand.xiu.com/3577.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=天柏伦','abtest');">天柏伦</a>
+								<a href="http://brand.xiu.com/2911.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=彪马','abtest');">彪马</a>
+								<a href="http://brand.xiu.com/1326.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=哥仑步','abtest');">哥仑步</a>
+								<a href="http://brand.xiu.com/1363.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=康尔健野','abtest');">康尔健野</a>
+								<a href="http://brand.xiu.com/1455465.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=皮尔瑜伽','abtest');">皮尔瑜伽</a>
+								<a href="http://brand.xiu.com/1695.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=鸿星尔克','abtest');">鸿星尔克</a>
+								<a href="http://brand.xiu.com/1725.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=锐步','abtest');">锐步</a>
+								<a href="http://brand.xiu.com/2185.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=海泰客','abtest');">海泰客</a>
+								<a href="http://brand.xiu.com/227411.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=威尔胜','abtest');">威尔胜</a>
+								<a href="http://brand.xiu.com/2910.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=耐克360','abtest');">耐克360</a>
+								<a href="http://brand.xiu.com/2938.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=匡威','abtest');">匡威</a>
+								<a href="http://brand.xiu.com/3040.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=新百伦','abtest');">新百伦</a>
+								<a href="http://brand.xiu.com/3376.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=茵宝','abtest');">茵宝</a>
+								<a href="http://brand.xiu.com/3624.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=阿迪达斯运动休闲','abtest');">阿迪达斯运动休闲</a>
+								<a href="http://brand.xiu.com/689254.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=犸凯奴','abtest');">犸凯奴</a>
+								<a href="http://brand.xiu.com/856118.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=卡拉威高尔夫','abtest');">卡拉威高尔夫</a>
+								<a href="http://brand.xiu.com/1192.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=菩尔瑜伽','abtest');">菩尔瑜伽</a>
+								<a href="http://brand.xiu.com/1061.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=索德士','abtest');">索德士</a>
+																										</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a href="http://www.xiu.com/cx/24857.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=酷爽一“夏” 耐克夏季新品惠！','abtest');">酷爽一“夏” 耐克夏季新品惠！</a>
+			                                    <a href="http://www.xiu.com/cx/24858.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=“疾”速闪耀 阿迪达斯新品来袭！','abtest');">“疾”速闪耀 阿迪达斯新品来袭！</a>
+			                                    <a href="http://www.xiu.com/cx/24376.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=2012暑期运动超值购物季','abtest');">2012暑期运动超值购物季</a>
+			                                    <a href="http://www.xiu.com/cx/24375.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=瑜伽服新品惠','abtest');">瑜伽服新品惠</a>
+			                                    <a href="http://www.xiu.com/cx/22995.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=亚瑟士 鬼冢虎新品上线，全场3折起','abtest');">亚瑟士 鬼冢虎新品上线，全场3折起</a>
+			            		</dd>
+	</dl>
+</div>
+					</div>
+        <span class="layer_arrow"></span>
+</div></li>
+		<li><p class="ty8">
+<a href="http://www.xiu.com/home.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=家居','abtest');"><b>家居</b></a>
+<a href="http://list.xiu.com/19754.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=床品','abtest');">床品</a>
+<a href="http://list.xiu.com/19768.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=channel|lev3=家居日用','abtest');">家居日用</a>
+
+</p>
+<div class="tyo_box">
+	<div class="tyo_con">
+		<div class="tyoCon_l">
+			<h5>请选择分类：</h5>
+																		<dl>
+	<dt><h4><a href="http://list.xiu.com/19754.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=床上用品','abtest');">床上用品</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/20575.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=三件套','abtest');">三件套</a>
+			 |  <a href="http://list.xiu.com/20576.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=四件套','abtest');">四件套</a>
+			 |  <a href="http://list.xiu.com/20577.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=六件套','abtest');">六件套</a>
+			 |  <a href="http://list.xiu.com/19755.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=被芯','abtest');">被芯</a>
+			 |  <a href="http://list.xiu.com/19757.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=床单被套','abtest');">床单被套</a>
+			 |  <a href="http://list.xiu.com/19758.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=毛毯毛巾被','abtest');">毛毯毛巾被</a>
+			 |  <a href="http://list.xiu.com/19759.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=蚊帐','abtest');">蚊帐</a>
+			 |  <a href="http://list.xiu.com/19760.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=凉席','abtest');">凉席</a>
+			 |  <a href="http://list.xiu.com/19756.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=枕芯','abtest');">枕芯</a>
+			 |  <a href="http://list.xiu.com/33436.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=床垫','abtest');">床垫</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19768.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=家居日用','abtest');">家居日用</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/19769.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=抱枕坐垫','abtest');">抱枕坐垫</a>
+			 |  <a href="http://list.xiu.com/19774.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=收纳系列','abtest');">收纳系列</a>
+			 |  <a href="http://list.xiu.com/19776.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=家庭装饰','abtest');">家庭装饰</a>
+			 |  <a href="http://list.xiu.com/19777.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=卫浴用品','abtest');">卫浴用品</a>
+			 |  <a href="http://list.xiu.com/19761.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=毛巾','abtest');">毛巾</a>
+			 |  <a href="http://list.xiu.com/19772.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=雨具','abtest');">雨具</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/20578.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=小家具','abtest');">小家具</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/20773.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=金属层架','abtest');">金属层架</a>
+			 |  <a href="http://list.xiu.com/20726.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=木质层架','abtest');">木质层架</a>
+			 |  <a href="http://list.xiu.com/20775.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=衣柜','abtest');">衣柜</a>
+			 |  <a href="http://list.xiu.com/20776.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=衣架','abtest');">衣架</a>
+			 |  <a href="http://list.xiu.com/20777.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=桌子','abtest');">桌子</a>
+			 |  <a href="http://list.xiu.com/20778.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=椅子','abtest');">椅子</a>
+			 |  <a href="http://list.xiu.com/32208.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=电脑桌椅','abtest');">电脑桌椅</a>
+			 |  <a href="http://list.xiu.com/32212.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=边桌/茶几','abtest');">边桌/茶几</a>
+			 |  <a href="http://list.xiu.com/32215.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=鞋架/鞋柜','abtest');">鞋架/鞋柜</a>
+			 |  <a href="http://list.xiu.com/32218.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=电视柜/储物柜','abtest');">电视柜/储物柜</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19752.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=保健器材','abtest');">保健器材</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/33366.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=健身器材','abtest');">健身器材</a>
+			 |  <a href="http://list.xiu.com/33365.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=计步器','abtest');">计步器</a>
+			 |  <a href="http://list.xiu.com/33364.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=体温计','abtest');">体温计</a>
+			 |  <a href="http://list.xiu.com/33363.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=健康秤','abtest');">健康秤</a>
+			 |  <a href="http://list.xiu.com/33362.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=血糖仪','abtest');">血糖仪</a>
+			 |  <a href="http://list.xiu.com/33361.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=血压计','abtest');">血压计</a>
+			 |  <a href="http://list.xiu.com/28731.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=足浴盆','abtest');">足浴盆</a>
+			 |  <a href="http://list.xiu.com/33367.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=其它','abtest');">其它</a>
+			 |  <a href="http://list.xiu.com/33359.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=活水机','abtest');">活水机</a>
+			</dd>
+</dl>
+												<dl>
+	<dt><h4><a href="http://list.xiu.com/19763.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=厨具餐具','abtest');">厨具餐具</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/32196.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=餐具','abtest');">餐具</a>
+			 |  <a href="http://list.xiu.com/32182.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=锅具','abtest');">锅具</a>
+			 |  <a href="http://list.xiu.com/32192.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=刀具','abtest');">刀具</a>
+			 |  <a href="http://list.xiu.com/32201.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=其他厨具','abtest');">其他厨具</a>
+			 |  <a href="http://list.xiu.com/32946.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=数码/家电/汽车用品','abtest');">数码/家电/汽车用品</a>
+			</dd>
+</dl>
+												<dl class="lastx">
+	<dt><h4><a href="http://list.xiu.com/20781.html"  onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=礼品/收藏品','abtest');">礼品/收藏品</a></h4></dt>
+	<dd>
+			 <a href="http://list.xiu.com/32222.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=瓷器/陶瓷','abtest');">瓷器/陶瓷</a>
+			 |  <a href="http://list.xiu.com/20782.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=创意礼品','abtest');">创意礼品</a>
+			 |  <a href="http://list.xiu.com/32224.html" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=category|lev3=工艺画','abtest');">工艺画</a>
+			</dd>
+</dl>
+														</div>
+																																				<div class="tyoCon_r">
+	<dl class="clearfix">
+		<dt>热门品牌：</dt>
+		<dd>
+						<a href="http://brand.xiu.com/1654.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=博洋','abtest');">博洋</a>
+								<a href="http://brand.xiu.com/3388.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=蔻姿','abtest');">蔻姿</a>
+								<a href="http://brand.xiu.com/2139.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=富安娜','abtest');">富安娜</a>
+								<a href="http://brand.xiu.com/2389.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=LOVO','abtest');">LOVO</a>
+								<a href="http://brand.xiu.com/2388.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=罗莱','abtest');">罗莱</a>
+								<a href="http://brand.xiu.com/38026.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=樱の物语','abtest');">樱の物语</a>
+								<a href="http://brand.xiu.com/1603.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=逸轩','abtest');">逸轩</a>
+								<a href="http://brand.xiu.com/2511.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=乐扣乐扣','abtest');">乐扣乐扣</a>
+								<a href="http://brand.xiu.com/167064.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=生活诚品','abtest');">生活诚品</a>
+								<a href="http://brand.xiu.com/1071169.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=慧乐家','abtest');">慧乐家</a>
+								<a href="http://brand.xiu.com/1804.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=空间大师','abtest');">空间大师</a>
+								<a href="http://brand.xiu.com/3256601.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=嘉加梦','abtest');">嘉加梦</a>
+								<a href="http://brand.xiu.com/2181.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=优然之家','abtest');">优然之家</a>
+								<a href="http://brand.xiu.com/1361727.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=贝德罗','abtest');">贝德罗</a>
+								<a href="http://brand.xiu.com/2310207.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=棉朵','abtest');">棉朵</a>
+								<a href="http://brand.xiu.com/6365.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=溢彩年华','abtest');">溢彩年华</a>
+								<a href="http://brand.xiu.com/1190.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=紫艺','abtest');">紫艺</a>
+								<a href="http://brand.xiu.com/336044.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=圣宝莱','abtest');">圣宝莱</a>
+								<a href="http://brand.xiu.com/412573.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=缦狄雅蓝','abtest');">缦狄雅蓝</a>
+								<a href="http://brand.xiu.com/3061919.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=易千家','abtest');">易千家</a>
+								<a href="http://brand.xiu.com/1828.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=欧姆龙','abtest');">欧姆龙</a>
+								<a href="http://brand.xiu.com/1895.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=倍轻松','abtest');">倍轻松</a>
+								<a href="http://brand.xiu.com/417227.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=信乐','abtest');">信乐</a>
+								<a href="http://brand.xiu.com/783220.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=琪特','abtest');">琪特</a>
+								<a href="http://brand.xiu.com/2508678.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=海一家居','abtest');">海一家居</a>
+								<a href="http://brand.xiu.com/3107796.html" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=brand|lev3=柏尼威斯','abtest');">柏尼威斯</a>
+																														</dd>
+	</dl>
+	<dl class="hot_active">
+		<dt>畅销活动：</dt>
+		<dd>
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a href="http://list.xiu.com/34908.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=<font color=red>家居亏本清仓</font>','abtest');"><font color=red>家居亏本清仓</font></a>
+			                                    <a href="http://www.xiu.com/cx/26090.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=家居清仓最高直降639元','abtest');">家居清仓最高直降639元</a>
+			                                    <a href="http://www.xiu.com/cx/26208.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=伦敦奥运时尚精品7.9折封顶','abtest');">伦敦奥运时尚精品7.9折封顶</a>
+			                                    <a href="http://www.xiu.com/cx/26389.shtml" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=夏凉0利润清仓','abtest');">夏凉0利润清仓</a>
+			                                    <a href="http://brand.xiu.com/3256601.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=嘉加梦折上再降 最高直降340元','abtest');">嘉加梦折上再降 最高直降340元</a>
+			                                    <a href="http://brand.xiu.com/2437363.html" target="_blank" class="" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=promotion|lev3=竺轩夏凉买赠','abtest');">竺轩夏凉买赠</a>
+			            		</dd>
+	</dl>
+</div>
+					</div>
+        <span class="layer_arrow"></span>
+</div></li>
+		<li class="more_class"><a href="http://www.xiu.com/about/classifymap.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=spfl|lev2=more1|lev3=more1','abtest');">查看更多分类</a></li>
+	</ul>
+      </div>
+      <ul class="navlist">
+                <li><a href="http://www.xiu.com/" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng1|lev3=首页','abtest');">首页</a></li>
+                        <li><a href="http://www.xiu.com/luxury.html" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng2|lev3=奢侈品','abtest');">奢侈品</a></li>
+        	<li class="sub">
+		<a href="javascript:" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng3|lev3=旗舰店','abtest');">旗舰店</a>
+		<span></span>
+		<div class="subNav">            <a target="_blank" href="http://www.xiu.com/west.html" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng3|lev3=欧美馆','abtest');">欧美馆</a>
+                <a target="_blank" href="http://www.xiu.com/korea.html" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng3|lev3=韩国馆','abtest');">韩国馆</a>
+                <a target="_blank" href="http://image.xiu.com/" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng3|lev3=IMAGE','abtest');">IMAGE</a>
+                <a target="_blank" href="http://www.xiu.com/jpselects.html" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng3|lev3=JPSELECTS','abtest');">JPSELECTS</a>
+                <a target="_blank" href="http://www.xiu.com/karmaloop/index.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng3|lev3=KARMALOOP','abtest');">KARMALOOP</a>
+                <a target="_blank" href="http://brand.xiu.com/1584984.html" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng3|lev3=帕丽斯•希尔顿','abtest');">帕丽斯•希尔顿</a>
+    </div>
+	</li>
+                <li><a href="http://www.xiu.com/globalbuy/index.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng4|lev3=全球速递','abtest');">全球速递</a></li>
+                        <li><a href="http://tuan.xiu.com/" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng5|lev3=秀团','abtest');">秀团</a></li>
+                        <li><a href="http://outlets.xiu.com" target="_blank" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=ng6|lev3=名品特卖','abtest');">名品特卖</a></li>
+        
+      </ul>
+    </div>
+  </div>
+  <div class="hotspot">
+    <div class="w"> <p class="HS_l son_HS_l"><b>热点推荐 ：</b>            <a target="_blank" href="http://www.xiu.com/point/index.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=redian|lev3=积分抽奖换优惠券','abtest');">积分抽奖换优惠券</a>
+                <a target="_blank" href="http://www.xiu.com/cx/26430.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=redian|lev3=亲子装2.4折','abtest');">亲子装2.4折</a>
+                <a target="_blank" href="http://www.xiu.com/cx/26490.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=redian|lev3=韩风新品69元起','abtest');">韩风新品69元起</a>
+    </p>
+<div class="HS_r" id="xiuQMsg"><b>秀快讯：</b><div class="scrollbox"><ul>
+            <li><a target="_blank" href="http://www.xiu.com/about/gonggao20120731.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=kuaixun|lev3=我们为最近海外商品订单的延误致歉！','abtest');">我们为最近海外商品订单的延误致歉！</a></li>
+                <li><a target="_blank" href="http://www.xiu.com/cx/26228.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=kuaixun|lev3=断码美鞋 0利润清仓！','abtest');">断码美鞋 0利润清仓！</a></li>
+                <li><a target="_blank" href="http://www.xiu.com/cx/25650.shtml" onclick="XIU.Window.ctraceClick('version=b|lev1=navigation|lev2=kuaixun|lev3=时尚大牌情侣对表专场 539起！','abtest');">时尚大牌情侣对表专场 539起！</a></li>
+    </ul></div></div>
+ </div>
+  </div>
+</div>
+<script type="text/javascript" src="/resources/static/js/xiu/publicHeadApp.min.js"></script>
+<!-- Page Create Time :   -->
+<!--PublicHeadDom end-->

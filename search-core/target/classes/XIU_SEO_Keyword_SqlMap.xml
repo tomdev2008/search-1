@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="XIU_SEO_KEYWORD">
+	<resultMap id="xiuSeoKwMap" type="com.xiu.search.dao.model.XiuSeoKeywordModel">
+		<result column="ID" property="id" jdbcType="INTEGER" />
+		<result column="KEY_WORD" property="curKw" jdbcType="VARCHAR" />
+		<result column="BRAND_ID" property="bId" jdbcType="INTEGER" />
+	</resultMap>
+
+	<resultMap id="xiuSeoKwMap2" type="com.xiu.search.dao.model.XiuSeoKeywordModel">
+		<result column="ID" property="id" jdbcType="INTEGER" />
+		<result column="KEY_WORD" property="curKw" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="selectById" parameterType="java.lang.Integer" resultMap="xiuSeoKwMap">
+		select ID,KEY_WORD,BRAND_ID from xiu_seo_keyword where ID=#{id}
+	</select>
+
+	<select id="selectPageList" parameterType="java.util.Map"
+		resultMap="xiuSeoKwMap2">
+		select B.* from(
+			select A.*,rownum rn from(
+				select ID,KEY_WORD from XIU_SEO_KEYWORD order by KEY_WORD
+			) A where rownum &lt; #{endRow}
+		) B where rn &gt; #{firstRow}
+
+	</select>
+
+	<select id="selectTotCount" resultType="Integer">
+		select count(ID) from XIU_SEO_KEYWORD
+	</select>
+</mapper>

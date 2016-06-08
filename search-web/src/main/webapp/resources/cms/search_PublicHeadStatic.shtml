@@ -1,0 +1,27 @@
+<script type="text/javascript">
+var currUrl = window.location.href,re = /\/cx\//;
+if(re.test(currUrl)){
+ if (typeof latency_metric_ti == 'undefined' ) latency_metric_ti = {};latency_metric_ti.fb = new Date().getTime();
+}
+</script>
+<!--PublicHeadStatic begin-->
+<link rel="shortcut icon" href="http://www.xiu.com/favicon.ico" type="image/x-icon" />
+<link rel="bookmark" href="http://www.xiu.com/favicon.ico" type="image/x-icon" />
+<link href="http://www.xiustatic.com/static/css/default/global.css?__=20121212114254" rel="stylesheet" type="text/css" />
+<link href="http://www.xiustatic.com/static/css/default/publicHead.css?__=20130514153615" rel="stylesheet" type="text/css">
+<style type="text/css">
+#head201210 .main_nav_box .navlist li a.hover{ background-color:transparent;}
+.con_right .right_1 .right_2_t{text-indent:4px}</style>
+<script type="text/javascript" src="http://www.xiustatic.com/static/js/xiu/publicHeadJs.min.js?__=20130520121541"></script>
+<!--[if IE 6]>
+<script src="http://www.xiustatic.com/static/js/thirdparty/DD_belatedPNG-min.js?__=20120628120825" type="text/javascript"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('.iepngfixed,background');
+    try {
+    document.execCommand("BackgroundImageCache", false, true);
+    } catch (e) {}
+</script>
+<script type="text/javascript" src="http://www.xiustatic.com/static/js/xiu/index201210/head.bgiframe.js?__=20121105120325"></script>
+<![endif]-->
+<!-- Page Create Time : 2013-05-30 03:15:21  --> 
+<!--PublicHeadStatic end-->

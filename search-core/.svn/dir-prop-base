@@ -1,0 +1,22 @@
+K 10
+svn:ignore
+V 248
+.project
+.metadata
+.settings
+.classpath
+# External tool builders
+.externalToolBuilders
+# Locally stored "Eclipse launch configurations"
+*.launch
+# CDT-specific
+.cproject
+# PDT-specific
+.buildpath
+# WTP
+.wtpmodules
+# maven temp directory
+target
+bin
+
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/search/!svn/ver/2232/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl
+END
+SimilarGoodsSolrServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/SimilarGoodsSolrServiceImpl.java
+END
+DeliverTypeServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/search/!svn/ver/2326/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/DeliverTypeServiceImpl.java
+END
+XiuSearchConfigServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/XiuSearchConfigServiceImpl.java
+END
+QueryParserSolrServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/search/!svn/ver/2215/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/QueryParserSolrServiceImpl.java
+END
+SkuSolrServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/search/!svn/ver/2185/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/SkuSolrServiceImpl.java
+END
+XTagServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/XTagServiceImpl.java
+END
+BrandBusinessOptServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/BrandBusinessOptServiceImpl.java
+END
+BrandServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/search/!svn/ver/1751/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/BrandServiceImpl.java
+END
+MemCachedServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/MemCachedServiceImpl.java
+END
+AttrGroupServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/AttrGroupServiceImpl.java
+END
+CatalogBusinessOptServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/search/!svn/ver/2362/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/CatalogBusinessOptServiceImpl.java
+END
+CatalogServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/CatalogServiceImpl.java
+END
+GoodsSolrServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/search/!svn/ver/2324/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/service/impl/GoodsSolrServiceImpl.java
+END

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/search/!svn/ver/2198/trunk/search2.5/search-web/src/main/webapp/views/pages/error
+END
+ebay-server-error.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/search/!svn/ver/1994/trunk/search2.5/search-web/src/main/webapp/views/pages/error/ebay-server-error.ftl
+END
+ebay-search-noresult.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/search/!svn/ver/1994/trunk/search2.5/search-web/src/main/webapp/views/pages/error/ebay-search-noresult.ftl
+END
+new-arrival-nocatalog.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/search/!svn/ver/2198/trunk/search2.5/search-web/src/main/webapp/views/pages/error/new-arrival-nocatalog.ftl
+END
+ebay-brand-noresult.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/2010/trunk/search2.5/search-web/src/main/webapp/views/pages/error/ebay-brand-noresult.ftl
+END
+server-error.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/pages/error/server-error.ftl
+END
+ebay-list-nocatalog.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/1994/trunk/search2.5/search-web/src/main/webapp/views/pages/error/ebay-list-nocatalog.ftl
+END
+search-noresult.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/pages/error/search-noresult.ftl
+END
+brand-noresult.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/pages/error/brand-noresult.ftl
+END
+list-nocatalog.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/pages/error/list-nocatalog.ftl
+END
+new-arrival-noresult.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/search/!svn/ver/2198/trunk/search2.5/search-web/src/main/webapp/views/pages/error/new-arrival-noresult.ftl
+END
+ebay-list-noresult.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/search/!svn/ver/1994/trunk/search2.5/search-web/src/main/webapp/views/pages/error/ebay-list-noresult.ftl
+END
+list-noresult.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/pages/error/list-noresult.ftl
+END

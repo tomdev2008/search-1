@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="XIU_TAG" >
+  <resultMap id="xTagMap" type="com.xiu.search.dao.model.XTag" >
+  	<result column="ID" property="id" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="selectById" parameterType="java.lang.Integer" resultMap="xTagMap">
+    select 
+    ID,NAME
+    from X_TAG
+    where ID = #{id} 
+    and DELETE_FLAG = 0
+  </select>
+  <select id="selectByName" parameterType="java.lang.String" resultMap="xTagMap">
+    select 
+    ID,NAME
+    from X_TAG
+    where NAME = #{name} 
+    and DELETE_FLAG = 0
+  </select>
+  <select id="selectByIds" parameterType="java.util.List" resultMap="xTagMap">
+    select 
+    ID,NAME
+    from X_TAG
+    where ID in 
+    <foreach item="id" collection="list" open="(" separator="," close=")">
+    	#{id}
+    </foreach> 
+    and DELETE_FLAG = 0
+  </select>
+  <select id="selectByNames" parameterType="java.util.List" resultMap="xTagMap">
+    select 
+    ID,NAME
+    from X_TAG
+    where NAME in 
+    <foreach item="name" collection="list" open="(" separator="," close=")">
+    	#{name}
+    </foreach> 
+    and DELETE_FLAG = 0
+  </select>
+</mapper>

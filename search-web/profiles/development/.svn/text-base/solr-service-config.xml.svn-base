@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core-beans>
+	<service url="http://solr.xiu.com:3736/solr2/">
+		<core name="xiu" class="com.xiu.search.core.solr.model.GoodsSolrModel" >
+			<connectionTimeout>5000</connectionTimeout>
+			<maxRetries>3</maxRetries>
+			<maxTotalConnections>30</maxTotalConnections>
+			<defaultMaxConnectionsPerHost>15</defaultMaxConnectionsPerHost>
+		</core>
+	</service>
+	<service  url="http://solrsku.xiu.com:3738/solr/">
+		<core name="sku" class="com.xiu.search.core.solr.model.XiuSKUIndexModel" >
+			<connectionTimeout>5000</connectionTimeout>
+			<maxRetries>3</maxRetries>
+			<maxTotalConnections>30</maxTotalConnections>
+			<defaultMaxConnectionsPerHost>15</defaultMaxConnectionsPerHost>
+		</core>
+	</service>
+	<service url="http://solr.xiu.com:3738/solr/">
+		<core name="lexicon" class="com.xiu.solr.lexicon.client.model.LexiconBaseModel" >
+			<connectionTimeout>5000</connectionTimeout>
+			<maxRetries>3</maxRetries>
+			<maxTotalConnections>30</maxTotalConnections>
+			<defaultMaxConnectionsPerHost>15</defaultMaxConnectionsPerHost>
+		</core>
+		<core name="oclass" class="com.xiu.search.core.solr.model.OclassSolrModel" >
+			<connectionTimeout>5000</connectionTimeout>
+			<maxRetries>3</maxRetries>
+			<maxTotalConnections>30</maxTotalConnections>
+			<defaultMaxConnectionsPerHost>15</defaultMaxConnectionsPerHost>
+		</core>
+	</service>
+</core-beans>

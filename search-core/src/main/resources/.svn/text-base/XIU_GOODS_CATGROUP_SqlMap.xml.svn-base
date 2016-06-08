@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="XIU_GOODS_CATGROUP" >
+  <resultMap id="BaseResultMap" type="com.xiu.search.dao.model.XDataCatalog" >
+    <result column="CATGROUP_ID" property="catalogId" jdbcType="DECIMAL" />
+<!--     <result column="MEMBER_ID" property="memberId" jdbcType="DECIMAL" /> -->
+    <result column="IDENTIFIER" property="identifier" jdbcType="VARCHAR" />
+    <result column="MARKFORDELETE" property="markfordelete" jdbcType="DECIMAL" />
+    <result column="LASTUPDATE" property="lastupdate" jdbcType="TIMESTAMP" />
+    <result column="FIELD1" property="field1" jdbcType="VARCHAR" />
+    <result column="FIELD2" property="level" jdbcType="VARCHAR" />
+    <result column="OID" property="oid" jdbcType="VARCHAR" />
+    <result column="RANK" property="rank" jdbcType="DECIMAL" />
+    <result column="OPTCOUNTER" property="optcounter" jdbcType="DECIMAL" />
+    <result column="CATGROUP_ID_PARENT" property="parentCatalogId" jdbcType="DECIMAL" />
+    <result column="NAME" property="catalogName" jdbcType="VARCHAR" />
+    <result column="DISPLAY" property="display" jdbcType="VARCHAR" />
+    <result column="QUERY" property="query" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <resultMap id="CatalogResultMap" type="com.xiu.search.dao.model.XDataCatalog" >
+    <result column="CATGROUP_ID" property="catalogId" jdbcType="DECIMAL" />
+    <result column="FIELD2" property="level" jdbcType="VARCHAR" />
+    <result column="CATGROUP_ID_PARENT" property="parentCatalogId" jdbcType="DECIMAL" />
+    <result column="QUERY" property="query" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!-- search catalog list by catlogId-->
+  <select id="selectCatalogQueryListByCatalogId" parameterType="Long" resultMap="CatalogResultMap">
+
+        select t.CATGROUP_ID , t.QUERY , t.CATGROUP_ID_PARENT, t.FIELD2 from (
+        
+          select c.catid as CATGROUP_ID, x.field1 as QUERY, c.CATGROUP_ID_PARENT as CATGROUP_ID_PARENT, g.field2 as FIELD2 from (
+        
+              select t.catgroup_id_child catid , t.catgroup_id_parent as CATGROUP_ID_PARENT
+              from catgrprel t 
+              where t.catalog_id = 10101 
+              start with t.catgroup_id_parent =  #{catalogId} 
+              connect by prior t.catgroup_id_child = t.catgroup_id_parent 
+              
+           ) c,x_sales_catalog_cond x , catgroup g
+          where c.catid = x.catgroup_id and g.catgroup_id=x.catgroup_id 
+            union 
+          select x.catgroup_id as CATGROUP_ID, x.field1 as QUERY, null as CATGROUP_ID_PARENT , g.field2 as FIELD2
+          from x_sales_catalog_cond x , catgroup g where x.catgroup_id =  #{catalogId} and g.catgroup_id=x.catgroup_id
+        
+        ) t order by t.field2 asc
+  </select>
+</mapper>

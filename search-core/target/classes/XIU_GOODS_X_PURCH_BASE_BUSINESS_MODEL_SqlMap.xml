@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="X_PURCH_BASE_BUSINESS_MODEL">
+  <resultMap id="XPurchBaseBusinessModel" type="com.xiu.search.dao.model.XPurchBaseBusinessModel">
+    <result column="ATTRIBUTE2" jdbcType="VARCHAR" property="spaceFlag" />
+    <result column="ATTRIBUTE1" jdbcType="VARCHAR" property="spaceFlagName" />
+  </resultMap>
+
+  <select id="deliverTypeFromChina" resultMap="XPurchBaseBusinessModel">
+    select t.ATTRIBUTE2 , t.ATTRIBUTE1 
+    from XIU_GOODS.X_PURCH_BASE_BUSINESS_MODEL t
+    <![CDATA[ 
+    where  to_number( t.ATTRIBUTE2 ) < 200
+    ]]> 
+  </select>
+  <select id="deliverTypeFromOverSea" resultMap="XPurchBaseBusinessModel">
+    select t.ATTRIBUTE2 , t.ATTRIBUTE1 
+    from XIU_GOODS.X_PURCH_BASE_BUSINESS_MODEL t
+    <![CDATA[ 
+    where  to_number( t.ATTRIBUTE2 ) > 200
+    ]]> 
+  </select> 
+</mapper>

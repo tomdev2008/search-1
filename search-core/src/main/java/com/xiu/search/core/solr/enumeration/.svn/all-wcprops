@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/search/!svn/ver/2199/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/enumeration
+END
+DeliverTypeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/search/!svn/ver/2199/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/enumeration/DeliverTypeEnum.java
+END
+MktTypeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/enumeration/MktTypeEnum.java
+END
+ItemShowTypeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/enumeration/ItemShowTypeEnum.java
+END
+SearchTimeRangeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/search/!svn/ver/2215/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/enumeration/SearchTimeRangeEnum.java
+END
+FacetPriceRangeQueryEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/enumeration/FacetPriceRangeQueryEnum.java
+END
+SearchSortOrderEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/enumeration/SearchSortOrderEnum.java
+END

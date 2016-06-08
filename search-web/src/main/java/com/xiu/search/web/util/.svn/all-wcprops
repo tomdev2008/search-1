@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/util
+END
+IPv4Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/util/IPv4Util.java
+END
+SystemInit.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/util/SystemInit.java
+END
+LoginUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/util/LoginUtils.java
+END
+CookieUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/util/CookieUtils.java
+END

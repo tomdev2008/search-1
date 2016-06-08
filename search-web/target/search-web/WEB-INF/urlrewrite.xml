@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN" "dtds/urlrewrite3.2.dtd">
+<urlrewrite use-query-string="true" decode-using="UTF-8">
+
+    <!-- SEO关键词相关  开始 -->
+	<rule>
+    	<name>seo_kw</name>
+        <note>SEO关键词列表</note>
+        <condition name="host" operator="equal">^search.xiu.com</condition>
+        <from>^/kw.html/?((\?(.*))?)$</from><!-- 显示出来的地址 -->
+        <to>/seokw-action.htm?p=1</to><!-- 实际地址 -->
+    </rule>
+ 	<rule>
+    	<name>seo_kw2</name>
+        <note>SEO关键词列表</note>
+        <condition name="host" operator="equal">^search.xiu.com</condition>
+        <from>^/kw-(.*).html/?((\?(.*))?)$</from>
+        <to>/seokw-action.htm?p=$1</to>
+    </rule>
+     <outbound-rule>
+        <note>SEO关键词列表</note>
+        <from>^/seokw-action.htm\?p=(.*)</from>
+        <to type="forward">/kw-$1.html</to>
+    </outbound-rule>
+    
+    <rule>
+    	<name>seo_kw_goods</name>
+        <note>SEO关键词商品</note>
+        <condition name="host" operator="equal">^search.xiu.com</condition>
+        <from>^/kw/([0-9]*)\.html/?((\?(.*))?)$</from>
+        <to>/seokw-goods-action.htm?kwId=$1&amp;p=1</to>
+    </rule>
+    <rule>
+    	<name>seo_kw_goods2</name>
+        <note>SEO关键词商品</note>
+        <condition name="host" operator="equal">^search.xiu.com</condition>
+        <from>^/kw/([0-9]*)-(.*)\.html/?((\?(.*))?)$</from>
+        <to>/seokw-goods-action.htm?kwId=$1&amp;p=$2</to>
+    </rule>
+    <outbound-rule>
+        <note>SEO关键词商品</note>
+        <from>^/seokw-goods-action.htm\?kwId=(.*)&amp;p=(.*)</from>
+        <to type="forward">/kw/$1-$2.html</to>
+    </outbound-rule>
+    <!-- SEO关键词相关  结束 -->
+    
+    
+
+	<!-- SKU请求外转内部分 2014-03-12 09:55 -->
+    <rule>
+    	<name></name>
+        <note>SKU返回JSON</note>
+        <condition name="host" operator="equal">^search.xiu.com</condition>
+        <from>^/skulist.html/?((\?(.*))?)$</from>
+        <to>/sku-list.htm</to>
+    </rule>
+    <!-- 获取skuCode对应的库存 -->
+    <rule>
+    	<name></name>
+        <note>SKU对应库存返回JSON</note>
+        <condition name="host" operator="equal">^list.xiu.com</condition>
+        <from>^/inventory/sku.html/?((\?(.*))?)$</from>
+        <to>/inventory/sku.htm</to>
+    </rule>
+
+	<!-- 外转内部分 -->
+    <rule>
+    	<name></name>
+        <note>搜索页面</note>
+        <condition name="host" operator="equal">^search.xiu.com</condition>
+        <from>^/s((\?(.*))?)$</from>
+        <to>/search-action.htm</to>
+    </rule>
+    
+    <rule>
+    	<name>o_api</name>
+        <note>对外提供的API</note>
+        <condition name="host" operator="equal">^api.search.xiu.com</condition>
+        <from>^/([a-z]*)\.htm/?((\?(.*))?)$</from>
+        <to>/$1-api-action.htm</to>
+    </rule>
+    <!-- 列表页开始 -->
+    <rule>
+        <note>列表页面</note>
+        <condition name="host" operator="equal">^list.xiu.com</condition>
+        <from>^/([0-9]*)\.html/?((\?(.*))?)$</from>
+        <to>/list-action.htm?cat=$1</to>
+    </rule>
+    <rule>
+        <note>列表页面完整url</note>
+        <condition name="host" operator="equal">^list.xiu.com</condition>
+        <from>^/([0-9]*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)\.html/?((\?(.*))?)$</from>
+        <to>/list-action.htm?cat=$1&amp;bid=$2&amp;f_price=$3&amp;vm=$4&amp;mkt=$12&amp;sort=$13&amp;ba=$14&amp;p=$15</to>
+    </rule>
+     <!-- 列表页结束 -->
+    <!-- 官网最新页面 -->
+    <rule>
+        <note>新品列表页面</note>
+        <condition name="host" operator="equal">^list.xiu.com</condition>
+        <from>^/new/([0-9]*)\.html/?((\?(.*))?)$</from>
+        <to>/new-arrival-action.htm?cat=$1</to>
+    </rule>
+    <rule>
+        <note>新品列表页面完整url</note>
+        <condition name="host" operator="equal">^list.xiu.com</condition>
+        <from>^/new/([0-9]*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)\.html/?((\?(.*))?)$</from>
+        <to>/new-arrival-action.htm?cat=$1&amp;bid=$2&amp;f_price=$3&amp;vm=$4&amp;mkt=$12&amp;sort=$13&amp;ba=$14&amp;p=$15</to>
+    </rule>
+     <!-- 官网最新页面end -->
+    
+    <rule>
+        <note>列表页面-全部运营分类</note>
+        <condition name="host" operator="equal">^list.xiu.com</condition>
+        <from>^/allcatalog.html$</from>
+        <to>/allcatalog-action.htm</to>
+    </rule>
+    
+    <!-- 品牌页面 -->
+    <rule>
+        <note>品牌页面</note>
+        <condition name="host" operator="equal">^brand.xiu.com</condition>
+        <from>^/([0-9]*)\.html/?((\?(.*))?)$</from>
+        <to>/brand-action.htm?bid=$1&amp;bo=1</to>
+    </rule>
+    
+    <rule>
+        <note>品牌页面分页url</note>
+        <condition name="host" operator="equal">^brand.xiu.com</condition>
+        <from>^/([0-9]*)--------------(.*)\.html/?((\?(.*))?)$</from>
+        <to>/brand-action.htm?bid=$1&amp;p=$2&amp;bo=1</to>
+    </rule>
+    
+    <rule>
+        <note>品牌页面完整url</note>
+        <condition name="host" operator="equal">^brand.xiu.com</condition>
+        <from>^/([0-9]*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)\.html/?((\?(.*))?)$</from>
+        <to>/brand-action.htm?bid=$1&amp;cat=$2&amp;f_price=$3&amp;vm=$4&amp;mkt=$12&amp;sort=$13&amp;ba=$14&amp;p=$15&amp;bo=2</to>
+    </rule>
+    <!-- 品牌页完成 -->
+    
+    <rule>
+    	<name></name>
+        <note>ebay搜索页面</note>
+        <from>^/search/s((\?(.*))?)$</from>
+        <to>/ebay-search-action.htm</to>
+    </rule>
+    <rule>
+        <note>列表页面</note>
+        <from>^/list/([0-9]*)\.html/?((\?(.*))?)$</from>
+        <to>/ebay-list-action.htm?cat=$1</to>
+    </rule>
+    <rule>
+        <note>列表页面完整url</note>
+        <from>^/list/([0-9]*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)\.html/?((\?(.*))?)$</from>
+        <to>/ebay-list-action.htm?cat=$1&amp;bid=$2&amp;f_price=$3&amp;vm=$4&amp;mkt=$12&amp;sort=$13&amp;ba=$14&amp;p=$15</to>
+    </rule>
+    <rule>
+        <note>ebay品牌页面</note>
+        <from>^/brand/([0-9]*)\.html/?((\?(.*))?)$</from>
+        <to>/ebay-brand-action.htm?bid=$1</to>
+    </rule>
+    <rule>
+        <note>ebay品牌页面完整url</note>
+        <from>^/brand/([0-9]*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)\.html/?((\?(.*))?)$</from>
+        <to>/ebay-brand-action.htm?bid=$1&amp;cat=$2&amp;f_price=$3&amp;vm=$4&amp;mkt=$12&amp;sort=$13&amp;ba=$14&amp;p=$15</to>
+    </rule>
+    <!-- 内转外部分 -->
+    <outbound-rule>
+        <note>搜索页面内转外</note>
+        <from>^/search-action.htm\?kw=(.*)</from>
+        <to type="forward">/s?kw=$1</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>列表页面</note>
+        <from>^/list-action.htm\?cat=([0-9]*)$</from>
+        <to type="forward">/$1.html</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>列表页面完整url</note>
+        <condition name="default-query">p=1</condition>
+        <from>^/list-action.htm\?cat=([0-9]*)&amp;bid=(.*)&amp;f_price=(.*)&amp;vm=(.*)&amp;mkt=(.*)&amp;sort=(.*)&amp;ba=(.*)&amp;p=(.*)$</from>
+        <to type="forward">/$1-$2-$3-$4--------$5-$6-$7-$8.html</to>
+    </outbound-rule>
+    
+    <outbound-rule>
+        <note>新品列表页面</note>
+        <from>^/new-arrival-action.htm\?cat=([0-9]*)$</from>
+        <to type="forward">/new/$1.html</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>新品列表页面完整url</note>
+        <condition name="default-query">p=1</condition>
+        <from>^/new-arrival-action.htm\?cat=([0-9]*)&amp;bid=(.*)&amp;f_price=(.*)&amp;vm=(.*)&amp;mkt=(.*)&amp;sort=(.*)&amp;ba=(.*)&amp;p=(.*)$</from>
+        <to type="forward">/new/$1-$2-$3-$4--------$5-$6-$7-$8.html</to>
+    </outbound-rule>
+    
+    <outbound-rule>
+        <note>品牌页面</note>
+        <from>^/brand-action.htm\?bid=([0-9]*)$</from>
+        <to type="forward">/$1.html</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>品牌页面完整url</note>
+        <condition name="default-query">p=1</condition>
+        <from>^/brand-action.htm\?bid=([0-9]*)&amp;cat=(.*)&amp;f_price=(.*)&amp;vm=(.*)&amp;mkt=(.*)&amp;sort=(.*)&amp;ba=(.*)&amp;p=(.*)$</from>
+        <to type="forward">/$1-$2-$3-$4--------$5-$6-$7-$8.html</to>
+    </outbound-rule>
+    
+    <outbound-rule>
+        <note>ebay搜索页面内转外</note>
+        <from>^/ebay-search-action.htm\?kw=(.*)</from>
+        <to type="forward">/search/s?kw=$1</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>ebay标签搜索页面内转外</note>
+        <from>^/ebay-search-action.htm\?tags=(.*)</from>
+        <to type="forward">/search/s?tags=$1</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>列表页面</note>
+        <from>^/ebay-list-action.htm\?cat=([0-9]*)$</from>
+        <to type="forward">/list/$1.html</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>列表页面完整url</note>
+        <condition name="default-query">p=1</condition>
+        <from>^/ebay-list-action.htm\?cat=([0-9]*)&amp;bid=(.*)&amp;f_price=(.*)&amp;vm=(.*)&amp;mkt=(.*)&amp;sort=(.*)&amp;ba=(.*)&amp;p=(.*)$</from>
+        <to type="forward">/list/$1-$2-$3-$4--------$5-$6-$7-$8.html</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>ebay品牌页面</note>
+        <from>^/ebay-brand-action.htm\?bid=([0-9]*)$</from>
+        <to type="forward">/brand/$1.html</to>
+    </outbound-rule>
+    <outbound-rule>
+        <note>ebay品牌页面完整url</note>
+        <condition name="default-query">p=1</condition>
+        <from>^/ebay-brand-action.htm\?bid=([0-9]*)&amp;cat=(.*)&amp;f_price=(.*)&amp;vm=(.*)&amp;mkt=(.*)&amp;sort=(.*)&amp;ba=(.*)&amp;p=(.*)$</from>
+        <to type="forward">/brand/$1-$2-$3-$4--------$5-$6-$7-$8.html</to>
+    </outbound-rule>
+</urlrewrite>
+

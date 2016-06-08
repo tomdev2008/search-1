@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/search/!svn/ver/1981/trunk/search2.5/search-web/src/main/resources
+END
+assembly-static.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/resources/assembly-static.xml
+END
+spring-search-jdbc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/resources/spring-search-jdbc.xml
+END
+spring-search-dao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/search/!svn/ver/2227/trunk/search2.5/search-web/src/main/resources/spring-search-dao.xml
+END
+spring-search-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/resources/spring-search-servlet.xml
+END
+spring-search-memcached.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/resources/spring-search-memcached.xml
+END
+spring-search-core.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/search/!svn/ver/2226/trunk/search2.5/search-web/src/main/resources/spring-search-core.xml
+END
+xiu-ui.properties
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/resources/xiu-ui.properties
+END
+assembly.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/resources/assembly.xml
+END
+freemarker.properties
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/resources/freemarker.properties
+END

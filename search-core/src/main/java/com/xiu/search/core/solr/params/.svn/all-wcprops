@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/search/!svn/ver/2199/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/params
+END
+SuggestFatParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/params/SuggestFatParams.java
+END
+SearchFatParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/search/!svn/ver/2199/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/params/SearchFatParams.java
+END
+BrandFatParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/params/BrandFatParams.java
+END
+MktItemInfoFatParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/params/MktItemInfoFatParams.java
+END
+ListFatParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/params/ListFatParams.java
+END

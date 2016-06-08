@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/macro
+END
+list-page-catalog-macro.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/macro/list-page-catalog-macro.ftl
+END
+search-page-catalog-macro.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/macro/search-page-catalog-macro.ftl
+END

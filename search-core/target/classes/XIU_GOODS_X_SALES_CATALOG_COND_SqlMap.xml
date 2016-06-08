@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="XIU_GOODS_X_SALES_CATALOG_COND">
+  <resultMap id="XSalesCatalogCondMap" type="com.xiu.search.dao.model.XSalesCatalogCond">
+    <result column="CATALOG_ID" jdbcType="DECIMAL" property="catalogId" />
+    <result column="CATGROUP_ID" jdbcType="DECIMAL" property="catgroupId" />
+    <result column="CATGROUP_TYPE" jdbcType="VARCHAR" property="catgroupType" />
+    <result column="SEARCHQUERY" jdbcType="VARCHAR" property="searchquery" />
+    <result column="CREATOR_ID" jdbcType="DECIMAL" property="creatorId" />
+    <result column="TIMEPLACED" jdbcType="TIMESTAMP" property="timeplaced" />
+    <result column="OPERATOR_ID" jdbcType="DECIMAL" property="operatorId" />
+    <result column="LASTUPDATE" jdbcType="TIMESTAMP" property="lastupdate" />
+    <result column="FIELD1" jdbcType="VARCHAR" property="field1" />
+    <result column="FIELD2" jdbcType="VARCHAR" property="field2" />
+    <result column="FIELD3" jdbcType="VARCHAR" property="field3" />
+    <result column="FIELD4" jdbcType="DECIMAL" property="field4" />
+    <result column="FIELD5" jdbcType="DECIMAL" property="field5" />
+    <result column="FIELD6" jdbcType="DECIMAL" property="field6" />
+    <result column="FIELD7" jdbcType="DECIMAL" property="field7" />
+    <result column="FIELD8" jdbcType="TIMESTAMP" property="field8" />
+    <result column="OPTCOUNTER" jdbcType="DECIMAL" property="optcounter" />
+    <result column="EVALUATEQUERY" jdbcType="VARCHAR" property="evaluatequery" />
+    <result column="QUERY" jdbcType="VARCHAR" property="query" />
+<!--     <result column="ORDERBY" jdbcType="DECIMAL" property="orderBy" /> -->
+<!--     <result column="ATTRDICTGRP_ID" jdbcType="DECIMAL" property="attrdictgrpId" /> -->
+  </resultMap>
+  <resultMap id="XSalesCatalogCondMap1" type="com.xiu.search.dao.model.XSalesCatalogCond">
+    <result column="CATGROUP_ID" jdbcType="DECIMAL" property="catgroupId" />
+    <result column="FIELD2" jdbcType="VARCHAR" property="field2" />
+  </resultMap>
+  
+  <resultMap id="XSalesCatalogCondMap2" type="com.xiu.search.dao.model.XSalesCatalogCond">
+    <result column="ORDERBY" jdbcType="DECIMAL" property="orderBy" />
+    <result column="ATTRDICTGRP_ID" jdbcType="DECIMAL" property="attrdictgrpId" />
+  </resultMap>
+  
+  <select id="selectByPrimaryKey" parameterType="long" resultMap="XSalesCatalogCondMap">
+    select 
+    CATALOG_ID, CATGROUP_ID, CATGROUP_TYPE, SEARCHQUERY, CREATOR_ID, TIMEPLACED, OPERATOR_ID, LASTUPDATE,
+    FIELD1, FIELD2, FIELD3, FIELD4, FIELD5, FIELD6, FIELD7, FIELD8, OPTCOUNTER, EVALUATEQUERY, QUERY
+    from X_SALES_CATALOG_COND
+    where CATALOG_ID = #{catalogId} and rownum=1
+  </select>
+  <select id="selectByPrimaryKeyForJson" parameterType="long" resultType="java.lang.String">
+    select 
+    FIELD2
+    from X_SALES_CATALOG_COND
+    where CATGROUP_ID = #{catgroupId} and rownum=1
+  </select>
+  <select id="selectByPrimaryKeysForJson" parameterType="java.util.List" resultMap="XSalesCatalogCondMap1">
+    select
+    CATGROUP_ID, FIELD2
+    from X_SALES_CATALOG_COND
+    where CATGROUP_ID in
+    <foreach item="catGroupId" collection="list" open="(" separator="," close=")">
+    	#{catGroupId}
+    </foreach>
+  </select>
+  
+  <select id="selectAllForAttrGroup" parameterType="java.util.List" resultMap="XSalesCatalogCondMap1">
+    select
+    CATGROUP_ID, FIELD2
+    from X_SALES_CATALOG_COND
+  </select>
+  <!-- 查询属性项排序规则		William.zhang	20130709 -->
+  <select id="selectAllForAttrValue" parameterType="java.util.List" resultMap="XSalesCatalogCondMap2">
+	  select 
+	      v.orderBy as ORDERBY, 
+          v.attrdictgrp_id as ATTRDICTGRP_ID
+	  from 
+	      xiu_goods.x_attrval_group_view v
+  </select>
+</mapper>

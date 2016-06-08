@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/search/!svn/ver/1966/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/catalog
+END
+XiuCatalogTreeCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/search/!svn/ver/1938/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/catalog/XiuCatalogTreeCache.java
+END
+XiuCatalogTreeCacheImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/search/!svn/ver/2311/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/catalog/XiuCatalogTreeCacheImpl.java
+END
+BrandModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/catalog/BrandModel.java
+END
+CatalogModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/catalog/CatalogModel.java
+END
+XiuBrandInfoCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/catalog/XiuBrandInfoCache.java
+END
+XiuBrandInfoCacheImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/search/!svn/ver/2215/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/catalog/XiuBrandInfoCacheImpl.java
+END

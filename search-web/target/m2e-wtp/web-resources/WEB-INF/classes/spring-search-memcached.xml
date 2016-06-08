@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd"
+	default-autowire="byName">
+
+	<!-- Memcached 连接池 -->
+	<bean id="memcachedPool" class="com.danga.MemCached.SockIOPool"
+		factory-method="getInstance" init-method="initialize" destroy-method="shutDown">
+		<constructor-arg>
+			<value>neeaMemcachedPool</value>
+		</constructor-arg>
+		<property name="servers">
+			<list>
+				<value>192.168.3.100:11211</value>
+				<value>192.168.3.200:11311</value>
+				<value>192.168.3.235:11411</value>
+				<value>192.168.3.236:11511</value>
+			</list>
+		</property>
+		<property name="initConn">
+			<value>100</value>
+		</property>
+		<property name="minConn">
+			<value>100</value>
+		</property>
+		<property name="maxConn">
+			<value>250</value>
+		</property>
+		<property name="maintSleep">
+			<value>30</value>
+		</property>
+		<property name="nagle">
+			<value>false</value>
+		</property>
+		<property name="socketTO">
+			<value>3000</value>
+		</property>
+		<property name="hashingAlg">
+			<value>2</value>
+		</property>
+	</bean>
+
+	<!-- Memcached 客户端 -->
+	<bean id="memcachedClient" class="com.danga.MemCached.MemCachedClient">
+		<constructor-arg>
+			<value>neeaMemcachedPool</value>
+		</constructor-arg>
+	</bean>
+</beans>

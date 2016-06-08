@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="XIU_SEARCH_CONFIG" >
+
+  <resultMap id="BaseResultMap" type="com.xiu.search.dao.model.XiuSearchConfigModel" >
+    <id column="CONFIG_ID" property="configId" jdbcType="DECIMAL" />
+    <result column="CONFIG_GROUPNAME" property="configGroupname" jdbcType="VARCHAR" />
+    <result column="CONFIG_STATUS" property="configStatus" jdbcType="CHAR" />
+    <result column="CONFIG_KEY" property="configKey" jdbcType="VARCHAR" />
+    <result column="CONFIG_VALUE" property="configValue" jdbcType="VARCHAR" />
+    <result column="CONFIG_UPDATETIME" property="configUpdatetime" />
+    <result column="CONFIG_DESC" property="configDesc" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  
+  <select id="selectAllXiuSearchConfig" resultMap="BaseResultMap">    
+     SELECT 
+       CONFIG_ID, 
+       CONFIG_GROUPNAME, 
+       CONFIG_STATUS, 
+       CONFIG_KEY, 
+       CONFIG_VALUE, 
+       CONFIG_UPDATETIME, 
+       CONFIG_DESC 
+     FROM XIU_SEARCH_CONFIG
+  </select>
+  
+</mapper>

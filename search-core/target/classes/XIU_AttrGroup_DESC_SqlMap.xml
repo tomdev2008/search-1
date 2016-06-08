@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="XIU_AttrGroup_DESC" >
+ 
+ <resultMap type="com.xiu.search.dao.model.XDataAttrDesc" id="xDataAttrDescMap">
+ 	<result column="ATTR_ID" property="id" jdbcType="VARCHAR" />
+ 	<result column="NAME" property="name" jdbcType="VARCHAR" />
+ </resultMap>
+ 
+  <select id="selectAllGroupName" resultMap="xDataAttrDescMap">
+  	 <![CDATA[
+  	 	select to_char(ad.attr_id) as attr_id,
+         case
+           when ad.description2 = '' or ad.description2 is null then
+            ad.name
+           else
+            ad.description2
+         end name
+      from xiu_goods.attrdesc ad where ad.language_id=-7
+  	 ]]>
+		
+  </select>
+</mapper>

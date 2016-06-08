@@ -1,0 +1,590 @@
+package com.xiu.search.core.bof.impl;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.solr.client.solrj.response.FacetField;
+import org.apache.solr.client.solrj.response.FacetField.Count;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xiu.search.core.attrval.XiuAttrGroupCache;
+import com.xiu.search.core.bo.FacetFilterBo;
+import com.xiu.search.core.bo.FacetFilterBo.FacetTypeEnum;
+import com.xiu.search.core.bo.FacetFilterValueBo;
+import com.xiu.search.core.bof.FacetFilterBof;
+import com.xiu.search.core.model.AttrGroupJsonModel;
+import com.xiu.search.core.solr.enumeration.FacetPriceRangeQueryEnum;
+import com.xiu.search.core.solr.index.GoodsIndexFieldEnum;
+import com.xiu.search.core.util.XiuSearchStringUtils;
+import com.xiu.search.dao.cache.StaticClothSizeCache;
+
+@Service("facetFilterBof")
+public class FacetFilterBofImpl implements FacetFilterBof {
+	
+	@Autowired
+	private XiuAttrGroupCache xiuAttrGroupCache;
+	
+	
+
+	@Override
+	public FacetFilterBo parseBrandFacetFilter(FacetField facetField){
+		if(null == facetField || facetField.getValues()==null)
+			return null;
+		FacetFilterBo bo = new FacetFilterBo();
+		bo.setFacetFieldName(GoodsIndexFieldEnum.BRAND_ID_NAME.name());
+		bo.setFacetDisplay("品牌");
+		bo.setFacetType(FacetTypeEnum.BRAND);
+		FacetFilterValueBo fvBo;
+		String[] idNameArr;
+		int firstIndex;
+		for (Count count : facetField.getValues()) {
+			if(StringUtils.isNotBlank(count.getName()) 
+					&& count.getCount()>0){
+				firstIndex = count.getName().indexOf("_");
+				if(firstIndex > 0){
+					idNameArr = new String[2];
+					idNameArr[0] = count.getName().substring(0 , firstIndex);
+					idNameArr[1] = count.getName().substring(firstIndex+1,count.getName().length());
+					if(StringUtils.isNumeric(idNameArr[0]) && StringUtils.isNotBlank(idNameArr[1])){
+						fvBo = new FacetFilterValueBo();
+						fvBo.setId(Long.valueOf(idNameArr[0]));
+						fvBo.setName(idNameArr[1]);
+						fvBo.setItemCount(count.getCount());
+						
+						//2014-10-06 09:55
+						fvBo.setFirstLetter(XiuSearchStringUtils.getFirstLetter(fvBo.getName()).toUpperCase().substring(0,1));
+						
+						bo.addFacetValueBo(fvBo);
+					}
+				}
+			}
+		}
+		
+		/**
+		 * 根据首字母升序排序，再按包含商品数量降序排序 2014-10-06 10:04
+		 */
+		if(bo.getFacetValueBos()!=null && bo.getFacetValueBos().size()>1){
+			Collections.sort(bo.getFacetValueBos(), new  Comparator<FacetFilterValueBo>() {
+				@Override
+				public int compare(FacetFilterValueBo o1, FacetFilterValueBo o2) {
+					int rst = o1.getFirstLetter().compareToIgnoreCase(o2.getFirstLetter());
+					if(rst!=0){
+						return rst;
+					}
+					return (int)Math.signum((o2.getItemCount() - o1.getItemCount()));
+				}
+			});
+		}
+		
+		return bo;
+	}
+	
+	@Override
+	public FacetFilterBo parsePriceRangeFacetFilter(Map<String, Integer> priceRange){
+		if(null == priceRange || priceRange.size()==0)
+			return null;
+		FacetFilterBo bo = new FacetFilterBo();
+		bo.setFacetFieldName(GoodsIndexFieldEnum.PRICE_FINAL.name());
+		bo.setFacetDisplay("价格");
+		/*
+		 * lvshd 添加日期：2014-08-4 16:35
+		 */
+		bo.setShowOrder(Integer.MAX_VALUE);
+		bo.setFacetType(FacetTypeEnum.PRICE);
+		FacetFilterValueBo fvBo;
+		Map<String,FacetFilterValueBo> valueMap = new HashMap<String, FacetFilterValueBo>();
+		for (Entry<String, Integer> pr : priceRange.entrySet()) {
+			if(null != pr.getValue() && pr.getValue() > 0){
+				fvBo = new FacetFilterValueBo();
+				fvBo.setItemCount(pr.getValue());
+				valueMap.put(pr.getKey(), fvBo);
+			}
+		}
+		String queryStr;
+		for (FacetPriceRangeQueryEnum prq : FacetPriceRangeQueryEnum.values()) {
+			queryStr = prq.getTermRangeQuery().toString();
+			if(valueMap.containsKey(queryStr)){
+				fvBo = valueMap.get(queryStr);
+				fvBo.setId(Long.valueOf(prq.getOrder()));
+				fvBo.setName(prq.getDisplay());
+				fvBo.setPriceRange(prq);
+				bo.addFacetValueBo(fvBo);
+			}
+		}
+		return bo;
+	}
+	
+//	@Override
+//	public FacetFilterBo parseAttrFacetFilter(FacetField facetField,String[] oriAttrValIds){
+//		return this.parseAttrFacetFilter(facetField, oriAttrValIds, null);
+//	}
+
+	@Override
+	public FacetFilterBo formatSelectFacetFilter(FacetFilterBo oriFacetFilter,
+			long valueId) {
+		if(oriFacetFilter==null 
+				|| oriFacetFilter.getFacetValueBos()==null)
+			return null;
+		FacetFilterBo ret = new FacetFilterBo();
+		ret.setFacetFieldName(oriFacetFilter.getFacetFieldName());
+		ret.setFacetType(oriFacetFilter.getFacetType());
+		ret.setFacetDisplay(oriFacetFilter.getFacetDisplay());
+		for (FacetFilterValueBo bo : oriFacetFilter.getFacetValueBos()) {
+			if(bo.getId() == valueId){
+				FacetFilterValueBo boClone = bo.clone();
+				if(FacetTypeEnum.ATTR.equals(oriFacetFilter.getFacetType())){
+					String filterStr = boClone.getFilter();
+					if(filterStr.equals(Long.toString(valueId))){
+//						boClone.setFilter(null);
+					}else{
+						int lastIndexof = filterStr.lastIndexOf(";"+valueId);
+//						boClone.setFilter(filterStr.substring(0,lastIndexof));
+						ret.setCancelFilter(filterStr.substring(0,lastIndexof));
+					}
+				}
+				ret.addFacetValueBo(boClone);
+				return ret;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * 根据新的业务逻辑，需要支持多选		William.zhang	20130507
+	 */
+	@Override
+	public FacetFilterBo formatSelectFacetFilter(FacetFilterBo oriFacetFilter,
+			List<Long> attrValIds) {
+		if(oriFacetFilter==null 
+				|| oriFacetFilter.getFacetValueBos()==null)
+			return null;
+		FacetFilterBo ret = new FacetFilterBo();
+		ret.setFacetFieldName(oriFacetFilter.getFacetFieldName());
+		ret.setFacetType(oriFacetFilter.getFacetType());
+		ret.setFacetDisplay(oriFacetFilter.getFacetDisplay());
+		List<FacetFilterValueBo> selectBos = new ArrayList<FacetFilterValueBo>();
+		Map<Long,String> idNameMap = new HashMap<Long, String>();
+		for (FacetFilterValueBo bo : oriFacetFilter.getFacetValueBos()) {
+			if(attrValIds.contains(bo.getId())){
+				selectBos.add(bo);
+			}
+			idNameMap.put(bo.getId(), bo.getName());
+		}
+		if(selectBos.size() == 0)
+			return null;
+		
+		String filterStr = selectBos.get(0).getFilter();
+		String[] filterStrArr = StringUtils.split(filterStr, ';');
+		List<String> selectFilterList = new ArrayList<String>();
+		List<String> selectFilterNameList = new ArrayList<String>();
+		String idFilterTemp;
+		boolean containIdFlag;
+		if(null != filterStrArr){
+			for(String o : filterStrArr){
+				containIdFlag = false;
+				idFilterTemp = "|" + o + "|";
+				for (Long attrValId : attrValIds) {
+					if(!idNameMap.containsKey(attrValId)){
+						continue;
+					}
+					if(idFilterTemp.indexOf("|"+attrValId + "|")>=0){
+						containIdFlag = true;
+						continue;
+					}
+				}
+				if(!containIdFlag)
+					selectFilterList.add(o);
+			}
+		}
+		for (Long attrValId : attrValIds) {
+			if(!idNameMap.containsKey(attrValId)){
+				continue;
+			}
+			selectFilterNameList.add(idNameMap.get(attrValId));
+		}
+		FacetFilterValueBo ffvb = new FacetFilterValueBo();
+		ffvb.setName(StringUtils.join(selectFilterNameList, ","));
+		String brandName=StringUtils.join(selectFilterNameList, ",");
+		//设置页面展示长度为10，多出的用省略号代替！！		William.zhang
+		if(brandName.length()>10){
+			ret.setFacetValueBosNames(StringUtils.substring(brandName, 0, 10) + "...");
+		}else{
+			ret.setFacetValueBosNames(brandName);
+		}
+		ret.setFacetValueBosNamesForTitle(StringUtils.join(selectFilterNameList, ","));
+		//拼接 Display name
+		//拼接 Filter string
+		if(FacetTypeEnum.ATTR.equals(ret.getFacetType())){
+			if(selectFilterList.size() == 0){
+				ret.setCancelFilter(null);
+			}else{
+				ret.setCancelFilter(StringUtils.join(selectFilterList, ";"));
+			}
+		}
+		ret.addFacetValueBo(ffvb);
+		return ret;
+	}
+
+	@Override
+	public FacetFilterBo formatSelectCustomPriceRangeFacetFilter(Double startPrice,
+			Double endPrice) {
+		if(null == startPrice && null == endPrice)
+			return null;
+		FacetFilterBo ret = new FacetFilterBo();
+		ret.setFacetFieldName(GoodsIndexFieldEnum.PRICE_FINAL.name());
+		ret.setFacetDisplay("价格");
+		ret.setFacetType(FacetTypeEnum.PRICE);
+		FacetFilterValueBo vBo = new FacetFilterValueBo();
+		DecimalFormat df = new DecimalFormat("#.##");
+		if(null == startPrice){
+			vBo.setName("0-" + df.format(endPrice) + "元");
+		}else if(null == endPrice){
+			vBo.setName(df.format(startPrice) + "元以上");
+		}else{
+			vBo.setName(df.format(startPrice) + "-" + df.format(endPrice) + "元");
+		}
+		ret.addFacetValueBo(vBo);
+		return ret;
+	}
+
+	@Override
+	public FacetFilterBo formatSelectFacetFilter(FacetTypeEnum type,
+			long valueId) {
+		FacetFilterBo ret = new FacetFilterBo();
+		if(FacetTypeEnum.PRICE.equals(type)){
+			FacetPriceRangeQueryEnum priceEnum = FacetPriceRangeQueryEnum.valueOf((int)valueId);
+			if(null == priceEnum)
+				return null;
+			ret.setFacetType(type);
+			ret.setFacetDisplay("价格");
+			ret.setFacetFieldName(GoodsIndexFieldEnum.PRICE_FINAL.fieldName());
+			FacetFilterValueBo vBo = new FacetFilterValueBo();
+			vBo.setId(valueId);
+			vBo.setPriceRange(priceEnum);
+			vBo.setName(priceEnum.getDisplay());
+			ret.addFacetValueBo(vBo);
+		}
+		return ret;
+	}
+	
+
+
+//	public FacetFilterBo parseAttrFacetFilter(FacetField facetField,
+//			String[] oriAttrValIds, Map<String, AttrGroupJsonModel> attrIdNameMap) {
+//		if(null == facetField 
+//				|| facetField.getValues()==null 
+//				|| attrIdNameMap == null
+//				|| !attrIdNameMap.containsKey(facetField.getName()))
+//			return null;
+//		// 原始查询字符串
+//		String oriFilterStr =  null;
+//		Set<String> filterSet = null;
+//		if(null != oriAttrValIds && oriAttrValIds.length > 0){
+//			oriFilterStr = StringUtils.join(oriAttrValIds,";");
+//			filterSet = new HashSet<String>();
+//			CollectionUtils.addAll(filterSet, oriAttrValIds);
+//		}
+//		
+//		FacetFilterBo bo = new FacetFilterBo();
+//		//bo.setFacetId(facetField.get)
+//		bo.setFacetFieldName(facetField.getName());
+//		AttrGroupJsonModel attrGroupJsonModel = attrIdNameMap.get(facetField.getName());
+//		if(null == attrGroupJsonModel)
+//			return null;
+////		if(null != attrIdNameMap){
+//		//必须小于四个字
+//		String name = attrGroupJsonModel.getName();
+//		if(StringUtils.isNotBlank(name)){
+//			if(name.length()>4)
+//				name = name.substring(0,4);
+//			bo.setFacetDisplay(name);
+//		}
+////		}
+//		bo.setFacetType(FacetTypeEnum.ATTR);
+//		FacetFilterValueBo fvBo;
+//		String[] idNameArr;
+//		int firstIndex;		
+//		String idStr;
+//		int indexof;
+//		List<String> attrGroupList = Arrays.asList(attrGroupJsonModel.getAttrGroupValueIds());
+////		attrGroupList.indexOf("");
+//		for (Count count : facetField.getValues()) {
+//			if(StringUtils.isNotBlank(count.getName()) 
+//					&& count.getCount()>0){
+//				firstIndex = count.getName().indexOf("_");
+//				if(firstIndex > 0){
+//					idNameArr = new String[2];
+//					idNameArr[0] = count.getName().substring(0 , firstIndex);
+//					idNameArr[1] = count.getName().substring(firstIndex+1,count.getName().length());
+//					if(XiuSearchStringUtils.isIntegerNumber(idNameArr[0])
+//						//	&& (indexof = attrGroupList.indexOf(idNameArr[0])) >=0 
+//							&& StringUtils.isNotBlank(idNameArr[1])){
+//						
+//						
+//						//根据isAll字段，判断页面输出类容		William.zhang	20130514
+//						indexof = attrGroupList.indexOf(idNameArr[0]);
+//						fvBo = new FacetFilterValueBo();
+//						fvBo.setId(Long.valueOf(idNameArr[0]));
+//						fvBo.setName(idNameArr[1]);
+//						fvBo.setItemCount(count.getCount());
+//						fvBo.setShowOrder(indexof);
+//						idStr = fvBo.getId().toString();
+//						// 生成筛选区的filter条件
+//						if(null == oriFilterStr || idStr.equals(oriFilterStr)){
+//							fvBo.setFilter(idStr);
+//						}else if(!filterSet.contains(idStr)){
+//							fvBo.setFilter(oriFilterStr+";"+idStr);
+//						}else{
+//							// 若包含，则需要重新生成顺序
+//							StringBuffer sb = new StringBuffer();
+//							boolean isFirst = true;
+//							for (String _vid : oriAttrValIds) {
+//								if(!_vid.equals(idStr)){
+//									if(!isFirst)
+//										sb.append(";");
+//									sb.append(_vid);
+//									isFirst = false;
+//								}
+//							}
+//							fvBo.setFilter(sb.toString()+";"+idStr);
+//						}
+//						
+//						if(attrGroupJsonModel.isAll()){
+//							bo.addFacetValueBo(fvBo);
+//						}else{
+//							if(indexof >=0 ){
+//								bo.addFacetValueBo(fvBo);
+//							}
+//						}
+//						
+//						
+//						
+////						fvBo = new FacetFilterValueBo();
+////						fvBo.setId(Long.valueOf(idNameArr[0]));
+////						fvBo.setName(idNameArr[1]);
+////						fvBo.setItemCount(count.getCount());
+////						fvBo.setShowOrder(indexof);
+////						idStr = fvBo.getId().toString();
+////						// 生成筛选区的filter条件
+////						if(null == oriFilterStr || idStr.equals(oriFilterStr)){
+////							fvBo.setFilter(idStr);
+////						}else if(!filterSet.contains(idStr)){
+////							fvBo.setFilter(oriFilterStr+";"+idStr);
+////						}else{
+////							// 若包含，则需要重新生成顺序
+////							StringBuffer sb = new StringBuffer();
+////							boolean isFirst = true;
+////							for (String _vid : oriAttrValIds) {
+////								if(!_vid.equals(idStr)){
+////									if(!isFirst)
+////										sb.append(";");
+////									sb.append(_vid);
+////									isFirst = false;
+////								}
+////							}
+////							fvBo.setFilter(sb.toString()+";"+idStr);
+////						}
+////						bo.addFacetValueBo(fvBo);
+//					}
+//				}
+//			}
+//		}
+//		if(bo.getFacetValueBos()==null || bo.getFacetValueBos().size()==0)
+//			return null;
+//		if("颜色".equals(bo.getFacetDisplay())
+//				|| "尺码".equals(bo.getFacetDisplay())){
+//			Collections.sort(bo.getFacetValueBos(), new  Comparator<FacetFilterValueBo>() {
+//				@Override
+//				public int compare(FacetFilterValueBo o1, FacetFilterValueBo o2) {
+//					return o2.getShowOrder()-o1.getShowOrder();
+//				}
+//			});
+//		}
+//		return bo;
+//	}
+
+	/**
+	 * 解析属性筛选结果	支持多选		William.zhang	20130508<br>
+	 * 索引分组查询结果的解析<br>
+	 * 将名称通过attrIndexFieldNameMap进行初始化
+	 * @return
+	 */
+	@Override
+	public FacetFilterBo parseAttrFacetFilter(FacetField facetField,
+			List<List<String>> attrValIdList,
+			Map<String, AttrGroupJsonModel> attrIdNameMap) {
+
+		if(null == facetField 
+				|| facetField.getValues()==null 
+				|| attrIdNameMap == null
+				|| !attrIdNameMap.containsKey(facetField.getName()))
+			return null;
+		
+		FacetFilterBo bo = new FacetFilterBo();
+		bo.setFacetFieldName(facetField.getName());//attr_7000000000000027250
+		AttrGroupJsonModel attrGroupJsonModel = attrIdNameMap.get(facetField.getName());
+		if(null == attrGroupJsonModel)
+			return null;
+		//必须小于四个字
+		String name = attrGroupJsonModel.getName();
+		if(StringUtils.isNotBlank(name)){
+			if(name.length()>4)
+				name = name.substring(0,4);
+			bo.setFacetDisplay(name);
+		}
+		/*
+		 * lvshd 添加日期：2014-07-23 11：38
+		 */
+		bo.setShowOrder(attrGroupJsonModel.getOrder());
+		bo.setFacetType(FacetTypeEnum.ATTR);
+		FacetFilterValueBo fvBo;
+		String[] idNameArr;
+		int firstIndex;		
+		String idStr;
+		int indexof;
+		Integer globalOrder=null;// 全局值组排序值
+		List<String> attrGroupList = Arrays.asList(attrGroupJsonModel.getAttrGroupValueIds());
+		Set<String> allAttrValIdSet = new HashSet<String>();
+		for (Count count : facetField.getValues()) {
+			if(StringUtils.isNotBlank(count.getName()) 
+					&& count.getCount()>0){
+				firstIndex = count.getName().indexOf("_");//-5903_涤纶 [-5705, 43]
+				if(firstIndex > 0){
+					idNameArr = new String[2];
+					idNameArr[0] = count.getName().substring(0 , firstIndex);
+					idNameArr[1] = count.getName().substring(firstIndex+1,count.getName().length());
+					if(XiuSearchStringUtils.isIntegerNumber(idNameArr[0])
+							&& StringUtils.isNotBlank(idNameArr[1])){
+						//根据isAll字段，判断页面输出内容		William.zhang	20130514
+						indexof = attrGroupList.indexOf(idNameArr[0]);
+						fvBo = new FacetFilterValueBo();
+						fvBo.setId(Long.valueOf(idNameArr[0]));
+						fvBo.setName(idNameArr[1]);
+						fvBo.setItemCount(count.getCount());
+						/*
+						 * 全局排序值从缓存中取得   
+						 * lvshd 2014-07-28 12:14
+						 */
+						globalOrder = xiuAttrGroupCache.selectAttrValueForId(Long.valueOf(idNameArr[0]));
+						fvBo.setShowOrder(globalOrder==null?Integer.MIN_VALUE:globalOrder.intValue());
+						allAttrValIdSet.add(fvBo.getId().toString());
+						// 生成筛选区的filter条件
+						if(attrGroupJsonModel.isAll()){
+							bo.addFacetValueBo(fvBo);
+						}else{
+							if(indexof >=0 ){
+								bo.addFacetValueBo(fvBo);
+							}
+						}
+					}
+				}
+			} 
+		}
+		if(bo.getFacetValueBos()==null || bo.getFacetValueBos().size()==0)
+			return null;
+		List<List<String>> unselectAttrVals;
+		StringBuilder sb;
+		for (FacetFilterValueBo o : bo.getFacetValueBos()) {
+			unselectAttrVals = null;
+			if(attrValIdList != null && attrValIdList.size()>0){
+				unselectAttrVals = new ArrayList<List<String>>();
+				loop2:
+				for (List<String> list : attrValIdList) {
+					for (String str : list) {
+						if(allAttrValIdSet.contains(str))
+							continue loop2;
+					}
+					unselectAttrVals.add(list);
+				}
+			}
+			if(CollectionUtils.isEmpty(unselectAttrVals)){
+				o.setFilter(String.valueOf(o.getId()));
+			}else
+			{
+				sb = new StringBuilder();
+				for (List<String> list : unselectAttrVals) {
+					if(CollectionUtils.isNotEmpty(list)){
+						if(sb.length() > 0)
+							sb.append(";");
+						sb.append(StringUtils.join(list,"|"));
+					}
+				}
+				if(sb.length() > 0)
+					sb.append(";");
+				sb.append(String.valueOf(o.getId()));
+				o.setFilter(sb.toString());
+			}
+		}
+		//获取attrId
+		name = facetField.getName();
+		indexof = name.indexOf('_');
+		if(indexof <= 0){
+			return null;
+		}
+		idStr = name.substring(indexof+1, name.length());
+		if(StringUtils.isNumeric(idStr)){
+			bo.setFacetId(Long.valueOf(idStr));
+		}
+		/*
+		 * 属性值展示排序	 lvsd 2014-07-28 12:36
+		 * 
+		 *  先按自身的排序值降序 ，如果没有排序值，再按包含的商品数量降序
+		 *  
+		 *  尺码按其它的方法排序 liuchen 2015-11-24
+		 */
+		
+		if("规范尺码".equals(bo.getFacetDisplay().trim()) || "尺码".equals(bo.getFacetDisplay().trim())){ 
+			Collections.sort(bo.getFacetValueBos(), new  Comparator<FacetFilterValueBo>() {
+				@Override
+				public int compare(FacetFilterValueBo o1, FacetFilterValueBo o2) {
+//					int pos1 = StaticClothSizeCache.getInstance().getSize(o1.getName());
+//					int pos2 = StaticClothSizeCache.getInstance().getSize(o2.getName());
+//					return pos1 - pos2;
+					double pos1 = StaticClothSizeCache.getInstance().getSize(o1.getName().trim());
+					double pos2 = StaticClothSizeCache.getInstance().getSize(o2.getName().trim());
+					if ( pos1 > pos2 )
+						return 1;
+					else
+						return -1;
+				}
+			});
+		}else if(bo.getFacetValueBos() != null && bo.getFacetValueBos().size()>1){
+			Collections.sort(bo.getFacetValueBos(), new  Comparator<FacetFilterValueBo>() {
+				@Override
+				public int compare(FacetFilterValueBo o1, FacetFilterValueBo o2) {
+					int tmpVal = o2.getShowOrder()-o1.getShowOrder();
+					if(tmpVal!=0){
+						return (int)Math.signum(tmpVal);
+					}
+					return (int)Math.signum((o2.getItemCount() - o1.getItemCount()));
+				}
+			});
+		}
+		//规范颜色名称展示不正确，现在需要重新设置一下		William.zhang	20130725
+		/*
+		 * 添加排序值  lvshd 2014-08-04 14:45
+		 */
+		if("规范尺码".equals(bo.getFacetDisplay().trim())){
+			bo.setFacetDisplay("尺码");
+			bo.setShowOrder(Integer.MAX_VALUE-1);
+		}
+		if("规范颜色".equals(bo.getFacetDisplay().trim())){
+			bo.setFacetDisplay("颜色");
+			bo.setShowOrder(Integer.MAX_VALUE-2);
+		}
+		return bo;
+	}
+	
+}

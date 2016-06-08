@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/model
+END
+XiuSKUIndexModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/model/XiuSKUIndexModel.java
+END
+LexiconSolrModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/model/LexiconSolrModel.java
+END
+SuggestSolrModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/model/SuggestSolrModel.java
+END
+OclassSolrModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/model/OclassSolrModel.java
+END
+GoodsSolrModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/2224/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/solr/model/GoodsSolrModel.java
+END

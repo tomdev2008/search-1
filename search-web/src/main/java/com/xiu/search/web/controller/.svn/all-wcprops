@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/search/!svn/ver/2197/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller
+END
+SEOKeywordController.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/SEOKeywordController.java
+END
+AllCatalogController.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/AllCatalogController.java
+END
+SearchController.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/2372/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/SearchController.java
+END
+ConfigController.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/ConfigController.java
+END
+SkuAjaxController.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/search/!svn/ver/2185/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/SkuAjaxController.java
+END
+DialingTestController.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/DialingTestController.java
+END
+APIController.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/APIController.java
+END
+NewArrivalController.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/search/!svn/ver/2197/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/NewArrivalController.java
+END
+BaseController.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/search/!svn/ver/2197/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/BaseController.java
+END
+ListController.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/search/!svn/ver/1990/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/ListController.java
+END
+BrandForEbayContoller.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/search/!svn/ver/2215/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/BrandForEbayContoller.java
+END
+SearchForEbayController.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/search/!svn/ver/2215/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/SearchForEbayController.java
+END
+SuggestController.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/SuggestController.java
+END
+ListForEbayController.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/search/!svn/ver/1991/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/ListForEbayController.java
+END
+AjaxController.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/AjaxController.java
+END
+MktItemInfoController.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/MktItemInfoController.java
+END
+BrandController.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/search/!svn/ver/2371/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/BrandController.java
+END
+ErrorController.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/java/com/xiu/search/web/controller/ErrorController.java
+END

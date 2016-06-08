@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="XIU_CAT_RECOMMEND" >
+  <resultMap id="xiuCatItemRecommendMap" type="com.xiu.search.dao.model.XiuCatRecommend" >
+  	<result column="RECOMMEND_ID" property="recommendId" jdbcType="INTEGER" />
+    <result column="CAT_ID" property="catId" jdbcType="INTEGER" />
+    <result column="WEIGHT" property="weight" jdbcType="INTEGER" />
+    <result column="BIZ_TYPE" property="bizType" jdbcType="INTEGER" />
+    <result column="BIZ_ID" property="bizId" jdbcType="VARCHAR" />
+    <result column="IS_DISPLAY" property="isDisplay" jdbcType="BOOLEAN" />
+    <result column="GMT_CREATE" property="gmtCreate" jdbcType="DATE" />
+    <result column="GMT_MODIFY" property="gmtModify" jdbcType="DATE" />
+  </resultMap>
+  <resultMap id="xiuCatItemRecommendMap1" type="com.xiu.search.dao.model.XiuCatRecommend" >
+    <result column="CAT_ID" property="catId" jdbcType="INTEGER" />
+    <result column="WEIGHT" property="weight" jdbcType="INTEGER" />
+    <result column="BIZ_ID" property="bizId" jdbcType="VARCHAR" />
+    <result column="BIZ_TYPE" property="bizType" jdbcType="INTEGER" />
+  </resultMap>
+   <resultMap id="xiuCatItemRecommendMap2" type="com.xiu.search.dao.model.XiuCatRecommend" >
+    <result column="CAT_ID" property="catId" jdbcType="INTEGER" />
+    <result column="BIZ_MKT_TYPE" property="mktType" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="selectByPrimaryKeyForBusiness" parameterType="java.util.Map" resultMap="xiuCatItemRecommendMap1">
+    select 
+    CAT_ID,WEIGHT,BIZ_ID,BIZ_TYPE
+    from XIU_CAT_RECOMMEND
+    where CAT_ID = #{catalogId}
+    <if test="null!=types">
+    	and BIZ_TYPE in
+	    <foreach item="type" collection="types" open="(" separator="," close=")">
+	    	#{type}
+	    </foreach>
+    </if>
+    <if test="null!=mktType">
+    	 and BIZ_MKT_TYPE = #{mktType} 
+    </if>
+    and IS_DISPLAY='1'
+    and rownum &lt; 300
+     order by WEIGHT desc
+  </select>
+  
+  <select id="selectAllCatRecommend" parameterType="java.util.Map" resultMap="xiuCatItemRecommendMap2">
+    select CAT_ID,BIZ_MKT_TYPE from XIU_CAT_RECOMMEND where IS_DISPLAY='1'
+  </select>
+</mapper>

@@ -1,0 +1,25 @@
+##search.loggingRoot=/www/logs/search-web
+##search.loggingRoot=d:/
+
+search.highlight.prefix=<strong><span class="red">
+search.highlight.suffix=</span></strong>
+#
+encryption.auth_md5code=SZXIU2
+#liuzhe,wuyongqi,weibin,qingqing
+search.admin_id=1002557460,1002653037,1000373370,1002054698
+#The switch of warn
+search.log.warn.switch=true
+#The overtime of warn(ms)
+search.log.warn.overtime=300
+#ebay provider code
+search.ebay.pcode=1528
+
+
+#Cache options,max size only for lru cache
+search.cache.maxsize.mkt_tab_item_count=15360
+
+#bfd js of client name
+search.bfd.client_name=Czouxiu
+
+#Comprehensive sort
+search.comp.sort.enabled=true

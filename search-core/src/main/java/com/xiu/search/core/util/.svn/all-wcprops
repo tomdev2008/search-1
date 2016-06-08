@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/search/!svn/ver/1978/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/util
+END
+XiuSearchStringUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/util/XiuSearchStringUtils.java
+END
+CommonUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/search/!svn/ver/2376/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/util/CommonUtil.java
+END
+XiuSearchConfigBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/search/!svn/ver/2215/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/util/XiuSearchConfigBean.java
+END
+Constants.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/util/Constants.java
+END
+Page.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/util/Page.java
+END
+SolrPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/util/SolrPage.java
+END
+ThreadLocalData.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/util/ThreadLocalData.java
+END

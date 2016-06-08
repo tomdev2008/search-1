@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd"
+	default-autowire="byName">
+
+	<util:properties id="searchProperties" location="WEB-INF/search.properties"/>
+	<bean id="propertyPlaceHolderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<!-- 
+		<property name="locations">
+			<list>
+				<value>WEB-INF/dbconfig.properties</value>
+				<value>WEB-INF/search.properties</value>
+			</list>
+		</property>
+		-->
+		<property name="properties" ref="searchProperties"></property>
+	</bean>
+	<bean id="xiuSearchConfig" class="com.xiu.search.dao.config.XiuSearchConfig">
+		<constructor-arg index="0" ref="searchProperties"/>
+	</bean>
+	<!-- 
+	<bean id="dataSources_search" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="${search.db.url}" />
+		<property name="username" value="${search.db.username}" />
+		<property name="password" value="${search.db.password}" />
+		<property name="idleMaxAgeInMinutes" value="${search.db.idleMaxAge}" />
+		<property name="partitionCount" value="${search.db.partitionCount}" />
+		<property name="maxConnectionsPerPartition" value="${search.db.maxConnectionsPerPartition}" />
+		<property name="minConnectionsPerPartition" value="${search.db.minConnectionsPerPartition}" />
+		<property name="releaseHelperThreads" value="${search.db.releaseHelperThreads}" />
+		<property name="statementsCachedPerConnection" value="${search.db.statementsCachedPerConnection}" />
+		<property name="connectionTimeoutInMs" value="${search.db.connectionTimeoutInMs}" />
+		<property name="defaultAutoCommit" value="${search.db.defaultAutoCommit}" />
+	</bean>
+	<bean id="dataSources_goods" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="${goods.db.url}" />
+		<property name="username" value="${goods.db.username}" />
+		<property name="password" value="${goods.db.password}" />
+		<property name="idleMaxAgeInMinutes" value="${goods.db.idleMaxAge}" />
+		<property name="partitionCount" value="${goods.db.partitionCount}" />
+		<property name="maxConnectionsPerPartition" value="${goods.db.maxConnectionsPerPartition}" />
+		<property name="minConnectionsPerPartition" value="${goods.db.minConnectionsPerPartition}" />
+		<property name="releaseHelperThreads" value="${goods.db.releaseHelperThreads}" />
+		<property name="statementsCachedPerConnection" value="${goods.db.statementsCachedPerConnection}" />
+		<property name="connectionTimeoutInMs" value="${goods.db.connectionTimeoutInMs}" />
+		<property name="defaultAutoCommit" value="${goods.db.defaultAutoCommit}" />
+	</bean>
+	 -->
+	<!-- 
+	<bean id="sqlSessionFactoryForSearch" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:search-ibatis-config.xml</value>
+		</property>
+		<property name="dataSource" ref="dataSources_search" />
+	</bean>
+ 	-->	
+ 	<bean id="dataSources_goods" class="org.springframework.jndi.JndiObjectFactoryBean">  
+		<property name="jndiName" value="java:comp/env/jdbc/wcsxiu"/>
+		<property name="resourceRef" value="true"></property>
+	</bean>
+	<!-- 
+	<bean id="sqlSessionFactoryForGoods" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:goods-ibatis-config.xml</value>
+		</property>
+		<property name="dataSource" ref="dataSources_goods" />
+	</bean>
+	 -->
+	
+	<bean id="sqlSessionFactoryForGoods" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSources_goods" />
+		<property name="configLocation" value="classpath:goods-mybatis-config.xml" />
+	</bean>
+	
+	<bean id="dataSources_search" class="org.springframework.jndi.JndiObjectFactoryBean">  
+		<property name="jndiName" value="java:comp/env/jdbc/search"/>
+		<property name="resourceRef" value="true"></property>
+	</bean>
+<!-- 
+	<bean id="sqlSessionFactoryForSearch" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:search-ibatis-config.xml</value>
+		</property>
+		<property name="dataSource" ref="dataSources_search" />
+	</bean>
+ -->
+	
+	<bean id="sqlSessionFactoryForSearch" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSources_search" />
+		<property name="configLocation" value="classpath:search-mybatis-config.xml" />
+	</bean>
+	
+</beans>

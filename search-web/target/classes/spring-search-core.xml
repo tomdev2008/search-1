@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
+       default-lazy-init="true">
+       
+	<!-- Activates scanning of @Service -->
+    <context:component-scan base-package="com.xiu.search.core">
+    	<context:include-filter type="regex" expression=".service.*Impl"/>
+    	<context:include-filter type="regex" expression=".bof.*Impl"/>
+    </context:component-scan>
+    <bean id="suggestService" class="com.xiu.solr.lexicon.client.service.SuggestServiceImpl"></bean>
+    <bean id="queryParseService" class="com.xiu.solr.lexicon.client.service.QueryParseServiceImpl"></bean>
+    
+    <!--     从数据库读取配置service
+    <bean id="xiuSearchConfigService" class="com.xiu.search.core.service.impl.XiuSearchConfigServiceImpl" lazy-init="false">
+        <property name="xiuSearchConfigDAO" ref="xiuSearchConfigDAO" />
+    </bean> -->
+    
+    <!--     从数据库读取配置bean
+    <bean id="xiuSearchConfigBean" class="com.xiu.search.core.util.XiuSearchConfigBean" lazy-init="false" init-method="init">
+        <property name="xiuSearchConfigService" ref="xiuSearchConfigService" />
+    </bean>  -->
+    <bean class="com.xiu.search.core.config.XiuSearchPropertyImpl"
+		factory-method="getInstance" init-method="init"
+		lazy-init="false">
+		<property name="xiuSearchConfigDAO" ref="xiuSearchConfigDAO" />
+	</bean>
+    <!-- 
+	<bean id="systemInitParam" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="searchData.loggingRoot" value="${search.loggingRoot}" />
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean class="com.xiu.search.web.util.SystemInit"></bean>
+	 -->
+	 
+	 <!-- 属性项名称缓存 bean 【此Bean的加载顺序必须放在“从数据库读取筛选项类bean”之前】-->
+	<bean id="xiuAttrGroupInfoCache" class="com.xiu.search.core.attrval.XiuAttrGroupInfoCacheImpl" factory-method="getInstance" init-method="init" lazy-init="false">
+		<property name="xDataAttrDescDAO" ref="xDataAttrDescDAO" />
+	</bean>
+	
+	<!--  从数据库读取运营分类bean -->
+    <bean class="com.xiu.search.core.catalog.XiuCatalogTreeCacheImpl" factory-method="getInstance" init-method="init" lazy-init="false">
+		<property name="xiuCatalogDAO" ref="xiuCatalogDAO" />
+	</bean>
+	
+	<!--  从数据库读取筛选项类bean -->
+    <bean id="xiuAttrGroupCache" class="com.xiu.search.core.attrval.XiuAttrGroupCacheImpl" factory-method="getInstance" init-method="init" lazy-init="false">
+		<property name="xSalesCatalogCondDAO" ref="xSalesCatalogCondDAO" />
+	</bean>
+	
+	<!--  系统启动时，加载运营人员推荐的数据处理Bean -->
+    <bean id="xiuRecommonCache" class="com.xiu.search.core.recom.XiuRecommonCacheImpl" factory-method="getInstance" init-method="init" lazy-init="false">
+		<property name="memCachedService" ref="memCachedService" />
+		<property name="brandBusinessOptService" ref="brandBusinessOptService" />
+		<property name="catalogBusinessOptService" ref="catalogBusinessOptService" />
+	</bean>
+	
+	<bean id="xiuBrandInfoCache" class="com.xiu.search.core.catalog.XiuBrandInfoCacheImpl" factory-method="getInstance" init-method="init" lazy-init="false">
+		<property name="xDataBrandDAO" ref="xDataBrandDAO" />
+	</bean>
+
+
+	<bean id="deliverTypeService" class="com.xiu.search.core.service.impl.DeliverTypeServiceImpl" factory-method="getInstance" init-method="init" lazy-init="false">
+		<property name="deliverTypeDAO" ref="deliverTypeDAO" />
+	</bean>
+</beans>

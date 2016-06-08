@@ -1,0 +1,43 @@
+10
+
+dir
+2211
+http://192.168.3.5/svn/search/trunk/search2.5/search-web/src/main/webapp/views
+http://192.168.3.5/svn/search
+
+
+
+2015-05-28T01:15:36.644543Z
+2206
+chenyuechu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+295b0c03-8ea0-4bd8-9f19-99401f87629a
+
+pages
+dir
+
+macro
+dir
+
+common
+dir
+
+iteminfo
+dir
+
+templates
+dir
+

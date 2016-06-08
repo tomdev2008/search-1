@@ -1,0 +1,68 @@
+<!-- 页脚 开始 -->
+<div class="s_footer" id="pageFooter">
+  <div class="about_xiu">
+    <div class="about_left">
+      <ul class="about_ul">
+        <li>
+          <a target="_blank" href="http://www.xiu.com/about/aboutus.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">关于走秀</a>
+          |</li>
+
+        <li>
+          <a target="_blank" href="http://www.xiu.com/about/media.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">媒体报道</a>
+          |</li>
+        <li>
+          <a target="_blank" href="http://www.xiu.com/about/cooperate.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">品牌招商</a>
+          |</li>
+        <li>
+
+          <a target="_blank" href="http://www.xiu.com/about/job.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">加入走秀</a>
+          |</li>
+        <li>
+          <a target="_blank" href="http://www.xiu.com/about/link.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">友情链接</a>
+          |</li>
+        <li>
+          <a target="_blank" href="http://www.xiu.com/about/contact.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">联系我们</a>
+
+          |</li>
+		<li>
+          <a target="_blank" href="http://www.xiu.com/about/classifymap.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">网站地图</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ul class="s_f">
+
+    <li>
+      <a href="" onClick="return false;" style="cursor:default">正品保证<b class="s_f1"></b></a>
+    </li>
+    <li>
+      <a target="_blank" href="http://www.xiu.com/help/index.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">服务质量保证<b class="s_f2"></b></a>
+    </li>
+    <li class="fli_last">
+      <a target="_blank" href="http://www.xiu.com/help/index.shtml" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">7天退换货保障<b class="s_f3"></b></a>
+
+    </li>
+  </ul>
+  <p class="s_copyright">Copyright © 2008-2012
+    <a href="http://www.xiu.com/">Xiu.com</a>
+    版权所有 .
+    <a target="_blank" href="http://www.miibeian.gov.cn/" onClick="XIU.Window.ctraceClick(&#39;version=a|lev1=yj|lev2=yj|lev3=yj&#39;,&#39;abtest&#39;);">粤ICP备07502993号</a>
+  </p>
+  <div class="s_appreciation_div">
+
+  <!--  <a href="http://www.xiu.com/help/help1-8.shtml" target="_blank"><img src="http://www.xiustatic.com/static/img/footer/picc.jpg"/></a>
+    <a href="http://www.xiu.com/help/ICP.shtml" target="_blank"><img name="http://www.xiustatic.com/static/img/footer/binfo06.jpg"/></a>-->
+    <a href="http://www.xiu.com/help/ICP.shtml" target="_blank"><img src="http://www.xiustatic.com/static/img/footer/binfo02.jpg"></a>
+    <a href="http://net.china.com.cn/index.htm" target="_blank"><img src="http://www.xiustatic.com/static/img/footer/binfo01.jpg"></a>
+    <img src="http://www.xiustatic.com/static/img/footer/cjdwlogo.jpg"><br>
+	<a href="http://www.sznet110.gov.cn/netalarm/index.jsp" target="_blank"><img src="http://images.xiustatic.com/cms/advertisement/2012/02/15/c626a2d2-cf52-4177-98b6-6313d9144573.gif"></a>
+	<a href="http://www.sznet110.gov.cn/webrecord/innernet/Welcome.jsp?bano=4403101020565" target="_blank">
+	<img src="http://images.xiustatic.com/cms/advertisement/2012/02/15/f0a169d7-f9a5-4efe-a48a-2c0517ee3f79.gif"></a>
+    <a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1667062250" target="_blank"><img src="http://www.xiustatic.com/static/img/footer/binfo05.jpg"></a>
+    <a href="https://ss.cnnic.cn/verifyseal.dll?sn=2010090100100002003&amp;pa=621350" target="_blank"><img src="http://www.xiustatic.com/static/img/footer/knetSealLogo.jpg"></a>
+   <!-- <a href="https://www.alipay.com/aip/aip_validate_list.htm?trustId=AIP07012327" target="_blank"><img name="http://www.xiu.com/static/img/footer/binfo04.jpg" /></a>-->
+    <a href="http://www.ebs.gov.cn/EntCertificate.aspx?mainId=7ffba2a8-c8b9-4d36-b196-bf81c17253b5" target="_blank"><img src="http://www.xiustatic.com/static/img/footer/ebsIcon.jpg"></a>
+	<a href="http://www.xiu.com/help/service_new.shtml" target="_blank"><img src="http://www.xiustatic.com/static/img/footer/consumer_service.jpg"></a>
+  </div>
+</div>
+<!-- 页脚 结束 -->

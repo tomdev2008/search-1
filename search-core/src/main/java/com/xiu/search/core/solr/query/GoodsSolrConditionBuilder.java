@@ -1,0 +1,578 @@
+package com.xiu.search.core.solr.query;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.lucene.index.Term;
+import org.apache.lucene.search.BooleanClause.Occur;
+import org.apache.lucene.search.BooleanQuery;
+import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.search.TermRangeQuery;
+import org.apache.solr.client.solrj.SolrQuery.ORDER;
+import org.apache.solr.search.SolrQueryParser;
+
+import com.xiu.search.core.enumeration.RequestInletEnum;
+import com.xiu.search.core.model.CatalogBusinessOptModel;
+import com.xiu.search.core.solr.enumeration.DeliverTypeEnum;
+import com.xiu.search.core.solr.enumeration.FacetPriceRangeQueryEnum;
+import com.xiu.search.core.solr.enumeration.MktTypeEnum;
+import com.xiu.search.core.solr.enumeration.SearchSortOrderEnum;
+import com.xiu.search.core.solr.enumeration.SearchTimeRangeEnum.TimeRange;
+import com.xiu.search.core.solr.index.GoodsIndexFieldEnum;
+import com.xiu.search.core.solr.params.SearchFatParams;
+import com.xiu.search.core.util.XiuSearchStringUtils;
+import com.xiu.search.dao.config.XiuSearchConfig;
+import com.xiu.search.solrj.query.FacetAttrCondition;
+import com.xiu.search.solrj.query.QueryFieldCondition;
+import com.xiu.search.solrj.query.QueryFieldFacetCondition;
+import com.xiu.search.solrj.query.QueryFieldSortCondition;
+
+/**
+ * 搜索商品的solr条件builder类
+ * @author Leon
+ *
+ */
+public class GoodsSolrConditionBuilder {
+
+	/**
+	 * 构建搜索页面的主查询逻辑<br>
+	 * 不带权重，只进行boolean查询
+	 * TODO: 后期价格区间采用trie查询
+	 * @param solrParams
+	 * @param businessModel 运营设置的业务需求
+	 * @return
+	 */
+	public static List<QueryFieldCondition> createMainCondition(SearchFatParams solrParams,CatalogBusinessOptModel businessModel){
+		List<QueryFieldCondition> mainConds = new ArrayList<QueryFieldCondition>();
+		BooleanQuery weightBQ=null,brandBQ = null,attrBQ = null,mainBQ = new BooleanQuery();
+		BooleanQuery tempBq;
+		
+		// 搜索关键字
+		// 此部分仅搜索逻辑使用
+		if(null != solrParams.getKeyword()){
+			tempBq = new BooleanQuery();
+			String keyword=XiuSearchStringUtils.escapeSolrMetacharactor(solrParams.getKeyword());
+			tempBq.add(new TermQuery(new Term(GoodsIndexFieldEnum.DEFAULT_SEARCH.fieldName(), "\"" + keyword + "\"~500" )), Occur.MUST);
+			tempBq.add(new TermQuery(new Term(GoodsIndexFieldEnum.BRAND_NAME.fieldName(),keyword)),Occur.SHOULD);
+			tempBq.add(new TermQuery(new Term(GoodsIndexFieldEnum.BRAND_NAME_EN.fieldName(),keyword)),Occur.SHOULD);
+			tempBq.add(new TermQuery(new Term(GoodsIndexFieldEnum.ITEM_TAGS.fieldName(),keyword)),Occur.SHOULD);
+			mainBQ.add(tempBq, Occur.MUST);
+		}
+		
+		/*
+		 * 拼装运营分类查询条件
+		 */
+		if(null != solrParams.getCatalogId()){
+			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.OCLASS_IDS.fieldName(),solrParams.getCatalogId().toString())), Occur.MUST);
+		}
+		if (null != solrParams.getTimeRangeEnum()) {
+			TimeRange range = solrParams.getTimeRangeEnum().getTimeRange();
+			if (range !=null) {
+				mainBQ.add(new TermRangeQuery(GoodsIndexFieldEnum.ONSALE_TIME.fieldName(), range.getBegin(), range.getEnd(), true, true), Occur.MUST);
+			}
+		}
+		// 标签搜索
+//		if(null != solrParams.getSearchTags()){
+//			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.ITEM_TAGS.fieldName(), solrParams.getSearchTags())), Occur.MUST);
+//		}
+		if(null != solrParams.getSearchTagsId()){
+			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.ITEM_LABELS.fieldName(), solrParams.getSearchTagsId().toString())), Occur.MUST);
+		}
+		// 品牌参数
+//		if(null != solrParams.getBrandId()){
+//			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.BRAND_ID.fieldName(), solrParams.getBrandId().toString())), Occur.MUST);
+//		}
+		
+		// 品牌参数 新业务规则，支持多选	William.zhang	20130506
+		if(null != solrParams.getBrandIds() && solrParams.getBrandIds().size() > 0){
+			brandBQ = new BooleanQuery();
+			for(Long brandId : solrParams.getBrandIds()){
+				brandBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.BRAND_ID.fieldName(), brandId.toString())), Occur.SHOULD);
+			}
+			mainBQ.add(brandBQ, Occur.MUST);
+		}else{
+			// 品牌参数
+			if(null != solrParams.getBrandId()){
+				mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.BRAND_ID.fieldName(), solrParams.getBrandId().toString())), Occur.MUST);
+			}
+		}
+		
+		// 是否可购买
+		if(null != solrParams.getBuyableFlag() && solrParams.getBuyableFlag()){
+			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.ONSALE_FLAG.fieldName(), "1")), Occur.MUST);
+		}
+		
+		// 属性项
+//		if(null != solrParams.getAttrValIds()){
+//			for (String attrValId : solrParams.getAttrValIds()) {
+//				mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.ATTR_IDS.fieldName(), SolrQueryParser.escape(attrValId))),Occur.MUST);
+//			}
+//		}
+		
+		//属性项新业务逻辑，支持多选	William.zhang	20130507
+		
+		if(null != solrParams.getAttrValIdList()){
+			attrBQ = new BooleanQuery();
+			int num = 0;
+			BooleanQuery tempQ;
+			for(List<String> list : solrParams.getAttrValIdList()){
+				tempQ = new BooleanQuery();
+				int i = 0;		//防止用户输入的数据中有空数据，用来计数
+				for(String str : list){
+					if(str != null && !"".equals(str)){
+						num ++;
+						i++;
+						//当筛选项值是筛选项ID如：7000000000000000073时，使用分类ID+属性筛选项ID组合字符串标识”其他“属性值
+						if (solrParams.getCatalogId() !=null && str.length()==19 && Long.valueOf(str)>0) {
+							str = solrParams.getCatalogId()+ str;
+						}
+						tempQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.ATTR_IDS.fieldName(), XiuSearchStringUtils.escapeSolrMetacharactor(String.valueOf(str)))), Occur.SHOULD);
+					}
+				}
+				if(i>0){
+					attrBQ.add(tempQ,Occur.MUST);
+				}
+			}
+			if(num>0){
+				mainBQ.add(attrBQ, Occur.MUST);
+			}
+		}else{
+			// 属性项	老的业务逻辑，依然沿用
+			if(null != solrParams.getAttrValIds()){
+				for (String attrValId : solrParams.getAttrValIds()) {
+					mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.ATTR_IDS.fieldName(), SolrQueryParser.escape(attrValId))),Occur.MUST);
+				}
+			}
+			
+		}
+		
+		
+		// 价格范围
+		if(null != solrParams.getPriceRangeEnum()){
+			mainBQ.add(solrParams.getPriceRangeEnum().getTermRangeQuery(), Occur.MUST);
+		}
+		// 自定义价格范围
+		if(null != solrParams.getStartPrice() || null != solrParams.getEndPrice()){
+			String lowerTerm = null == solrParams.getStartPrice() ?  "0" : String.valueOf(solrParams.getStartPrice());
+			String upperTerm = null == solrParams.getEndPrice() ? "*" : String.valueOf(solrParams.getEndPrice());
+			mainBQ.add(new TermRangeQuery(GoodsIndexFieldEnum.PRICE_FINAL.fieldName(), lowerTerm, upperTerm, true, true),Occur.MUST);
+			//TODO: 后期采用trie查询
+//			mainBQ.add(NumericRangeQuery.newDoubleRange(field, min, max, minInclusive, maxInclusive));
+		}
+		
+		//店中店标识
+		if(null!=solrParams.getProviderCode()){
+			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.PROVIDER_CODE.fieldName(), solrParams.getProviderCode())), Occur.MUST);
+		}
+		
+		// 商品来源ebay
+		if(null != solrParams.getMktType()){
+			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.MKT_TYPE.fieldName(),Integer.toString(solrParams.getMktType().getType()))), Occur.MUST);
+		}
+		// 运营设置的权重相关的参数
+		if(null != businessModel){
+			//优先显示的商品和品牌
+			weightBQ = buildCatalogBusiness(businessModel);
+			//优先显示的分类
+			brandBQ = buildBrandIdBusiness(businessModel);
+			if(brandBQ != null && brandBQ.clauses().size()>0){
+				mainBQ.add(brandBQ, Occur.SHOULD);
+			}
+		}
+		
+        // 添加商品类型过滤	 修改了查询关联关系	Occur.MUST改为Occur.SHOULD 支持页面多选	William.zhang	20130514
+        if (null != solrParams.getItemShowType()) {
+            tempBq = new BooleanQuery();
+            for (Integer type : solrParams.getItemShowType()) {
+                tempBq.add(new TermQuery(new Term(GoodsIndexFieldEnum.ITEM_SHOW_TYPE.fieldName(), type.toString())),Occur.SHOULD); 
+            }
+            mainBQ.add(tempBq, Occur.MUST);
+        }
+        //用户选择的发货方式		William.zhang	20130514
+        if (null != solrParams.getChannel()){
+       	 DeliverTypeEnum deliverTypes = DeliverTypeEnum.getDeliverType(solrParams.getChannel());
+       	 if (deliverTypes != null) {
+       		 tempBq = new BooleanQuery();
+				for (int i = 0; i < deliverTypes.getDeliverPlaceCodes().length; i++) {
+		            tempBq.add(new TermQuery(new Term(GoodsIndexFieldEnum.SPACE_FLAG.fieldName(), deliverTypes.getDeliverPlaceCodes()[i])),Occur.SHOULD); 
+				}
+	            mainBQ.add(tempBq, Occur.MUST);
+			}
+       }
+        //由chen liu修改。因为在程序里定义死是不科学的
+        /*if (null != solrParams.getChannel()){
+        	 //DeliverTypeEnum deliverTypes = DeliverTypeEnum.getDeliverType(solrParams.getChannel());
+        	List<XPurchBaseBusinessModel> deliverTypes = DeliverTypeService.getInstance().getDeliverType(solrParams.getChannel());
+        	 if (deliverTypes != null && !deliverTypes.isEmpty()) {
+        		 tempBq = new BooleanQuery();
+ 				for (int i = 0; i < deliverTypes.size(); i++) {
+ 					XPurchBaseBusinessModel model = deliverTypes.get(i);
+		            tempBq.add(new TermQuery(new Term(GoodsIndexFieldEnum.SPACE_FLAG.fieldName(), model.getSpaceFlag())),Occur.SHOULD); 
+				}
+	            mainBQ.add(tempBq, Occur.MUST);
+			}
+        }*/
+		
+        /*
+         * ②  addTime:2013-06-18 15:30
+         * 查询相似商品分组数据 
+         */
+        if(null!=solrParams.getSimilarGroupId()){
+			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.SIMILAR_GROUPID.fieldName(), solrParams.getSimilarGroupId())), Occur.MUST);
+		}
+        	
+		// 组合BQ
+        QueryFieldCondition cond;
+		boolean weightFlag = (null != weightBQ && weightBQ.clauses().size()>0);
+		if(weightFlag){
+			BooleanQuery collectQuery = new BooleanQuery();
+			mainBQ.setBoost(0f);
+			collectQuery.add(mainBQ,Occur.MUST);
+			collectQuery.add(weightBQ,Occur.SHOULD);
+			cond = new QueryFieldCondition(collectQuery);
+			mainConds.add(cond);
+		}else {
+			cond = new QueryFieldCondition(mainBQ);
+			mainConds.add(cond);
+		}
+		
+		/*
+		 * 注释日期：2013-06-18 15：00   改用①处的逻辑
+		 */
+//		if(mainBQ.clauses().size() > 0){
+//			cond = new QueryFieldCondition(mainBQ);
+//			if(weightFlag)
+//				cond.setBoost(0f);
+//			mainConds.add(cond);
+//		}
+		// 运营分类的查询条件
+//		if(null != solrParams.getCatalogQueryStr()&&mainBQ.clauses().size()>0){
+//			cond = new QueryFieldCondition(solrParams.getCatalogQueryStr(),QueryFieldOperator.AND);
+//			cond.setBoost(0f);
+//			mainConds.add(cond);
+//		}else if(null != solrParams.getCatalogQueryStr()&&mainBQ.clauses().size()==0){
+//			cond = new QueryFieldCondition(solrParams.getCatalogQueryStr(),QueryFieldOperator.OR);
+//			cond.setBoost(0f);
+//			mainConds.add(cond);
+//		}
+		// 查询相似商品分组数据  注释日期：2013-06-18 15：30  改用②的逻辑
+//		if(null!=solrParams.getSimilarGroupId()){
+//			mainBQ.add(new TermQuery(new Term(GoodsIndexFieldEnum.SIMILAR_GROUPID.fieldName(), solrParams.getSimilarGroupId())), Occur.MUST);
+//			cond = new QueryFieldCondition(mainBQ);
+//			mainConds.add(cond);
+//		}
+		return mainConds;
+	}
+	
+	/**
+	 * 构建搜索页面的主查询逻辑<br>
+	 * 不带权重，只进行boolean查询
+	 * TODO: 后期价格区间采用trie查询
+	 * @param solrParams
+	 * @return
+	 */
+	public static List<QueryFieldCondition> createMainCondition(SearchFatParams solrParams){
+		return createMainCondition(solrParams, null);
+	}
+	
+	/**
+	 * 构建筛选区分组查询条件<br>
+	 * 包含品牌、价格区间、筛选区
+	 * @param brandFacetFlag 品牌筛选ID，false 不分组
+	 * @param priceFacetFlag 是否需要价格区间筛选，false 不分组
+	 * @param facetFields 属性项筛选数组，null 不分组
+	 * @return
+	 */
+	public static List<QueryFieldFacetCondition> createFilterFacetCondition(boolean brandFacetFlag, boolean priceFacetFlag,String[] facetFields){
+		List<QueryFieldFacetCondition> facetConds = new ArrayList<QueryFieldFacetCondition>();
+		QueryFieldFacetCondition facetCond = null;
+		FacetAttrCondition facetAttrCond = null;
+		// 品牌ID未选中，则进行品牌分组
+		if(brandFacetFlag){
+			facetCond = new QueryFieldFacetCondition(GoodsIndexFieldEnum.BRAND_ID_NAME.fieldName());
+			facetAttrCond = new FacetAttrCondition();
+			facetAttrCond.setLimit(200);
+			facetAttrCond.setMincount(1);
+			facetCond.setFacetAttr(facetAttrCond);
+			facetConds.add(facetCond);
+		}
+		// 价格区间未输入或选中，则进行价格区间分组
+		if(priceFacetFlag){
+			facetCond = new QueryFieldFacetCondition();
+			for (FacetPriceRangeQueryEnum em : FacetPriceRangeQueryEnum.values()) {
+				facetCond.addFacetQuery(em.getTermRangeQuery().toString());
+			}
+			facetCond.setFacetAttr(facetAttrCond);
+			facetConds.add(facetCond);
+		}
+		// 如果需要其他筛选条件
+		if(null != facetFields && facetFields.length > 0){
+			facetCond = new QueryFieldFacetCondition(facetFields);
+			facetAttrCond = new FacetAttrCondition();
+			facetAttrCond.setLimit(80);
+			facetAttrCond.setMincount(1);
+			facetConds.add(facetCond);
+		}
+		return facetConds;
+	}
+	
+	public static QueryFieldFacetCondition createExtFacetCondition(String[] facetFields,int limit){
+		if(null == facetFields)
+			return null;
+		QueryFieldFacetCondition facetCond = null;
+		FacetAttrCondition facetAttrCond = null;
+		facetCond = new QueryFieldFacetCondition(facetFields);
+		facetAttrCond = new FacetAttrCondition();
+		facetAttrCond.setLimit(limit);
+		facetAttrCond.setMincount(1);
+		facetCond.setFacetAttr(facetAttrCond);
+		return facetCond;
+	}
+	
+	/**
+	 * 构建搜索页面的排序逻辑 <br>
+	 * 上下架排序优先 <br>
+	 * 1 - 价格升序 <br>
+	 * 2 - 价格降序 <br>
+	 * 3 - 折扣升序 <br>
+	 * 4 - 折扣降序 <br>
+	 * 5 - 总销量升序 <br>
+	 * 6 - 总销量降序 <br>
+	 * 7 - 上架时间升序 <br>
+	 * 8 - 上架时间降序 <br>
+	 * 9 - 得分降序/销售额降序 <br>
+	 * 10 - 总销售额升序 <br>
+	 * 11 - 总销售额降序 <br>
+	 * 说明：当前总销售额和总销量默认存的一周的
+	 * @return
+	 */
+	@Deprecated
+	public static List<QueryFieldSortCondition> createSortCondition(SearchSortOrderEnum sort, MktTypeEnum mktType ,boolean withBusiness){
+		List<QueryFieldSortCondition> sortConds = new ArrayList<QueryFieldSortCondition>();
+		//始终是以上下架排序优先
+		sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ONSALE_FLAG.fieldName(), ORDER.desc));
+		switch (sort.getSortOrder()) {
+		case 1:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.PRICE_FINAL.fieldName(), ORDER.asc));
+			break;
+			
+		case 2:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.PRICE_FINAL.fieldName(), ORDER.desc));
+			break;
+			
+		case 3:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.DISCOUNT.fieldName(), ORDER.asc));
+			break;
+			
+		case 4:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.DISCOUNT.fieldName(), ORDER.desc));
+			break;
+			
+		case 5:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_VOLUME.fieldName(), ORDER.asc));
+			break;
+			
+		case 6:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_VOLUME.fieldName(), ORDER.desc));
+			break;
+			
+		case 7:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ONSALE_TIME.fieldName(), ORDER.asc));
+			break;
+			
+		case 8:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ONSALE_TIME.fieldName(), ORDER.desc));
+			break;
+			
+		case 9:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SCORE.fieldName(), ORDER.desc));
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_AMOUNT.fieldName(), ORDER.desc));
+			
+			if (null != mktType && !MktTypeEnum.XIU.equals(mktType)) {
+	            sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ITEMSCORE.fieldName(), ORDER.desc));
+			}
+			break;
+			
+		case 10:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_AMOUNT.fieldName(), ORDER.asc));
+			break;
+			
+		case 11:
+			if(withBusiness){
+				sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SCORE.fieldName(), ORDER.desc));
+			}
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_AMOUNT.fieldName(), ORDER.desc));
+            if (null != mktType && !MktTypeEnum.XIU.equals(mktType)) {
+                sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ITEMSCORE.fieldName(), ORDER.desc));
+            }
+			break;
+			
+		default:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SCORE.fieldName(), ORDER.desc));
+			break;
+		}
+		return sortConds;
+	}
+	
+	public static List<QueryFieldSortCondition> createSortCondition(SearchFatParams solrParams,CatalogBusinessOptModel businessModel,boolean needMoreLinkSort){
+		List<QueryFieldSortCondition> sortConds = new ArrayList<QueryFieldSortCondition>();
+		sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ONSALE_FLAG.fieldName(), ORDER.desc));
+		if (solrParams == null ) {
+			return null;
+		}
+		SearchSortOrderEnum sort =  solrParams.getSort() == null ? SearchSortOrderEnum.SCORE_AMOUNT_DESC : solrParams.getSort();
+//		RequestInletEnum inlet = solrParams.getRequestInletEnum();
+		MktTypeEnum mktType = solrParams.getMktType();
+		switch (sort.getSortOrder()) {
+		case 1:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.PRICE_FINAL.fieldName(), ORDER.asc));
+			break;
+			
+		case 2:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.PRICE_FINAL.fieldName(), ORDER.desc));
+			break;
+			
+		case 3:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.DISCOUNT.fieldName(), ORDER.asc));
+			break;
+			
+		case 4:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.DISCOUNT.fieldName(), ORDER.desc));
+			break;
+			
+		case 5:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_VOLUME.fieldName(), ORDER.asc));
+			break;
+			
+		case 6:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_VOLUME.fieldName(), ORDER.desc));
+			break;
+			
+		case 7:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ONSALE_TIME.fieldName(), ORDER.asc));
+			break;
+			
+		case 8:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ONSALE_TIME.fieldName(), ORDER.desc));
+			break;
+			
+		case 9:
+//			去除MoreLink
+//            if(needMoreLinkSort){
+//                sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SIMILAR_LEVEL.fieldName(), ORDER.desc));
+//            }
+            sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SCORE.fieldName(), ORDER.desc));
+            sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_AMOUNT.fieldName(), ORDER.desc));
+            if(MktTypeEnum.EBAY.equals(mktType)){
+                //sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ITEMSCORE.fieldName(), ORDER.desc));
+            	sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ITEM_PIQ.fieldName(), ORDER.desc));
+            }
+            break;
+			
+		case 10:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_AMOUNT.fieldName(), ORDER.asc));
+			break;
+			
+		case 11:
+			if(!MktTypeEnum.EBAY.equals(mktType)  &&  Boolean.valueOf(XiuSearchConfig.getPropertieValue(XiuSearchConfig.COMP_SORT_ENABLED))){
+                if (RequestInletEnum.LIST_PAGE.equals(solrParams.getRequestInletEnum())) {
+                    sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.CATALOG_SCORE.fieldName()+solrParams.getCatalogId(), ORDER.desc));
+                } else if (RequestInletEnum.BRAND_PAGE.equals(solrParams.getRequestInletEnum())) {
+                    sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.BRAND_SCORE.fieldName(), ORDER.desc));
+                }
+			}
+			
+			if(businessModel!=null && businessModel.getGoodsItemTopShow() != null){
+				sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SCORE.fieldName(), ORDER.desc));
+			}
+			
+//			去除MoreLink
+//			if(needMoreLinkSort){
+//				sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SIMILAR_LEVEL.fieldName(), ORDER.desc));
+//			}
+			
+			if(solrParams!=null && solrParams.getSearchTagsId() != null){
+				sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ITEM_LABEL_SORT.fieldName()+solrParams.getSearchTagsId(), ORDER.desc));
+			}
+			if(MktTypeEnum.EBAY.equals(mktType)){
+				sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ITEM_PIQ.fieldName(), ORDER.desc));
+				sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.PRICE_FINAL.fieldName(), ORDER.asc));
+//              sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.ITEMSCORE.fieldName(), ORDER.desc));
+            } else {
+                sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SALES_AMOUNT.fieldName(), ORDER.desc));
+            }
+			if(null != businessModel 
+					&& businessModel.getCatalogId()!=null){
+				sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.CBRAND_WEIGHT_PREFIX.fieldName()+businessModel.getCatalogId(), ORDER.desc));
+			}
+			break;
+			
+		case 12:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SIMILAR_SCORE.fieldName(), ORDER.asc));
+			break;
+			
+		case 13:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SIMILAR_SCORE.fieldName(), ORDER.desc));
+			break;
+			
+		default:
+			sortConds.add(new QueryFieldSortCondition(GoodsIndexFieldEnum.SCORE.fieldName(), ORDER.desc));
+			break;
+		}
+		return sortConds;
+	}
+	
+	@Deprecated
+	public static List<QueryFieldSortCondition> createSortCondition(SearchSortOrderEnum sort, MktTypeEnum mktType){
+		return createSortCondition(sort, mktType,false);
+	}
+	
+	private static BooleanQuery buildCatalogBusiness(CatalogBusinessOptModel model){
+		BooleanQuery ret = new BooleanQuery();
+		Integer var;
+		String varStr;
+		int maxBoost = 100000;
+		TermQuery tq;
+		if(null != model.getGoodsItemTopShow() && model.getGoodsItemTopShow().size()>0){
+			for (int i=0,len = model.getGoodsItemTopShow().size();i<len;i++) {
+				varStr = model.getGoodsItemTopShow().get(i);
+				if(varStr == null)
+					continue;
+				tq = new TermQuery(new Term(GoodsIndexFieldEnum.PART_NUMBER.fieldName(), varStr));
+				tq.setBoost(maxBoost-i*10);
+				ret.add(tq,Occur.SHOULD);
+			}
+		}
+		if(null != model.getBrandGoodsItemTopShow() && model.getBrandGoodsItemTopShow().size()>0){
+			Iterator<Integer> ite =  model.getBrandGoodsItemTopShow().keySet().iterator();
+			maxBoost = 5000;
+			int i = 0;
+			while (ite.hasNext() && (var = ite.next()) != null) {
+				tq = new TermQuery(new Term(GoodsIndexFieldEnum.BRAND_ID.fieldName(), Integer.toString(var)));
+				tq.setBoost(maxBoost-i*10);
+				ret.add(tq,Occur.SHOULD);
+				i++;
+			}
+		}
+		return ret;
+	}
+
+	private static BooleanQuery buildBrandIdBusiness(CatalogBusinessOptModel model){
+		BooleanQuery ret = new BooleanQuery();
+		Integer var;
+		TermQuery tq;
+		if(null != model.getBrandCatalogIdTopShow() && model.getBrandCatalogIdTopShow().size()>0){
+			Iterator<Integer> ite =  model.getBrandCatalogIdTopShow().keySet().iterator();
+			int len = (model.getBrandCatalogIdTopShow().size()+1) * 100;
+			while (ite.hasNext() && (var = ite.next()) != null) {
+				tq = new TermQuery(new Term(GoodsIndexFieldEnum.OCLASS_IDS.fieldName(), Integer.toString(var)));
+				tq.setBoost(len);
+				ret.add(tq,Occur.SHOULD);
+				len-=10;
+			}
+		}
+		return ret;
+	}
+	
+}

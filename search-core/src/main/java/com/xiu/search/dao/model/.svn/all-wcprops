@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/search/!svn/ver/2236/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model
+END
+XPurchBaseBusinessModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/search/!svn/ver/2236/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XPurchBaseBusinessModel.java
+END
+XiuSearchConfigModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XiuSearchConfigModel.java
+END
+XiuSeoKeywordModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XiuSeoKeywordModel.java
+END
+XTag.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XTag.java
+END
+XiuBrandRecommend.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XiuBrandRecommend.java
+END
+XiuCatRecommend.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XiuCatRecommend.java
+END
+XiuCatalogDBModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XiuCatalogDBModel.java
+END
+XDataBrand.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XDataBrand.java
+END
+XiuSimilarProducts.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XiuSimilarProducts.java
+END
+XDataAttrDesc.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/search/!svn/ver/1965/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XDataAttrDesc.java
+END
+XDataCatalog.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XDataCatalog.java
+END
+XSalesCatalogCond.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/model/XSalesCatalogCond.java
+END

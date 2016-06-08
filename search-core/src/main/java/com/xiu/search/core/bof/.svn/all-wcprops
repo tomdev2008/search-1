@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/search/!svn/ver/2202/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof
+END
+FacetFilterBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/search/!svn/ver/2322/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/FacetFilterBof.java
+END
+CatalogBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/search/!svn/ver/1978/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/CatalogBof.java
+END
+ListBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/ListBof.java
+END
+SEOKeywordBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/SEOKeywordBof.java
+END
+SuggestBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/SuggestBof.java
+END
+XTagBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/XTagBof.java
+END
+SearchBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/SearchBof.java
+END
+BrandBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/BrandBof.java
+END
+MktItemInfoBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/MktItemInfoBof.java
+END
+NewArrivalListBof.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/search/!svn/ver/2199/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/NewArrivalListBof.java
+END

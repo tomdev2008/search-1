@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/search/!svn/ver/2230/trunk/search2.5/search-core/src/main/resources
+END
+XIU_BRAND_RECOMMEND_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_BRAND_RECOMMEND_SqlMap.xml
+END
+XIU_GOODS_CATGROUP_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_GOODS_CATGROUP_SqlMap.xml
+END
+XIU_CAT_RECOMMEND_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_CAT_RECOMMEND_SqlMap.xml
+END
+XIU_GOODS_X_DATA_BRAND_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/1966/trunk/search2.5/search-core/src/main/resources/XIU_GOODS_X_DATA_BRAND_SqlMap.xml
+END
+goods-mybatis-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/search/!svn/ver/2230/trunk/search2.5/search-core/src/main/resources/goods-mybatis-config.xml
+END
+XIU_AttrGroup_DESC_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/search/!svn/ver/1965/trunk/search2.5/search-core/src/main/resources/XIU_AttrGroup_DESC_SqlMap.xml
+END
+XIU_GOODS_X_SALES_CATALOG_COND_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_GOODS_X_SALES_CATALOG_COND_SqlMap.xml
+END
+XIU_GOODS_X_PURCH_BASE_BUSINESS_MODEL_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/search/!svn/ver/2229/trunk/search2.5/search-core/src/main/resources/XIU_GOODS_X_PURCH_BASE_BUSINESS_MODEL_SqlMap.xml
+END
+XIU_ITEM_INFO_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_ITEM_INFO_SqlMap.xml
+END
+XIU_CATALOG_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_CATALOG_SqlMap.xml
+END
+XIU_SEARCH_CONFIG_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_SEARCH_CONFIG_SqlMap.xml
+END
+XIU_SEO_Keyword_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_SEO_Keyword_SqlMap.xml
+END
+XIU_TAG_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/XIU_TAG_SqlMap.xml
+END
+search-mybatis-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/resources/search-mybatis-config.xml
+END

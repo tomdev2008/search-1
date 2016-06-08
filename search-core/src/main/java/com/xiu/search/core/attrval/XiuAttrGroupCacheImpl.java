@@ -1,0 +1,382 @@
+package com.xiu.search.core.attrval;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import net.sf.json.JSONArray;
+
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.xiu.search.core.bof.CatalogBof;
+import com.xiu.search.core.catalog.CatalogModel;
+import com.xiu.search.core.catalog.XiuCatalogTreeCache;
+import com.xiu.search.core.config.XiuSearchProperty;
+import com.xiu.search.core.model.AttrGroupJsonModel;
+import com.xiu.search.core.model.AttrGroupJsonModel.AttrGroupTypeEnum;
+import com.xiu.search.core.solr.index.GoodsIndexFieldEnum;
+import com.xiu.search.dao.XSalesCatalogCondDAO;
+
+/**
+ * 属性项ID缓存类接口
+ * @author Willian.zhang		20130705
+ *
+ */
+public class XiuAttrGroupCacheImpl extends XiuAttrGroupCache {
+
+	private final static Logger log = Logger.getLogger(XiuAttrGroupCacheImpl.class);
+	private volatile Map<Long,Map<String,AttrGroupJsonModel>> attrGroupMap = new HashMap<Long,Map<String,AttrGroupJsonModel>>();
+	private volatile Map<Long,Integer> attrValueSeqMap = new HashMap<Long,Integer>();
+	
+	private final static String COLOR_ID="7000000000000027249";//官网规范颜色的属性项ID
+	private final static String SIZE_ID="7000000000000027250";//官网规范尺码的属性项ID
+	
+	
+	private static String[] EMPTY_STRING_ARRAY = new String[0];
+	@Autowired
+	private XSalesCatalogCondDAO xSalesCatalogCondDAO;
+	
+	/**
+	 * 初始化属性项数据
+	 */
+	@Override
+	public void init(){
+		log.info("初始化XiuAttrGroupCacheImpl，执行init()");
+		this.reLoadAttr();
+		this.reLoadAttrValue();
+		this.reloadTimer();
+	}
+	
+	/**
+	 * 加载属性项数据
+	 */
+	@Override
+	public void reLoadAttr(){
+		try{
+			log.info("执行XiuAttrGroupCacheImpl.reLoadAttr()开始");
+			//分类id：属性组[{id:'',name:'',type:'',order:'',display:''}]
+			Map<Long, String> map = xSalesCatalogCondDAO.selectAllForAttrGroup();
+			Map<Long,Map<String,AttrGroupJsonModel>> mapTemp = new HashMap<Long,Map<String,AttrGroupJsonModel>>();
+	        List<CatalogModel> categoryList = XiuCatalogTreeCache.getInstance().getTree12();//取分类
+	        if(categoryList != null){
+	        	Map<String,AttrGroupJsonModel> groupMapTemp;
+	        	CatalogModel cat1,cat2;
+	        	for (CatalogModel cat : categoryList) {
+	        		if(cat.getParentCatalogId() > 0)
+	        			continue;
+	        		// 处理一级分类
+	        		//key :属性项id
+	        		groupMapTemp = parseJsonToAttrCatalogLinkMap(map.get(Long.valueOf(cat.getCatalogId())));
+	        		mapTemp.put((long)cat.getCatalogId(), groupMapTemp);
+	        		if(null != cat.getChildIdList() && cat.getChildIdList().size()>0){//判断二级是否为空
+	        			for (Integer catId1 : cat.getChildIdList()) {
+	        				cat1 = XiuCatalogTreeCache.getInstance().getTreeNodeById12(String.valueOf(catId1));
+	        				if(cat1 == null)
+	        					continue;
+	        				// 处理二级
+	        				groupMapTemp = parseJsonToAttrCatalogLinkMap(map.get(Long.valueOf(cat1.getCatalogId())));
+	        				if(groupMapTemp == null || groupMapTemp.size() <= 0){
+	        					groupMapTemp = mapTemp.get(Long.valueOf(cat1.getParentCatalogId()));
+	        				}
+	                		mapTemp.put((long)cat1.getCatalogId(), groupMapTemp);
+	                		if(null != cat1.getChildIdList() && cat1.getChildIdList().size()>0){//判断三级是否为空
+	                			for (Integer catId2 : cat1.getChildIdList()) {
+	                				cat2 = XiuCatalogTreeCache.getInstance().getTreeNodeById12(String.valueOf(catId2));
+	                				if(cat2 == null)
+	                					continue;
+	                				// 处理三级
+	                				groupMapTemp = parseJsonToAttrCatalogLinkMap(map.get(Long.valueOf(cat2.getCatalogId())));
+	                				if(groupMapTemp == null || groupMapTemp.size() <= 0){
+	                					groupMapTemp = mapTemp.get(Long.valueOf(cat2.getParentCatalogId()));
+	                				}
+	                				mapTemp.put((long)cat2.getCatalogId(), groupMapTemp);
+	                			}
+	                		}
+	        			}
+	        		}
+				}
+	        }
+			attrGroupMap = mapTemp;
+			mapTemp=null;
+			map = null;
+			log.info("执行XiuAttrGroupCacheImpl.reLoadAttr()结束");
+		}catch(Exception e){
+			log.error("执行XiuAttrGroupCacheImpl.reLoadAttr()发生异常", e);
+		}
+	}
+	/**
+	 * 加载属性项值顺序数据
+	 */
+	@Override
+	public void reLoadAttrValue(){
+		try{
+			log.info("执行XiuAttrGroupCacheImpl.reLoadattrValue()开始");
+			Map<Long, Integer> mapTemp = xSalesCatalogCondDAO.selectAllForAttrValue();
+//			Map<Long, Integer> mapTemp = new HashMap<Long, Integer>();
+//			mapTemp.put(666L, 1000);
+//			mapTemp.put(123L, 10);
+//			mapTemp.put(77L, 100);
+			if(mapTemp != null ){
+		    	attrValueSeqMap = mapTemp;
+		    }else{
+		    	log.info("【XiuAttrGroupCacheImpl】在数据库中没有查询到属性值的信息");
+		    }
+			log.info("执行XiuAttrGroupCacheImpl.reLoadattrValue()结束");
+		}catch(Exception e){
+			log.error("执行XiuAttrGroupCacheImpl.reLoadattrValue()发生异常", e);
+		}
+	}
+	/**
+	 * 根据属性项ID，取得对应的属性项
+	 * @param attrGroupId
+	 * @return
+	 */
+	@Override
+	public Map<String,AttrGroupJsonModel>  selectByPrimaryKeyForJson(Long categoryId) {
+		if(categoryId != null){
+			return attrGroupMap.get(categoryId);
+		}
+		return null;
+	}
+	
+	/**
+	 * 根据属性项ID集合，取得集合对应的属性项
+	 * @param attrCatalogIds
+	 * @return
+	 */
+//	@Override
+//	public Map<String,AttrGroupJsonModel> selectByPrimaryKeysForJson(List<Long> attrCatalogIds) {
+//		if(attrCatalogIds != null && attrCatalogIds.size()>0){
+//			Map<String,AttrGroupJsonModel> mapTemp = new HashMap<String,AttrGroupJsonModel>();
+//			Map<Long,Map<String,AttrGroupJsonModel>> attrGroupMap1 = attrGroupMap;
+//			for(long i : attrCatalogIds){
+//				if(attrGroupMap1.containsKey(i+"")){
+//					mapTemp.putAll(attrGroupMap1.get(i));
+//				}
+//			}
+//			attrGroupMap1 = null;
+//			return mapTemp;
+//		}else{
+//			return null;
+//		}
+//	}
+	public Integer selectAttrValueForId(Long id){
+		if(id != null){
+			return attrValueSeqMap.get(id);
+		}
+		return null;
+	}
+	/**
+	 * 定时器
+	 */
+	private void reloadTimer(){
+		Timer t=new Timer(true);
+		TimerTask tk=new TimerTask() {
+			@Override
+			public void run() {
+				reLoadAttr();
+				reLoadAttrValue();
+			}
+		};
+		//N分钟之后 ，每隔N分钟执行一次
+		t.scheduleAtFixedRate(tk, XiuSearchProperty.getInstance().getAttrRefreshfrequency(), XiuSearchProperty.getInstance().getAttrRefreshfrequency());
+	}
+
+	private Map<String,AttrGroupJsonModel> parseJsonToAttrCatalogLinkMap(String json){
+//		//伪造的运营分类数据	William.zhang	20130524
+//		json = "[{\"aliasName\":\"\",\"attrGroupValueId\":[],\"display\":\"1\",\"id\":\"7000000000000000091\",\"isAll\":\"1\",\"name\":\"图案样式\",\"order\":\"4\",\"type\":\"0\"},{\"aliasName\":\"\",\"attrGroupValueId\":[],\"display\":\"1\",\"id\":\"7000000000000000090\",\"isAll\":\"1\",\"name\":\"袖长\",\"order\":\"2\",\"type\":\"0\"},{\"aliasName\":\"\",\"attrGroupValueId\":[],\"display\":\"1\",\"id\":\"7000000000000019770\",\"isAll\":\"1\",\"name\":\"服装风格\",\"order\":\"3\",\"type\":\"0\"}]";
+		Map<String, AttrGroupJsonModel> attrGroups=new LinkedHashMap<String, AttrGroupJsonModel>();
+		List<AttrGroupJsonModel> attrGroupList = new ArrayList<AttrGroupJsonModel>();
+		if(StringUtils.isNotBlank(json)){
+			@SuppressWarnings("unchecked")
+			List<Map<String,Object>> array=JSONArray.fromObject(json);
+			Map<String,Object> _obj;
+			AttrGroupJsonModel _attrModel;
+			for (int i = 0,len=array.size(); i < len; i++) {
+				_obj=(Map<String,Object>)array.get(i);
+				_attrModel = this.transformJsonItemToModel(_obj);
+				if(null != _attrModel && _attrModel.isDisplayFlag()){
+					attrGroupList.add(_attrModel);
+				}
+				// 0:不展示 1:展示 
+//			if("1".equals(getValueForString(_obj.get("display")))){
+//				_type = getValueForString(_obj.get("type"));
+//				_type = StringUtils.isBlank(_type) ? "0" : _type;
+//				_name = getValueForString(_obj.get("name"));
+//				_id = getValueForString(_obj.get("id"));
+//				if("0".equals(_type) && StringUtils.isNotBlank(_id) && StringUtils.isNotBlank(_name)){
+//					attrGroups.put(GoodsIndexFieldEnum.ATTRS_PREFIX.fieldName()+_id, _name);
+//				}else if("1".equals(_type)){
+//					_id = "0";
+//					_name = StringUtils.isBlank(_name) ? "品牌类型" : _name;
+//					attrGroups.put(GoodsIndexFieldEnum.ATTRS_PREFIX.fieldName()+_id, _name);
+//				}
+//			}
+			}
+		}
+		
+		//处理规范颜色和规范尺码
+		this.addColorAndSizeAttr(attrGroupList);
+		
+		//排序
+		Collections.sort(attrGroupList,new Comparator<AttrGroupJsonModel>() {
+			@Override
+			public int compare(AttrGroupJsonModel o1, AttrGroupJsonModel o2) {
+				return o2.getOrder() - o1.getOrder();
+			}
+		});
+		for (AttrGroupJsonModel m : attrGroupList) {
+			attrGroups.put(GoodsIndexFieldEnum.ATTRS_PREFIX.fieldName()+m.getId(), m);
+		}
+		return attrGroups;
+	}
+	
+	private AttrGroupJsonModel transformJsonItemToModel(Map<String,Object> itemMap){
+		if(null == itemMap)
+			return null;
+		String[] attrGroupValueIds = null;
+		try {
+			attrGroupValueIds = (String[]) ((JSONArray) itemMap.get("attrGroupValueId")).toArray(new String[]{});
+		} catch (Exception e) {// ignore this exception
+		}
+		AttrGroupJsonModel ret = new AttrGroupJsonModel();
+		ret.setAll("1".equals(itemMap.get("isAll")));
+		if(!ret.isAll()
+				 && (attrGroupValueIds == null || attrGroupValueIds.length == 0))
+			return null;
+		ret.setAttrGroupValueIds(attrGroupValueIds);
+		AttrGroupTypeEnum type = AttrGroupTypeEnum.valueof(getValueForInteger(itemMap.get("type")));
+		int order = getValueForInteger(itemMap.get("order"));
+		boolean displayFlag = "1".equals(getValueForString(itemMap.get("display")));
+		
+		/*
+		 * 此处处理逻辑不再使用 2014-07-21 12：01  名称从缓存中读取
+		String name = getValueForString(itemMap.get("name"));
+		//	有别名的情况展示别名	William.zhang	20130507
+		if(itemMap.get("aliasName") != null && !"".equals(itemMap.get("aliasName"))){
+			name = getValueForString(itemMap.get("aliasName"));
+		}
+		*/
+		
+		String id = getValueForString(itemMap.get("id"));
+		String name = XiuAttrGroupInfoCache.getInstance().getAttrGrouNameByID(id);
+		
+		if(name==null){
+			return null;
+		}
+		
+		//	属性值是否全展示	William.zhang	20130507
+		
+		ret.setOrder(order); 
+		ret.setDisplayFlag(displayFlag);
+		if(type == null){
+			type = AttrGroupTypeEnum.ATTR;
+		}
+		if(type == AttrGroupTypeEnum.ATTR){
+			ret.setId(id);
+			ret.setName(name);
+		}else if(type == AttrGroupTypeEnum.BRAND){
+			ret.setId("0");
+			ret.setName(StringUtils.isBlank(name) ? "品牌类型" : name);
+		}
+		return ret;
+	}
+	
+	/**
+	 * 判断Map值的类型,避免出现Integer或null
+	 * @param o
+	 * @return
+	 */
+	private int getValueForInteger(Object o){
+		if(null==o){
+			return 0;
+		}else if(o instanceof Integer){
+			return ((Integer) o).intValue();
+		}else if(o instanceof String){
+			try {
+				return Integer.valueOf(o.toString());
+			} catch (Exception e) {
+			}
+		}
+		return 0;
+	}
+	
+	/**
+	 * 判断Map值的类型,避免出现Integer或null
+	 * @param o
+	 * @return
+	 */
+	private String getValueForString(Object o){
+		return null==o?"":o.toString();
+	}
+	
+	private void addColorAndSizeAttr(List<AttrGroupJsonModel> attrGroupList){
+		if(attrGroupList == null)
+			return;
+		List<String> attrIds = new ArrayList<String>(2);
+		
+		//添加日期：2014-07-30 17：00 lvshd
+		boolean hasColor=false,hasSize=false;
+		for (AttrGroupJsonModel o : attrGroupList) {
+			if(o!=null){
+				attrIds.add(o.getId());
+				if(!hasColor && COLOR_ID.equals(o.getId())){
+					o.setOrder(Integer.MAX_VALUE-2);
+					hasColor=true;
+				}
+				if(!hasSize && SIZE_ID.equals(o.getId())){
+					o.setOrder(Integer.MAX_VALUE-1);
+					hasSize=true;
+				}
+			}
+		}
+		AttrGroupJsonModel attr;
+		
+		//规范颜色	镜像环境颜色的ID为700000000000002 0 249，所以在镜像上面颜色存在不设置不显示的问题，上了线就正常了！
+		if(!hasColor && (attrIds == null || !attrIds.contains(COLOR_ID))){//"7000000000000027249")){
+			attr = new AttrGroupJsonModel();
+			attr.setAliasName("颜色");
+			attr.setAll(true);
+			//attr.setId("7000000000000027249");
+			attr.setId(COLOR_ID);
+			attr.setAttrGroupValueIds(EMPTY_STRING_ARRAY);
+			attr.setName("颜色");
+			attr.setOrder(Integer.MAX_VALUE-2);// 修改日期：2014-07-30 15：57
+			attr.setType(0);
+			attr.setDisplayFlag(true);
+			attrGroupList.add(attr);
+		}
+		//规范尺码	镜像环境颜色的ID为700000000000002 0 250，所以在镜像上面颜色存在不设置不显示的问题，上了线就正常了！
+		if(!hasSize && (attrIds == null || !attrIds.contains(SIZE_ID))){//"7000000000000027250")){
+			attr = new AttrGroupJsonModel();
+			attr.setAliasName("尺码");
+			attr.setAll(true);
+			//attr.setId("7000000000000027250");
+			attr.setId(SIZE_ID);
+			attr.setName("尺码");
+			attr.setOrder(Integer.MAX_VALUE-1);// 修改日期：2014-07-30 15：57
+			attr.setAttrGroupValueIds(EMPTY_STRING_ARRAY);
+			attr.setType(0);
+			attr.setDisplayFlag(true);
+			attrGroupList.add(attr);
+		}
+			
+		
+	}
+
+	public void setxSalesCatalogCondDAO(XSalesCatalogCondDAO xSalesCatalogCondDAO) {
+		this.xSalesCatalogCondDAO = xSalesCatalogCondDAO;
+	}
+	
+	@Autowired
+    private CatalogBof catalogBof;
+
+}

@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+/****== 品牌馆_start ==****/
+.bd{ width:950px; margin:20px auto 0 auto;}
+.bd .b_title{ font-size:12px; height:20px; line-height:20px; background:url(/static/css/default/img/gr.gif) 5px 6px no-repeat; padding-left:15px; font-weight:normal;color:#000;border-bottom:#e5e5e5 1px solid;padding-bottom:5px;}
+.bd .e_list{border-bottom:2px solid #000; height:28px; width:930px;padding-left:20px; padding-top:12px;clear:both;}
+.bd .e_list a{ float:left; display:block; background:url(/static/ebay/css/img/ppai_but.gif) -66px 0 no-repeat; height:30px; width:65px;line-height:32px;line-height:34px\9;*line-height:34px;_line-height:34px;text-align:center; color:#000;  position:relative;z-index:10; margin:0 1px;_top:6px;}
+.bd .e_list  a:hover,.bd .e_list a.on{background:url(/static/ebay/css/img/ppai_but.gif) 0 0 no-repeat; color:#000; height:30px;line-height:32px;line-height:34px\9;*line-height:34px;_line-height:34px;}
+.bd .e_list .lkList,.bd .e_list .lkList:hover{ background:url(/static/css/default/img/all_b_style_bg.gif) 0 -184px; height:20px; width:83px; line-height:20px; text-align:left; text-indent:6px; float:right; margin-right:5px; margin-top:4px;}
+.bd .e_list .lkList:hover{ color:#fc8b0b;}
+.bd .e_list a.check,.bd .e_list a.check:hover{ display:block; float:right; padding-left:8px; line-height:30px; background:url(/static/css/default/img/g_jt.gif) no-repeat 0 10px; }
+
+.bd .numberCode{ background:url(/static/css/default/img/tr_bg.gif) center bottom no-repeat; padding:15px 0 20px 40px; height:20px; line-height:20px; margin-bottom:10px; color:#000;}
+.bd .numberCode a{ display:inline-block; height:20px; text-align:center; padding:0 7px;}
+.bd .numberCode a:hover,.bd .numberCode a.on{ height:20px; background:#000; color:#fff; text-align:center;}
+.bd .numberBox{ position:relative; overflow:hidden;zoom:1}
+.bd .g_liselemets{ width:950px; margin:0; overflow:hidden;display:block; position:relative;top:0px}
+.bd .g_liselemets li{ padding:20px 0 0px 160px ; background:url(/static/css/default/img/z_line.gif) 0 bottom repeat-x; display:block; width:800px; position:relative;}
+.bd .g_liselemets li a,.masterplate_div .g_list a{ float:left; width:110px; height:100px; margin:0 20px 10px 0; }
+.bd .g_liselemets li a img,.masterplate_div .g_list img{ display:block; border:1px solid #e0e0e0; width:100px; height:50px; padding:4px; overflow:hidden;}
+.bd .g_liselemets li a span,.masterplate_div .g_list span{ display:block; width:110px; height:35px; line-height:18px; text-align:center; overflow:hidden; }
+.bd .g_liselemets li .s{ position:absolute; left:0px; top:20px; width:140px; height:80px; font-size:90px; font-family:Tahoma, Geneva, sans-serif; color:#999; display:block; line-height:70px; text-align:center;}
+
+/* 热门品牌 */
+.ppai_hot{background:#fafafa;border:#ebebeb 1px solid;margin-top:12px;clear:both;height:240px;}
+.ppai_hot h2{background:#dfdfdf url(img/ppai_title_bg.gif) no-repeat 16px 24px;width:168px;height:240px;float:left;}
+.ppai_hot img{width:780px;height:240px;float:left;}
+
+/****== 分类列表_start ==****/
+.masterplate_div{ width:920px; margin:0 auto;}
+.masterplate_div .master_list{ float:right; width:260px;}
+.masterplate_div .master_list h2{ background:url(/static/css/default/img/master_list_title.gif) 0 0 no-repeat; height:20px; width:210px; font-size:12px; color:#fff; padding-left:50px; padding-top:12px;}
+.masterplate_div .master_list .m_list{ width:260px; padding-top:10px; overflow:hidden;}
+.masterplate_div .master_list .m_list li{ background:url(/static/css/default/img/z_line.gif)  bottom  repeat-x; height:18px; line-height:18px; padding:5px 0 5px; margin-left:10px; width:250px; overflow:hidden;}
+.masterplate_div .master_list .m_list li img{ vertical-align:middle; margin-right:5px;}
+
+.masterplate_div .g_list{width:630px; overflow:hidden;}
+.masterplate_div .g_list .eles_w{ width:660px;}
+.masterplate_div .hot{ width:900px; margin:20px auto; overflow:hidden;}
+.masterplate_div .hot div.eles_w{ width:950px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

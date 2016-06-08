@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/search/!svn/ver/2189/trunk/search2.5/search-web/src/main/webapp/views/common
+END
+bottom_static.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/search/!svn/ver/2215/trunk/search2.5/search-web/src/main/webapp/views/common/bottom_static.ftl
+END
+ebay_bottom_static.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/common/ebay_bottom_static.ftl
+END
+ebay_header_include.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/search/!svn/ver/2009/trunk/search2.5/search-web/src/main/webapp/views/common/ebay_header_include.ftl
+END
+header_include.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/search/!svn/ver/1921/trunk/search2.5/search-web/src/main/webapp/views/common/header_include.ftl
+END
+ebay_head_static.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/search/!svn/ver/2189/trunk/search2.5/search-web/src/main/webapp/views/common/ebay_head_static.ftl
+END
+head_static.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/search/!svn/ver/2026/trunk/search2.5/search-web/src/main/webapp/views/common/head_static.ftl
+END
+ebay_head_static_for_tag.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/src/main/webapp/views/common/ebay_head_static_for_tag.ftl
+END

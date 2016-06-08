@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="XIU_BRAND_RECOMMEND" >
+  <resultMap id="xiuBrandRecommendMap" type="com.xiu.search.dao.model.XiuBrandRecommend" >
+    <result column="BRAND_ID" property="brandId" jdbcType="INTEGER" />
+    <result column="WEIGHT" property="weight" jdbcType="INTEGER" />
+    <result column="BIZ_ID" property="bizId" jdbcType="VARCHAR" />
+    <result column="BIZ_TYPE" property="bizType" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <resultMap id="xiuBrandRecommendMap2" type="com.xiu.search.dao.model.XiuBrandRecommend" >
+    <result column="BRAND_ID" property="brandId" jdbcType="INTEGER" />
+    <result column="BIZ_TYPE" property="bizType" jdbcType="INTEGER" />
+    <result column="BIZ_MKT_TYPE" property="mktType" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <select id="selectByPrimaryKeyForBusiness" parameterType="java.util.Map" resultMap="xiuBrandRecommendMap">
+    select 
+    BRAND_ID,WEIGHT,BIZ_ID,BIZ_TYPE
+    from XIU_BRAND_RECOMMEND
+    where BRAND_ID = #{brandId}
+    <if test="null!=types">
+    	and BIZ_TYPE in
+	    <foreach item="type" collection="types" open="(" separator="," close=")">
+	    	#{type}
+	    </foreach>
+    </if>
+    and rownum &lt; 300
+     order by WEIGHT desc
+  </select>
+  
+  <select id="selectByPKAndTypesAndMktTypeForBusiness" parameterType="java.util.Map" resultMap="xiuBrandRecommendMap">
+    select 
+    BRAND_ID,WEIGHT,BIZ_ID,BIZ_TYPE
+    from XIU_BRAND_RECOMMEND
+    where BRAND_ID = #{brandId}
+    <if test="null!=types">
+    	and BIZ_TYPE in
+	    <foreach item="type" collection="types" open="(" separator="," close=")">
+	    	#{type}
+	    </foreach>
+    </if>
+    <if test="null!=mktType">
+    	and BIZ_MKT_TYPE = #{mktType} 
+    </if>
+    and rownum &lt; 300
+     order by WEIGHT desc
+  </select>
+  
+  
+  <select id="selectAllBrandRecommend" resultMap="xiuBrandRecommendMap2">
+    	select BRAND_ID,BIZ_TYPE,BIZ_MKT_TYPE  from XIU_BRAND_RECOMMEND
+  </select>
+  
+  
+  
+</mapper>

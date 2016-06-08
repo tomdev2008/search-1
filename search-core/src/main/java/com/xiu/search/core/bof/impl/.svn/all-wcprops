@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/search/!svn/ver/2202/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl
+END
+BrandBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/search/!svn/ver/2349/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/BrandBofImpl.java
+END
+MktItemInfoBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/MktItemInfoBofImpl.java
+END
+NewArrivalListBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/search/!svn/ver/2199/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/NewArrivalListBofImpl.java
+END
+FacetFilterBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/search/!svn/ver/2373/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/FacetFilterBofImpl.java
+END
+CatalogBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/search/!svn/ver/1978/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/CatalogBofImpl.java
+END
+ListBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/search/!svn/ver/2349/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/ListBofImpl.java
+END
+SEOKeywordBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/SEOKeywordBofImpl.java
+END
+SuggestBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/SuggestBofImpl.java
+END
+XTagBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/XTagBofImpl.java
+END
+SearchBofImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/search/!svn/ver/2349/trunk/search2.5/search-core/src/main/java/com/xiu/search/core/bof/impl/SearchBofImpl.java
+END

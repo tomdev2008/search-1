@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/search/!svn/ver/2253/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache
+END
+StaticClothSizeCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/search/!svn/ver/2376/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/StaticClothSizeCache.java
+END
+CacheHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/CacheHolder.java
+END
+CacheExpireEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/search/!svn/ver/2361/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/CacheExpireEnum.java
+END
+LRUCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/search/!svn/ver/2216/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/LRUCache.java
+END
+CacheStateEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/CacheStateEnum.java
+END
+CacheTypeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/search/!svn/ver/2360/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/CacheTypeEnum.java
+END
+StaticCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/search/!svn/ver/2215/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/StaticCache.java
+END
+CacheManage.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/CacheManage.java
+END
+CumulativeStats.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/CumulativeStats.java
+END
+LocalCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/search/!svn/ver/1735/trunk/search2.5/search-core/src/main/java/com/xiu/search/dao/cache/LocalCache.java
+END

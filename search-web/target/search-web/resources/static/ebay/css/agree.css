@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 框架 */
+.a_main{width:950px;margin:20px auto;overflow:auto;position:relative;}
+.a_main .a_left{width:208px;float:left;}
+.a_main .a_right{width:730px;float:right;}
+
+/* 导航 */
+.dh{margin:0;float:right;padding-left:12px; line-height:25px; color:#646464; border-bottom:1px solid #e5e5e5; background:url(img/goods_info.gif) no-repeat 0 5px;overflow:hidden;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis;width:714px;}
+.dh a{ color:#000;}
+
+
+/* 左栏菜单 */
+.a_left{background:#f7f7f7;border-top:#dfdfdf 1px solid;border-left:#dfdfdf 1px solid;border-right:#dfdfdf 1px solid;margin-top:30px;font-family:"微软雅黑";}
+.a_left h2{height:30px;line-height:30px;width:199px;background:#000;position:absolute;left:0;top:0;color:#fff;padding-left:11px;font-size:14px;}
+.a_left ul{flaot:left;}
+.a_left ul li{border-bottom:#dfdfdf 1px solid;height:37px;line-height:37px;padding-left:11px;font-size:12px;}
+.a_left ul li a{color:#000;text-decoration:none;}
+.a_left ul li a:hover,.a_main .a_left ul li a.curr{color:#fb941b;}
+
+
+/* 服务承诺 */
+.a_right .agree_text{width:700px;margin:0 auto;overflow:auto;padding-bottom:6em;}
+.a_right .agree_text h2{font-weight:bold;margin:2.5em 0 8px 0;}
+.a_right .agree_text p{line-height:22px;}
+
+/* 常见问题 */
+.faq{width:700px;margin:0 auto;overflow:hidden;clear:both;padding:2em 0;}
+.faq li{padding-bottom:1em;}
+.faq li,.faq li p{float:left;width:100%;margin-bottom:5px;}
+.faq li p span strong{color:#000;font-weight:bold;}
+.faq li p span{float:left;display:block;width:679px;line-height:22px;color:#646464;}
+.faq li p span.q{width:16px;height:16px;margin:4px 5px 0 0;background:url(img/goods_info.gif) no-repeat right -892px;}
+.faq li p span.d{width:16px;height:16px;margin:4px 5px 0 0;background:url(img/goods_info.gif) no-repeat right -910px;}

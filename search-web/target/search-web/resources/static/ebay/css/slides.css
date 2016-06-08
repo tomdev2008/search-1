@@ -1,0 +1,64 @@
+/*	kvshow - start */
+
+#kvshow .slides_container {
+	width:1000px;
+	height:300px;
+	display:none;
+	overflow:hidden;
+	position:relative;
+}
+#kvshow .slides_container a {
+	width:1000px;
+	height:272px;
+	display:block;
+}
+
+#kvshow .slides_container a img {
+	display:block;
+}
+/*
+	Pagination
+*/
+#kvshow .pagination {
+	position:absolute;
+	bottom:0;
+	z-index:100;
+}
+
+#kvshow .pagination li {
+	float:left;
+	margin:0;
+	list-style:none;
+}
+
+#kvshow .pagination li a {
+	width:190px;
+	padding-left:9px;
+	margin-right:1px;
+    display:inline;
+	height:16px;
+	background:#FFF;
+	float:left;
+	filter:alpha(opacity=60);-moz-opacity: 0.60;opacity: 0.60;
+	color:#000;
+	text-decoration:none;
+}
+#kvshow .pagination li a.page5 { width:191px; margin:0}
+#kvshow .pagination li.current a {
+	background:#393939;
+	filter:alpha(opacity=80);-moz-opacity: 0.80;opacity: 0.80;
+	color:#FFF;
+	font-weight:bold;
+}
+
+*html #kvshow .pagination li a {
+	background:#dbdddd;
+}
+*html #kvshow .pagination li.current a {
+	background:#434444;
+}
+/* --kvshow end-- */
+
+
+
+

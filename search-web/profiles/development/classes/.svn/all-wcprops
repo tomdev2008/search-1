@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/profiles/development/classes
+END
+spring-search-memcached.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/profiles/development/classes/spring-search-memcached.xml
+END
+xiu-ui.properties
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/profiles/development/classes/xiu-ui.properties
+END

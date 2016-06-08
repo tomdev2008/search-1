@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/profiles/test
+END
+solr-service-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/profiles/test/solr-service-config.xml
+END
+search.properties
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/profiles/test/search.properties
+END
+log4j.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/search/!svn/ver/1735/trunk/search2.5/search-web/profiles/test/log4j.xml
+END
